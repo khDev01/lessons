@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <p id="english"> English</p>
+    <p id="arabic">Arabic</p>
+    <br><br><br>
+
+    <input type="button" value="Hello"
+    onclick="console.log(myresponse.json)">
+
+</body>
+<script>
+    english = document.getElementById('english')
+    arabic = document.getElementById('arabic')
+
+    urlBook1 = '../book1edit.json'
+
+    fetch(urlBook1)
+        .then(response => response.json())   // return json object
+        .then(data => {
+            // console.log(data[0].En)
+            english.innerHTML = data[0].En
+            arabic.innerHTML = data[0].Ar
+        })
+        .catch((error) => {
+            console.error('Error:', error)
+        })
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="container">
+        <div id="start">Start Quiz!
+        </div>
+        <div id="quiz"
+        style="display: none">
+            <div id="question"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <div class="choice"
+                id="A"
+                onclick="checkAnswer('A')">
+                </div>
+                <div class="choice"
+                id="B"
+                onclick="checkAnswer('B')">
+                </div>
+                <div class="choice"
+                id="C"
+                onclick="checkAnswer('C')">
+                </div>
+            </div>
+            <div id="timer">
+                <div id="counter"></div>
+                <div id="btimeGauge">
+                </div>
+                <div id="timeGauge">
+                </div>
+            </div>
+            <div id="progress"></div>
+        </div>
+        <div id="scoreContainer"
+        style="display: none"></div>
+    </div> -->
+
+</html>

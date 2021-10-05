@@ -1,0 +1,2640 @@
+[
+  {
+    "id": 0,
+    "Lesson": 1,
+    "En": "This",
+    "Ar": "\u0647\u064e\u0640\u0670\u0630\u064e\u0627"
+  },
+  {
+    "id": 1,
+    "Lesson": 1,
+    "En": "House",
+    "Ar": "\u0628\u064e\u064a\u0652\u062a\u064c"
+  },
+  {
+    "id": 2,
+    "Lesson": 1,
+    "En": "Door",
+    "Ar": "\u0628\u064e\u0627\u0628\u064c"
+  },
+  {
+    "id": 3,
+    "Lesson": 1,
+    "En": "Mosque",
+    "Ar": "\u0645\u064e\u0633\u0652\u062c\u0650\u062f\u064c"
+  },
+  {
+    "id": 4,
+    "Lesson": 1,
+    "En": "Book",
+    "Ar": "\u0643\u0650\u062a\u064e\u0627\u0628\u064c"
+  },
+  {
+    "id": 5,
+    "Lesson": 1,
+    "En": "Key",
+    "Ar": "\u0645\u0650\u0641\u0652\u062a\u064e\u0627\u062d\u064c"
+  },
+  {
+    "id": 6,
+    "Lesson": 1,
+    "En": "Chair",
+    "Ar": "\u0643\u064f\u0631\u0652\u0633\u0650\u0649\u0651\u064c"
+  },
+  {
+    "id": 7,
+    "Lesson": 1,
+    "En": "Pen",
+    "Ar": "\u0642\u064e\u0644\u064e\u0645\u064c"
+  },
+  {
+    "id": 8,
+    "Lesson": 1,
+    "En": "Bed",
+    "Ar": "\u0633\u064e\u0631\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 9,
+    "Lesson": 1,
+    "En": "Desk",
+    "Ar": "\u0645\u064e\u0643\u0652\u062a\u064e\u0628\u064c"
+  },
+  {
+    "id": 10,
+    "Lesson": 1,
+    "En": "What is this?",
+    "Ar": "\u0645\u064e\u0627 \u0647\u064e\u0640\u0670\u0630\u064e\u0627\u061f"
+  },
+  {
+    "id": 11,
+    "Lesson": 1,
+    "En": "Shirt",
+    "Ar": "\u0642\u064e\u0645\u0650\u064a\u0635\u064c"
+  },
+  { "id": 12, "Lesson": 1, "En": "No", "Ar": "\u0644\u0627" },
+  {
+    "id": 13,
+    "Lesson": 1,
+    "En": "Yes",
+    "Ar": "\u0646\u064e\u0639\u064e\u0645\u0652"
+  },
+  {
+    "id": 14,
+    "Lesson": 1,
+    "En": "Star",
+    "Ar": "\u0646\u064e\u062c\u0652\u0645\u064c"
+  },
+  {
+    "id": 15,
+    "Lesson": 1,
+    "En": "Who is this?",
+    "Ar": "\u0645\u064e\u0646\u0652 \u0647\u064e\u0640\u0670\u0630\u064e\u0627\u061f"
+  },
+  {
+    "id": 16,
+    "Lesson": 1,
+    "En": "Doctor",
+    "Ar": "\u0637\u064e\u0628\u0650\u064a\u0628\u064c"
+  },
+  {
+    "id": 17,
+    "Lesson": 1,
+    "En": "Boy",
+    "Ar": "\u0648\u064e\u0644\u064e\u062f\u064c"
+  },
+  {
+    "id": 18,
+    "Lesson": 1,
+    "En": "Student",
+    "Ar": "\u0637\u064e\u0627\u0644\u0650\u0628\u064c"
+  },
+  {
+    "id": 19,
+    "Lesson": 1,
+    "En": "Man",
+    "Ar": "\u0631\u064e\u062c\u064f\u0644\u064c"
+  },
+  {
+    "id": 20,
+    "Lesson": 1,
+    "En": "Merchant",
+    "Ar": "\u062a\u064e\u0627\u062c\u0650\u0631\u064c"
+  },
+  {
+    "id": 21,
+    "Lesson": 1,
+    "En": "Dog",
+    "Ar": "\u0643\u064e\u0644\u0652\u0628\u064c"
+  },
+  {
+    "id": 22,
+    "Lesson": 1,
+    "En": "Cat",
+    "Ar": "\u0642\u0650\u0637\u0651\u064c"
+  },
+  {
+    "id": 23,
+    "Lesson": 1,
+    "En": "Donkey",
+    "Ar": "\u062d\u0650\u0645\u064e\u0627\u0631\u064c"
+  },
+  {
+    "id": 24,
+    "Lesson": 1,
+    "En": "Horse",
+    "Ar": "\u062d\u0650\u0635\u064e\u0627\u0646\u064c"
+  },
+  {
+    "id": 25,
+    "Lesson": 1,
+    "En": "Rooster",
+    "Ar": "\u062f\u0650\u064a\u0643\u064c"
+  },
+  {
+    "id": 26,
+    "Lesson": 1,
+    "En": "Camel",
+    "Ar": "\u062c\u064e\u0645\u064e\u0644\u064c"
+  },
+  {
+    "id": 27,
+    "Lesson": 1,
+    "En": "Teacher",
+    "Ar": "\u0645\u064f\u062f\u064e\u0631\u064e\u0651\u0633\u064c"
+  },
+  {
+    "id": 28,
+    "Lesson": 1,
+    "En": "Handkerchief",
+    "Ar": "\u0645\u0650\u0646\u0652\u062f\u0650\u064a\u0644\u064c"
+  },
+  {
+    "id": 29,
+    "Lesson": 2,
+    "En": "That",
+    "Ar": "\u0630\u064e\u0644\u0650\u0643\u064e "
+  },
+  {
+    "id": 30,
+    "Lesson": 2,
+    "En": "Rock",
+    "Ar": "\u062d\u064e\u062c\u064e\u0631\u064c"
+  },
+  {
+    "id": 31,
+    "Lesson": 2,
+    "En": "Milk",
+    "Ar": "\u0644\u064e\u0628\u064e\u0646\u064c"
+  },
+  {
+    "id": 32,
+    "Lesson": 2,
+    "En": "Sugar",
+    "Ar": "\u0633\u064f\u0643\u0651\u064e\u0631\u064c "
+  },
+  {
+    "id": 33,
+    "Lesson": 2,
+    "En": "Imam",
+    "Ar": "\u0625\u0650\u0645\u064e\u0627\u0645\u064c"
+  },
+  {
+    "id": 34,
+    "Lesson": 3,
+    "En": "The (definite article)",
+    "Ar": "\u0627\u064e\u0644\u0652 "
+  },
+  {
+    "id": 35,
+    "Lesson": 3,
+    "En": "Broken",
+    "Ar": "\u0645\u064e\u0643\u0652\u0633\u064f\u0648\u0631\u064c"
+  },
+  {
+    "id": 36,
+    "Lesson": 3,
+    "En": "Open",
+    "Ar": "\u0645\u064e\u0641\u0652\u062a\u064f\u0648\u062d\u064c"
+  },
+  {
+    "id": 37,
+    "Lesson": 3,
+    "En": "Sitting",
+    "Ar": "\u062c\u064e\u0627\u0644\u0650\u0633\u064c "
+  },
+  {
+    "id": 38,
+    "Lesson": 3,
+    "En": "Standing",
+    "Ar": "\u0648\u064e\u0627\u0642\u0650\u0641\u064c"
+  },
+  {
+    "id": 39,
+    "Lesson": 3,
+    "En": "New",
+    "Ar": "\u062c\u064e\u062f\u0650\u064a\u062f\u064c "
+  },
+  {
+    "id": 40,
+    "Lesson": 3,
+    "En": "Old",
+    "Ar": "\u0642\u064e\u062f\u0650\u064a\u0645\u064c"
+  },
+  {
+    "id": 41,
+    "Lesson": 3,
+    "En": "Small",
+    "Ar": "\u0635\u064e\u063a\u0650\u064a\u0631\u064c "
+  },
+  {
+    "id": 42,
+    "Lesson": 3,
+    "En": "Big",
+    "Ar": "\u0643\u064e\u0628\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 43,
+    "Lesson": 3,
+    "En": "Dirty",
+    "Ar": "\u0648\u064e\u0633\u0650\u062e\u064c"
+  },
+  {
+    "id": 44,
+    "Lesson": 3,
+    "En": "Cold",
+    "Ar": "\u0628\u064e\u0627\u0631\u0650\u062f\u064c"
+  },
+  {
+    "id": 45,
+    "Lesson": 3,
+    "En": "Beautiful",
+    "Ar": "\u062c\u064e\u0645\u0650\u064a\u0644\u064c"
+  },
+  {
+    "id": 46,
+    "Lesson": 3,
+    "En": "Sweet",
+    "Ar": "\u062d\u064f\u0644\u0652\u0648\u064c"
+  },
+  {
+    "id": 47,
+    "Lesson": 3,
+    "En": "Sick",
+    "Ar": "\u0645\u064e\u0631\u0650\u064a\u0636\u064c"
+  },
+  {
+    "id": 48,
+    "Lesson": 3,
+    "En": "Shop",
+    "Ar": "\u0627\u0644\u062f\u0651\u064f\u0643\u0651\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 49,
+    "Lesson": 3,
+    "En": "Rich",
+    "Ar": "\u063a\u064e\u0646\u0650\u064a\u0651\u064c"
+  },
+  {
+    "id": 50,
+    "Lesson": 3,
+    "En": "Tall",
+    "Ar": "\u0637\u064e\u0648\u0650\u064a\u0644\u064c"
+  },
+  {
+    "id": 51,
+    "Lesson": 3,
+    "En": "Poor",
+    "Ar": "\u0641\u064e\u0642\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 52,
+    "Lesson": 3,
+    "En": "Short",
+    "Ar": "\u0642\u064e\u0635\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 53,
+    "Lesson": 3,
+    "En": "Apple",
+    "Ar": "\u0627\u0644\u062a\u064f\u0641\u0651\u064e\u0627\u062d\u064f"
+  },
+  {
+    "id": 54,
+    "Lesson": 3,
+    "En": "Hot",
+    "Ar": "\u062d\u064e\u0627\u0631\u0651\u064c"
+  },
+  {
+    "id": 55,
+    "Lesson": 3,
+    "En": "Near",
+    "Ar": "\u0642\u064e\u0631\u0650\u064a\u0628\u064c"
+  },
+  {
+    "id": 56,
+    "Lesson": 3,
+    "En": "Far away",
+    "Ar": "\u0628\u064e\u0639\u0650\u064a\u062f\u064c"
+  },
+  {
+    "id": 57,
+    "Lesson": 3,
+    "En": "Clean",
+    "Ar": "\u0646\u064e\u0638\u0650\u064a\u0641\u064c"
+  },
+  {
+    "id": 58,
+    "Lesson": 3,
+    "En": "Dirty",
+    "Ar": "\u0648\u064e\u0633\u0650\u062e\u064c"
+  },
+  {
+    "id": 59,
+    "Lesson": 3,
+    "En": "Light (weight)",
+    "Ar": "\u062e\u064e\u0641\u0650\u064a\u0641\u064c"
+  },
+  {
+    "id": 60,
+    "Lesson": 3,
+    "En": "Heavy",
+    "Ar": "\u062b\u064e\u0642\u0650\u064a\u0644\u064c"
+  },
+  {
+    "id": 61,
+    "Lesson": 3,
+    "En": "Paper",
+    "Ar": "\u0627\u064e\u0644\u0652\u0648\u064e\u0631\u064e\u0642\u064f"
+  },
+  {
+    "id": 62,
+    "Lesson": 3,
+    "En": "Water",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 63,
+    "Lesson": 3,
+    "En": "Moon",
+    "Ar": "\u0627\u0644\u0652\u0642\u064e\u0645\u064e\u0631\u064f"
+  },
+  {
+    "id": 64,
+    "Lesson": 4,
+    "En": "On",
+    "Ar": "\u0639\u064e\u0644\u064e\u0649\u0670"
+  },
+  { "id": 65, "Lesson": 4, "En": "In", "Ar": "\u0641\u0650\u064a" },
+  { "id": 66, "Lesson": 4, "En": "From", "Ar": "\u0645\u0650\u0646\u0652" },
+  {
+    "id": 67,
+    "Lesson": 4,
+    "En": "To",
+    "Ar": "\u0625\u0650\u0644\u064e\u0649\u0670"
+  },
+  { "id": 68, "Lesson": 4, "En": "Is", "Ar": "\u0623\u064e" },
+  {
+    "id": 69,
+    "Lesson": 4,
+    "En": "Where",
+    "Ar": "\u0623\u064e\u064a\u0652\u0646\u064e"
+  },
+  { "id": 70, "Lesson": 4, "En": "Who", "Ar": "\u0645\u064e\u0646\u0652" },
+  { "id": 71, "Lesson": 4, "En": "I", "Ar": "\u0623\u064e\u0646\u064e\u0627" },
+  {
+    "id": 72,
+    "Lesson": 4,
+    "En": "You (ms)",
+    "Ar": "\u0623\u064e\u0646\u0652\u062a\u064e"
+  },
+  {
+    "id": 73,
+    "Lesson": 4,
+    "En": "You (fs)",
+    "Ar": "\u0623\u064e\u0646\u0652\u062a\u0650"
+  },
+  { "id": 74, "Lesson": 4, "En": "He (ms)", "Ar": "\u0647\u064f\u0648\u064e" },
+  { "id": 75, "Lesson": 4, "En": "She (fs)", "Ar": "\u0647\u0650\u064a\u064e" },
+  {
+    "id": 76,
+    "Lesson": 4,
+    "En": "Prepositions (grammar)",
+    "Ar": "\u062d\u064e\u0631\u0652\u0641\u064f \u0627\u0644\u0652\u062c\u064e\u0631\u0651\u0650"
+  },
+  {
+    "id": 77,
+    "Lesson": 4,
+    "En": "Kitchen",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u0637\u0652\u0628\u064e\u062e\u064f"
+  },
+  {
+    "id": 78,
+    "Lesson": 4,
+    "En": "University",
+    "Ar": "\u0627\u0644\u0652\u062c\u064e\u0627\u0645\u0650\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 79,
+    "Lesson": 4,
+    "En": "School",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u062f\u0652\u0631\u064e\u0633\u064e\u0629\u064f"
+  },
+  {
+    "id": 80,
+    "Lesson": 4,
+    "En": "Japan",
+    "Ar": "\u0627\u0644\u0652\u064a\u064e\u0627\u0628\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 81,
+    "Lesson": 4,
+    "En": "China",
+    "Ar": "\u0627\u0644\u0635\u0651\u0650\u064a\u0652\u0646\u064f"
+  },
+  {
+    "id": 82,
+    "Lesson": 4,
+    "En": "India",
+    "Ar": "\u0627\u0644\u0652\u0647\u0650\u0646\u0652\u062f\u064f"
+  },
+  {
+    "id": 83,
+    "Lesson": 4,
+    "En": "Director, head-teacher",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u062f\u0650\u064a\u0652\u0631\u064f"
+  },
+  {
+    "id": 84,
+    "Lesson": 4,
+    "En": "Garden",
+    "Ar": "\u0627\u0644\u0652\u0628\u064f\u0633\u0652\u062a\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 85,
+    "Lesson": 4,
+    "En": "Farm",
+    "Ar": "\u0627\u0644\u0652\u062d\u064e\u0642\u0652\u0644\u064f"
+  },
+  {
+    "id": 86,
+    "Lesson": 4,
+    "En": "Classroom",
+    "Ar": "\u0627\u0644\u0652\u0641\u064e\u0635\u0652\u0644\u064f"
+  },
+  {
+    "id": 87,
+    "Lesson": 4,
+    "En": "Room",
+    "Ar": "\u0627\u0644\u0652\u063a\u064f\u0631\u0652\u0641\u064e\u0629\u064f"
+  },
+  {
+    "id": 88,
+    "Lesson": 4,
+    "En": "Toilet",
+    "Ar": "\u0627\u0644\u0652\u0645\u0650\u0631\u0652\u062d\u064e\u0627\u0636\u064f"
+  },
+  {
+    "id": 89,
+    "Lesson": 4,
+    "En": "Bathroom",
+    "Ar": "\u0627\u0644\u0652\u062d\u064e\u0645\u0651\u064e\u0627\u0645\u064f"
+  },
+  {
+    "id": 90,
+    "Lesson": 4,
+    "En": "Watch",
+    "Ar": "\u0627\u0644\u0633\u0651\u064e\u0627\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 91,
+    "Lesson": 4,
+    "En": "He went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u064e"
+  },
+  {
+    "id": 92,
+    "Lesson": 4,
+    "En": "He went out, left",
+    "Ar": "\u062e\u064e\u0631\u064e\u062c\u064e"
+  },
+  {
+    "id": 93,
+    "Lesson": 4,
+    "En": "Verbal sentence ",
+    "Ar": "\u0627\u0644\u0652\u062c\u064f\u0645\u0652\u0644\u064e\u0629\u064f \u0627\u0644\u0652\u0641\u0650\u0639\u0652\u0644\u0650\u064a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 94,
+    "Lesson": 4,
+    "En": "Nominal sentence",
+    "Ar": "\u0627\u0644\u0652\u062c\u064f\u0645\u0652\u0644\u064e\u0629\u064f \u0627\u0644\u0627\u0633\u0652\u0645\u0650\u064a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 95,
+    "Lesson": 4,
+    "En": "Doctor (female)",
+    "Ar": "\u0637\u064e\u0628\u0650\u064a\u0628\u064e\u0629\u064c"
+  },
+  {
+    "id": 96,
+    "Lesson": 4,
+    "En": "Engineer",
+    "Ar": "\u0645\u064f\u0647\u064e\u0646\u0652\u062f\u0650\u0633\u064c"
+  },
+  {
+    "id": 97,
+    "Lesson": 4,
+    "En": "Engineer (female)",
+    "Ar": "\u0645\u064f\u0647\u064e\u0646\u0652\u062f\u0650\u0633\u064e\u0629\u064c"
+  },
+  {
+    "id": 98,
+    "Lesson": 4,
+    "En": "Nurse (female)",
+    "Ar": "\u0645\u064f\u0645\u064e\u0631\u0651\u0650\u0636\u064e\u0629\u064c"
+  },
+  {
+    "id": 99,
+    "Lesson": 4,
+    "En": "Mother",
+    "Ar": "\u0623\u064f\u0645\u0651\u064c"
+  },
+  {
+    "id": 100,
+    "Lesson": 4,
+    "En": "Hospital",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u0633\u0652\u062a\u064e\u0634\u0652\u0641\u064e\u0649\u0670"
+  },
+  {
+    "id": 101,
+    "Lesson": 4,
+    "En": "Nice",
+    "Ar": "\u062c\u064e\u064a\u0651\u0650\u062f\u064c"
+  },
+  {
+    "id": 102,
+    "Lesson": 4,
+    "En": "Hard working",
+    "Ar": "\u0645\u064f\u062c\u0652\u062a\u064e\u0647\u0650\u062f\u064c"
+  },
+  {
+    "id": 103,
+    "Lesson": 4,
+    "En": "Intelligent",
+    "Ar": "\u0630\u064e\u0643\u0650\u064a\u0651\u064c"
+  },
+  {
+    "id": 104,
+    "Lesson": 4,
+    "En": "An apple",
+    "Ar": "\u062a\u064f\u0641\u0651\u064e\u0627\u062d\u064c"
+  },
+  {
+    "id": 105,
+    "Lesson": 4,
+    "En": "He drank",
+    "Ar": "\u0634\u064e\u0631\u0650\u0628\u064e"
+  },
+  {
+    "id": 106,
+    "Lesson": 4,
+    "En": "He ate",
+    "Ar": "\u0623\u064e\u0643\u064e\u0644\u064e"
+  },
+  {
+    "id": 107,
+    "Lesson": 5,
+    "En": "The messenger",
+    "Ar": "\u0627\u0644\u0631\u0651\u064e\u0633\u064f\u0648\u0644\u064f "
+  },
+  {
+    "id": 108,
+    "Lesson": 5,
+    "En": "The ka'ba",
+    "Ar": "\u0627\u0644\u0652\u0643\u064e\u0639\u0652\u0628\u064e\u0629\u064f"
+  },
+  {
+    "id": 109,
+    "Lesson": 5,
+    "En": "Name",
+    "Ar": "\u0627\u0644\u0627\u0633\u0652\u0645\u064f "
+  },
+  {
+    "id": 110,
+    "Lesson": 5,
+    "En": "Son",
+    "Ar": "\u0627\u0644\u0627\u0628\u0652\u0646\u064f "
+  },
+  {
+    "id": 111,
+    "Lesson": 5,
+    "En": "Paternal uncle",
+    "Ar": "\u0627\u0644\u0652\u0639\u064e\u0645\u0651\u064f "
+  },
+  {
+    "id": 112,
+    "Lesson": 5,
+    "En": "Maternal uncle",
+    "Ar": "\u0627\u0644\u0652\u062e\u064e\u0627\u0644\u064f"
+  },
+  {
+    "id": 113,
+    "Lesson": 5,
+    "En": "Bag, case",
+    "Ar": "\u0627\u0644\u062d\u064e\u0642\u0650\u064a\u0628\u064e\u0629\u064f"
+  },
+  {
+    "id": 114,
+    "Lesson": 5,
+    "En": "Car",
+    "Ar": "\u0627\u0644\u0633\u0651\u064e\u064a\u0651\u064e\u0627\u0631\u064e\u0629\u064f   "
+  },
+  {
+    "id": 115,
+    "Lesson": 5,
+    "En": "Closed",
+    "Ar": "\u0645\u064f\u063a\u0652\u0644\u064e\u0642\u064c"
+  },
+  {
+    "id": 116,
+    "Lesson": 5,
+    "En": "Under",
+    "Ar": "\u062a\u064e\u062d\u0652\u062a\u064e"
+  },
+  {
+    "id": 117,
+    "Lesson": 5,
+    "En": "There",
+    "Ar": "\u0647\u064f\u0646\u064e\u0627\u0643\u064e "
+  },
+  {
+    "id": 118,
+    "Lesson": 5,
+    "En": "Above",
+    "Ar": "\u0641\u064e\u0648\u0652\u0642\u064e "
+  },
+  {
+    "id": 119,
+    "Lesson": 5,
+    "En": "In front of",
+    "Ar": "\u0623\u064e\u0645\u064e\u0627\u0645\u064e  "
+  },
+  {
+    "id": 120,
+    "Lesson": 5,
+    "En": "Behind",
+    "Ar": "\u062e\u064e\u0644\u0652\u0641\u064e "
+  },
+  {
+    "id": 121,
+    "Lesson": 5,
+    "En": "Teacher (female)",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u062f\u0651\u064e\u0631\u0650\u0633\u064e\u0629\u064f"
+  },
+  {
+    "id": 122,
+    "Lesson": 6,
+    "En": "Earth",
+    "Ar": "\u0627\u0644\u0623\u064e\u0631\u0652\u0636\u064f"
+  },
+  {
+    "id": 123,
+    "Lesson": 6,
+    "En": "This (feminine)",
+    "Ar": "\u0647\u064e\u0640\u0670\u0630\u0650\u0647\u0650"
+  },
+  {
+    "id": 124,
+    "Lesson": 6,
+    "En": "Hand",
+    "Ar": "\u0627\u0644\u0652\u064a\u064e\u062f\u064f"
+  },
+  {
+    "id": 125,
+    "Lesson": 6,
+    "En": "Pot",
+    "Ar": "\u0642\u0650\u062f\u0652\u0631\u064c"
+  },
+  {
+    "id": 126,
+    "Lesson": 6,
+    "En": "Fruit",
+    "Ar": "\u0641\u064e\u0627\u0643\u0650\u0647\u064e\u0629\u064c"
+  },
+  {
+    "id": 127,
+    "Lesson": 6,
+    "En": "Girl",
+    "Ar": "\u0628\u0650\u0646\u0652\u062a\u064c"
+  },
+  {
+    "id": 128,
+    "Lesson": 6,
+    "En": "Head",
+    "Ar": "\u0631\u064e\u0623\u0652\u0633\u064c"
+  },
+  {
+    "id": 129,
+    "Lesson": 6,
+    "En": "Sun",
+    "Ar": "\u0627\u0644\u0634\u0651\u064e\u0645\u0652\u0633\u064f"
+  },
+  {
+    "id": 130,
+    "Lesson": 6,
+    "En": "Nose",
+    "Ar": "\u0623\u064e\u0646\u0652\u0641\u064c"
+  },
+  {
+    "id": 131,
+    "Lesson": 6,
+    "En": "Eye",
+    "Ar": "\u0639\u064e\u064a\u0652\u0646\u064c"
+  },
+  {
+    "id": 132,
+    "Lesson": 6,
+    "En": "Tongue",
+    "Ar": "\u0644\u0650\u0633\u064e\u0627\u0646\u064c"
+  },
+  {
+    "id": 133,
+    "Lesson": 6,
+    "En": "Ear",
+    "Ar": "\u0623\u064f\u0630\u064f\u0646\u064c"
+  },
+  {
+    "id": 134,
+    "Lesson": 6,
+    "En": "Face",
+    "Ar": "\u0648\u064e\u062c\u0652\u0647\u064c"
+  },
+  {
+    "id": 135,
+    "Lesson": 6,
+    "En": "Foot",
+    "Ar": "\u0642\u064e\u062f\u064e\u0645\u064c"
+  },
+  {
+    "id": 136,
+    "Lesson": 7,
+    "En": "Demonstrative pronouns",
+    "Ar": "\u0623\u064e\u0633\u0652\u0645\u064e\u0627\u0621\u064f \u0627\u0644\u0625\u0650\u0634\u064e\u0627\u0631\u064e\u0629\u0650"
+  },
+  {
+    "id": 137,
+    "Lesson": 7,
+    "En": "That (feminine)",
+    "Ar": "\u062a\u0650\u0644\u0652\u0643\u064e"
+  },
+  {
+    "id": 138,
+    "Lesson": 7,
+    "En": "Egg",
+    "Ar": "\u0628\u064e\u064a\u0652\u0636\u064e\u0629\u064c"
+  },
+  {
+    "id": 139,
+    "Lesson": 7,
+    "En": "Hen",
+    "Ar": "\u062f\u064e\u062c\u064e\u0627\u062c\u064e\u0629\u064c"
+  },
+  {
+    "id": 140,
+    "Lesson": 7,
+    "En": "Duck",
+    "Ar": "\u0628\u064e\u0637\u064e\u0629\u064c"
+  },
+  {
+    "id": 141,
+    "Lesson": 8,
+    "En": "Switzerland",
+    "Ar": "\u0633\u064f\u0648\u0650\u064a\u0633\u0652\u0631\u064e\u0627"
+  },
+  {
+    "id": 142,
+    "Lesson": 8,
+    "En": "Spoon",
+    "Ar": "\u0627\u0644\u0652\u0645\u0650\u0644\u0652\u0639\u064e\u0642\u064e\u0629\u064f"
+  },
+  {
+    "id": 143,
+    "Lesson": 8,
+    "En": "Cow",
+    "Ar": "\u0627\u0644\u0652\u0628\u064e\u0642\u064e\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 144,
+    "Lesson": 8,
+    "En": "Daughter of the farmer",
+    "Ar": "\u0628\u0650\u0646\u0652\u062a\u064f \u0627\u0644\u0652\u0641\u064e\u0644\u0627\u062d\u0650"
+  },
+  {
+    "id": 145,
+    "Lesson": 8,
+    "En": "The farmer",
+    "Ar": "\u0627\u0644\u0652\u0641\u064e\u0644\u0627\u062d\u064f"
+  },
+  {
+    "id": 146,
+    "Lesson": 8,
+    "En": "Germany",
+    "Ar": "\u0623\u0644\u0652\u0645\u064e\u0627\u0646\u0650\u064a\u064e\u0627"
+  },
+  {
+    "id": 147,
+    "Lesson": 8,
+    "En": "Knife",
+    "Ar": "\u0633\u0650\u0643\u0651\u0650\u064a\u0646\u064c"
+  },
+  {
+    "id": 148,
+    "Lesson": 9,
+    "En": "The described noun",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u0648\u0652\u0635\u064f\u0648\u0641\u064f"
+  },
+  {
+    "id": 149,
+    "Lesson": 9,
+    "En": "The adjective",
+    "Ar": "\u0627\u0644\u0635\u0651\u0650\u0641\u064e\u0629\u064f"
+  },
+  {
+    "id": 150,
+    "Lesson": 9,
+    "En": "Described noun",
+    "Ar": "\u0645\u064e\u0646\u0652\u0639\u064f\u0648\u062a\u064c"
+  },
+  {
+    "id": 151,
+    "Lesson": 9,
+    "En": "Adjective",
+    "Ar": "\u0646\u064e\u0639\u0652\u062a\u064c"
+  },
+  {
+    "id": 152,
+    "Lesson": 9,
+    "En": "Thirsty",
+    "Ar": "\u0639\u064e\u0637\u0652\u0634\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 153,
+    "Lesson": 9,
+    "En": "Lazy",
+    "Ar": "\u0643\u064e\u0633\u0652\u0644\u0627\u064e\u0646\u064f"
+  },
+  {
+    "id": 154,
+    "Lesson": 9,
+    "En": "Full",
+    "Ar": "\u0645\u064e\u0644\u0622\u0646\u064f"
+  },
+  {
+    "id": 155,
+    "Lesson": 9,
+    "En": "Hungry",
+    "Ar": "\u062c\u064e\u0648\u0652\u0639\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 156,
+    "Lesson": 9,
+    "En": "Happy",
+    "Ar": "\u0641\u064e\u0631\u0652\u062d\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 157,
+    "Lesson": 9,
+    "En": "Angry",
+    "Ar": "\u063a\u064e\u0636\u0652\u0628\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 158,
+    "Lesson": 9,
+    "En": "Famous",
+    "Ar": "\u0634\u064e\u0647\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 159,
+    "Lesson": 9,
+    "En": "Sparrow",
+    "Ar": "\u0639\u064f\u0635\u0652\u0641\u064f\u0648\u0631\u064c"
+  },
+  {
+    "id": 160,
+    "Lesson": 9,
+    "En": "Who, that, which (masculine)",
+    "Ar": "\u0627\u0644\u0651\u064e\u0630\u0650\u064a"
+  },
+  {
+    "id": 161,
+    "Lesson": 9,
+    "En": "Delicious",
+    "Ar": "\u0644\u064e\u0630\u0650\u064a\u0630\u064e\u0629\u064c"
+  },
+  {
+    "id": 162,
+    "Lesson": 9,
+    "En": "City",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u062f\u0650\u064a\u0646\u064e\u0629\u064f"
+  },
+  {
+    "id": 163,
+    "Lesson": 9,
+    "En": "America",
+    "Ar": "\u0623\u064e\u0645\u0652\u0631\u0650\u064a\u0643\u064e\u0627"
+  },
+  {
+    "id": 164,
+    "Lesson": 9,
+    "En": "Easy",
+    "Ar": "\u0633\u064e\u0647\u0652\u0644\u064c"
+  },
+  {
+    "id": 165,
+    "Lesson": 9,
+    "En": "Difficult",
+    "Ar": "\u0635\u064e\u0639\u0652\u0628\u064c"
+  },
+  {
+    "id": 166,
+    "Lesson": 9,
+    "En": "Why",
+    "Ar": "\u0644\u0650\u0645\u064e\u0627\u0630\u064e\u0627"
+  },
+  {
+    "id": 167,
+    "Lesson": 9,
+    "En": "Language",
+    "Ar": "\u0644\u064f\u063a\u064e\u0629\u064c "
+  },
+  {
+    "id": 168,
+    "Lesson": 9,
+    "En": "Cup",
+    "Ar": "\u0627\u0644\u0643\u064f\u0648\u0652\u0628\u064f"
+  },
+  {
+    "id": 169,
+    "Lesson": 9,
+    "En": "Today",
+    "Ar": "\u0627\u0644\u064a\u064e\u0648\u0652\u0645\u064f"
+  },
+  {
+    "id": 170,
+    "Lesson": 9,
+    "En": "Bird",
+    "Ar": "\u0627\u0644\u0637\u0651\u064e\u0627\u0621\u0650\u0631\u064f"
+  },
+  {
+    "id": 171,
+    "Lesson": 9,
+    "En": "Sharp",
+    "Ar": "\u062d\u064e\u0627\u062f\u064c"
+  },
+  {
+    "id": 172,
+    "Lesson": 10,
+    "En": "Your (feminine suffix)",
+    "Ar": "\u0643\u0650"
+  },
+  {
+    "id": 173,
+    "Lesson": 10,
+    "En": "Your (masculine suffix)",
+    "Ar": "\u0643\u064e"
+  },
+  { "id": 174, "Lesson": 10, "En": "Her (suffix)", "Ar": "\u0647\u064e\u0627" },
+  { "id": 175, "Lesson": 10, "En": "His (suffix)", "Ar": "\u0647\u064f\u0640" },
+  {
+    "id": 176,
+    "Lesson": 10,
+    "En": "We,  (suffix)",
+    "Ar": "\u0646\u064e\u0627"
+  },
+  { "id": 177, "Lesson": 10, "En": "My, mine (suffix)", "Ar": "\u064a" },
+  {
+    "id": 178,
+    "Lesson": 10,
+    "En": "Brother",
+    "Ar": "\u0623\u064e\u062e\u064c"
+  },
+  { "id": 179, "Lesson": 10, "En": "Father", "Ar": "\u0623\u064e\u0628\u064c" },
+  { "id": 180, "Lesson": 10, "En": "With", "Ar": "\u0645\u064e\u0639\u064e" },
+  {
+    "id": 181,
+    "Lesson": 10,
+    "En": "With, near",
+    "Ar": "\u0639\u0650\u0646\u0652\u062f\u064e"
+  },
+  {
+    "id": 182,
+    "Lesson": 10,
+    "En": "You went (ms)",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u062a\u064e"
+  },
+  {
+    "id": 183,
+    "Lesson": 10,
+    "En": "She went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u064e\u062a\u0652"
+  },
+  {
+    "id": 184,
+    "Lesson": 10,
+    "En": "You went (fs)",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u062a\u0650"
+  },
+  {
+    "id": 185,
+    "Lesson": 10,
+    "En": "We went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u0646\u064e\u0627"
+  },
+  {
+    "id": 186,
+    "Lesson": 10,
+    "En": "I went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u062a\u064f"
+  },
+  {
+    "id": 187,
+    "Lesson": 10,
+    "En": "Library",
+    "Ar": "\u0627\u0644\u0645\u064e\u0643\u0652\u062a\u064e\u0628\u064e\u0629\u064f"
+  },
+  {
+    "id": 188,
+    "Lesson": 10,
+    "En": "Now, just now",
+    "Ar": "\u0627\u0644\u0622\u0646\u064e"
+  },
+  {
+    "id": 189,
+    "Lesson": 10,
+    "En": "Clinic, small hospital",
+    "Ar": "\u0627\u0644\u0645\u064f\u0633\u0652\u062a\u064e\u0648\u0652\u0635\u0641\u064f"
+  },
+  {
+    "id": 190,
+    "Lesson": 10,
+    "En": "Fan",
+    "Ar": "\u0627\u0644\u0645\u0650\u0631\u0652\u0648\u064e\u062d\u064e\u0629\u064f"
+  },
+  {
+    "id": 191,
+    "Lesson": 10,
+    "En": "Market",
+    "Ar": "\u0627\u0644\u0633\u0651\u064f\u0648\u0652\u0642\u064f"
+  },
+  {
+    "id": 192,
+    "Lesson": 10,
+    "En": "Secondary school",
+    "Ar": "\u0627\u0644\u062b\u0651\u064e\u0627\u0646\u064e\u0648\u0650\u064a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 193,
+    "Lesson": 10,
+    "En": "Street",
+    "Ar": "\u0627\u0644\u0634\u0651\u064e\u0627\u0631\u0650\u0639\u064f"
+  },
+  { "id": 194, "Lesson": 10, "En": "About", "Ar": "\u0639\u064e\u0646\u0652" },
+  { "id": 195, "Lesson": 10, "En": "At, in", "Ar": "\u0628\u0650\u0640" },
+  {
+    "id": 196,
+    "Lesson": 10,
+    "En": "Kuwait",
+    "Ar": "\u0627\u0644\u0652\u0643\u064f\u0648\u064e\u064a\u0652\u062a\u064f"
+  },
+  {
+    "id": 197,
+    "Lesson": 10,
+    "En": "Husband",
+    "Ar": "\u0632\u064e\u0648\u0652\u062c\u064c"
+  },
+  {
+    "id": 198,
+    "Lesson": 10,
+    "En": "Minister",
+    "Ar": "\u0627\u0644\u0652\u0648\u064e\u0632\u0650\u064a\u0631\u064f"
+  },
+  {
+    "id": 199,
+    "Lesson": 11,
+    "En": "In it (masculine)",
+    "Ar": "\u0641\u0650\u064a\u0652\u0647\u0650"
+  },
+  {
+    "id": 200,
+    "Lesson": 11,
+    "En": "In it (feminine)",
+    "Ar": "\u0641\u0650\u064a\u0652\u0647\u064e\u0627"
+  },
+  {
+    "id": 201,
+    "Lesson": 11,
+    "En": "The present verb",
+    "Ar": "\u0627\u0644\u0652\u0641\u0650\u0639\u0652\u0644\u064f \u0627\u0644\u0652\u0645\u064f\u0636\u064e\u0627\u0631\u0650\u0639\u064f"
+  },
+  {
+    "id": 202,
+    "Lesson": 11,
+    "En": "I like, i love",
+    "Ar": "\u0623\u064f\u062d\u0650\u0628\u0651\u064f"
+  },
+  {
+    "id": 203,
+    "Lesson": 11,
+    "En": "Window",
+    "Ar": "\u0646\u064e\u0627\u0641\u0650\u0630\u064e\u0629\u064c "
+  },
+  {
+    "id": 204,
+    "Lesson": 12,
+    "En": "Masculine",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u0630\u064e\u0643\u0651\u064e\u0631\u064f"
+  },
+  {
+    "id": 205,
+    "Lesson": 12,
+    "En": "Feminine ",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u0624\u064e\u0646\u0651\u064e\u062b\u064f"
+  },
+  {
+    "id": 206,
+    "Lesson": 12,
+    "En": "Who, that, which (feminine)",
+    "Ar": "\u0627\u0644\u0651\u064e\u062a\u0650\u064a"
+  },
+  {
+    "id": 207,
+    "Lesson": 12,
+    "En": "The child",
+    "Ar": "\u0627\u0644\u0637\u0651\u0650\u0641\u0652\u0644\u064f"
+  },
+  {
+    "id": 208,
+    "Lesson": 12,
+    "En": "Young man",
+    "Ar": "\u0627\u0644\u0652\u0641\u064e\u062a\u064e\u0649"
+  },
+  {
+    "id": 209,
+    "Lesson": 12,
+    "En": "Young lady",
+    "Ar": "\u0627\u0644\u0652\u0641\u064e\u062a\u064e\u0627\u0629\u064f"
+  },
+  {
+    "id": 210,
+    "Lesson": 12,
+    "En": "Maternal aunt",
+    "Ar": "\u0627\u0644\u0652\u0639\u064e\u0645\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 211,
+    "Lesson": 12,
+    "En": "Supervisor",
+    "Ar": "\u0645\u064f\u0648\u064e\u062c\u0651\u0650\u0647\u064c"
+  },
+  {
+    "id": 212,
+    "Lesson": 12,
+    "En": "How are you",
+    "Ar": "\u0643\u064e\u064a\u0652\u0641\u064e \u062d\u064e\u0627\u0644\u064f\u0643\u064e"
+  },
+  {
+    "id": 213,
+    "Lesson": 12,
+    "En": "I am fine and all thanks to allah",
+    "Ar": "\u0623\u064e\u0646\u064e\u0627 \u0628\u0650\u062e\u064e\u064a\u0652\u0631\u064d \u0648\u064e\u0627\u0644\u0652\u062d\u064e\u0645\u0652\u062f\u064f \u0644\u0644\u0647\u0650"
+  },
+  {
+    "id": 214,
+    "Lesson": 12,
+    "En": "Where are you from?",
+    "Ar": "\u0645\u0650\u0646\u0652 \u0623\u064e\u064a\u0652\u0646\u064e \u0623\u064e\u0646\u0652\u062a\u0650\u061f"
+  },
+  {
+    "id": 215,
+    "Lesson": 12,
+    "En": "Blackboard",
+    "Ar": "\u0627\u0644\u0633\u064e\u0628\u0651\u064f\u0648\u0631\u064e\u0629\u0650"
+  },
+  {
+    "id": 216,
+    "Lesson": 12,
+    "En": "Tree",
+    "Ar": "\u0627\u0644\u0634\u0651\u064e\u062c\u064e\u0631\u064e\u0629\u0650"
+  },
+  {
+    "id": 217,
+    "Lesson": 13,
+    "En": "These",
+    "Ar": "\u0647\u064e\u0624\u064f\u0644\u0627\u0621\u0650"
+  },
+  {
+    "id": 218,
+    "Lesson": 13,
+    "En": "The plural",
+    "Ar": "\u0627\u0644\u0652\u062c\u064e\u0645\u0652\u0639\u064f"
+  },
+  {
+    "id": 219,
+    "Lesson": 13,
+    "En": "The singular",
+    "Ar": "\u0627\u0644\u0652\u0645\u064f\u0641\u0652\u0631\u064e\u062f\u064f"
+  },
+  {
+    "id": 220,
+    "Lesson": 13,
+    "En": "Sound plural",
+    "Ar": "\u062c\u064e\u0645\u0652\u0639\u064c \u0633\u064e\u0627\u0644\u0650\u0645\u064c"
+  },
+  {
+    "id": 221,
+    "Lesson": 13,
+    "En": "Broken plural",
+    "Ar": "\u062c\u064e\u0645\u0652\u0639\u064f \u062a\u064e\u0643\u0652\u0633\u0650\u064a\u0631\u064d"
+  },
+  {
+    "id": 222,
+    "Lesson": 13,
+    "En": "Books",
+    "Ar": "\u0643\u064f\u062a\u064f\u0628\u064c"
+  },
+  {
+    "id": 223,
+    "Lesson": 13,
+    "En": "Female students",
+    "Ar": "\u0637\u064e\u0627\u0644\u0650\u0628\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 224,
+    "Lesson": 13,
+    "En": "Farmers",
+    "Ar": "\u0641\u064e\u0644\u0627\u062d\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 225,
+    "Lesson": 13,
+    "En": "Engineers",
+    "Ar": "\u0645\u064f\u0647\u064e\u0646\u0652\u062f\u0650\u0633\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 226,
+    "Lesson": 13,
+    "En": "Granddaughter",
+    "Ar": "\u062d\u064e\u0641\u0650\u064a\u062f\u064e\u0629\u064c"
+  },
+  {
+    "id": 227,
+    "Lesson": 13,
+    "En": "Wives",
+    "Ar": "\u0632\u064e\u0648\u0652\u062c\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 228,
+    "Lesson": 13,
+    "En": "Female instructors",
+    "Ar": "\u0645\u064f\u0639\u064e\u0644\u0651\u0650\u0645\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 229,
+    "Lesson": 13,
+    "En": "Hotel",
+    "Ar": "\u0641\u064f\u0646\u0652\u062f\u064f\u0642\u064c"
+  },
+  {
+    "id": 230,
+    "Lesson": 13,
+    "En": "Female doctors",
+    "Ar": "\u0637\u064e\u0628\u0650\u064a\u0628\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 231,
+    "Lesson": 13,
+    "En": "Muslims",
+    "Ar": "\u0645\u064f\u0633\u0652\u0644\u0650\u0645\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 232,
+    "Lesson": 13,
+    "En": "Person who fasts",
+    "Ar": "\u0635\u064e\u0627\u0626\u0650\u0645\u064c"
+  },
+  {
+    "id": 233,
+    "Lesson": 13,
+    "En": "People who fast",
+    "Ar": "\u0635\u064e\u0627\u0626\u0650\u0645\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 234,
+    "Lesson": 13,
+    "En": "Inspector",
+    "Ar": "\u0645\u064f\u0641\u064e\u062a\u0651\u0650\u0634\u064c"
+  },
+  {
+    "id": 235,
+    "Lesson": 13,
+    "En": "Inspectors",
+    "Ar": "\u0645\u064f\u0641\u064e\u062a\u0651\u0650\u0634\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 236,
+    "Lesson": 13,
+    "En": "Hard working (fem plural)",
+    "Ar": "\u0645\u064f\u062c\u0652\u062a\u064e\u0647\u0650\u062f\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 237,
+    "Lesson": 13,
+    "En": "Hard working (plural)",
+    "Ar": "\u0645\u064f\u062c\u0652\u062a\u064e\u0647\u0650\u062f\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 238,
+    "Lesson": 13,
+    "En": "Mountain",
+    "Ar": "\u062c\u064e\u0628\u064e\u0644\u064c "
+  },
+  {
+    "id": 239,
+    "Lesson": 13,
+    "En": "Mountains",
+    "Ar": "\u062c\u0650\u0628\u064e\u0627\u0644\u064c"
+  },
+  {
+    "id": 240,
+    "Lesson": 13,
+    "En": "Pens",
+    "Ar": "\u0623\u064e\u0642\u0652\u0644\u0627\u0645\u064c"
+  },
+  {
+    "id": 241,
+    "Lesson": 13,
+    "En": "Pilgrim",
+    "Ar": "\u062d\u064e\u0627\u062c\u0651\u064c"
+  },
+  {
+    "id": 242,
+    "Lesson": 13,
+    "En": "Pilgrims",
+    "Ar": "\u062d\u064f\u062c\u0651\u064e\u0627\u062c\u064c"
+  },
+  {
+    "id": 243,
+    "Lesson": 13,
+    "En": "Brothers",
+    "Ar": "\u0625\u0650\u062e\u0652\u0648\u064e\u0629\u064c"
+  },
+  {
+    "id": 244,
+    "Lesson": 13,
+    "En": "Doctors",
+    "Ar": "\u0623\u064e\u0637\u0650\u0628\u0651\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 245,
+    "Lesson": 13,
+    "En": "Young men",
+    "Ar": "\u0641\u0650\u062a\u0652\u064a\u064e\u0629\u064c"
+  },
+  {
+    "id": 246,
+    "Lesson": 13,
+    "En": "New (plural)",
+    "Ar": "\u062c\u064f\u062f\u064f\u062f\u064c"
+  },
+  {
+    "id": 247,
+    "Lesson": 13,
+    "En": "Students",
+    "Ar": "\u0637\u064f\u0644\u0627\u0628\u064c"
+  },
+  {
+    "id": 248,
+    "Lesson": 13,
+    "En": "Tall (plural)",
+    "Ar": "\u0637\u0650\u0648\u064e\u0627\u0644\u064c"
+  },
+  {
+    "id": 249,
+    "Lesson": 13,
+    "En": "Short (plural)",
+    "Ar": "\u0642\u0650\u0635\u064e\u0627\u0631\u064c"
+  },
+  {
+    "id": 250,
+    "Lesson": 13,
+    "En": "Sons",
+    "Ar": "\u0623\u064e\u0628\u0652\u0646\u064e\u0627\u0621\u064c"
+  },
+  {
+    "id": 251,
+    "Lesson": 13,
+    "En": "Merchants",
+    "Ar": "\u062a\u064f\u062c\u0651\u064e\u0627\u0631\u064c"
+  },
+  {
+    "id": 252,
+    "Lesson": 13,
+    "En": "Men",
+    "Ar": "\u0631\u0650\u062c\u064e\u0627\u0644\u064c"
+  },
+  {
+    "id": 253,
+    "Lesson": 13,
+    "En": "Learned man",
+    "Ar": "\u0634\u064e\u064a\u0652\u062e\u064c"
+  },
+  {
+    "id": 254,
+    "Lesson": 13,
+    "En": "Learned men",
+    "Ar": "\u0634\u064f\u064a\u064f\u0648\u062e\u064c"
+  },
+  {
+    "id": 255,
+    "Lesson": 13,
+    "En": "Elder",
+    "Ar": "\u0643\u064e\u0628\u0650\u064a\u0631\u064c"
+  },
+  {
+    "id": 256,
+    "Lesson": 13,
+    "En": "Elders",
+    "Ar": "\u0643\u0650\u0628\u064e\u0627\u0631\u064c"
+  },
+  {
+    "id": 257,
+    "Lesson": 13,
+    "En": "Paternal uncles",
+    "Ar": "\u0623\u064e\u0639\u0652\u0645\u064e\u0627\u0645\u064c"
+  },
+  {
+    "id": 258,
+    "Lesson": 13,
+    "En": "Rich (plural)",
+    "Ar": "\u0623\u064e\u063a\u0652\u0646\u0650\u064a\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 259,
+    "Lesson": 13,
+    "En": "Poor (plural)",
+    "Ar": "\u0641\u064f\u0642\u064e\u0631\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 260,
+    "Lesson": 13,
+    "En": "Friend",
+    "Ar": "\u0635\u064e\u062f\u0650\u064a\u0642\u064c"
+  },
+  {
+    "id": 261,
+    "Lesson": 13,
+    "En": "Friends",
+    "Ar": "\u0623\u064e\u0635\u0652\u062f\u0650\u0642\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 262,
+    "Lesson": 13,
+    "En": "Farms",
+    "Ar": "\u062d\u064f\u0642\u064f\u0648\u0644\u064c"
+  },
+  {
+    "id": 263,
+    "Lesson": 13,
+    "En": "Woman",
+    "Ar": "\u0627\u0650\u0645\u0652\u0631\u064e\u0623\u064e\u0629\u064c"
+  },
+  {
+    "id": 264,
+    "Lesson": 13,
+    "En": "Women",
+    "Ar": "\u0646\u0650\u0633\u064e\u0627\u0621\u064c"
+  },
+  {
+    "id": 265,
+    "Lesson": 13,
+    "En": "Sister",
+    "Ar": "\u0623\u064f\u062e\u0652\u062a\u064c"
+  },
+  {
+    "id": 266,
+    "Lesson": 13,
+    "En": "Sisters",
+    "Ar": "\u0623\u064e\u062e\u064e\u0648\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 267,
+    "Lesson": 13,
+    "En": "Girl",
+    "Ar": "\u0628\u0650\u0646\u0652\u062a\u064c"
+  },
+  {
+    "id": 268,
+    "Lesson": 13,
+    "En": "Girls",
+    "Ar": "\u0628\u064e\u0646\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 269,
+    "Lesson": 13,
+    "En": "Young women",
+    "Ar": "\u0641\u064e\u062a\u064e\u064a\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 270,
+    "Lesson": 13,
+    "En": "Good (plural)",
+    "Ar": "\u062c\u064e\u064a\u0651\u0650\u062f\u064f\u0648\u0646\u064e"
+  },
+  {
+    "id": 271,
+    "Lesson": 13,
+    "En": "Name",
+    "Ar": "\u0627\u0633\u0652\u0645\u064c"
+  },
+  {
+    "id": 272,
+    "Lesson": 13,
+    "En": "Names",
+    "Ar": "\u0623\u064e\u0633\u0652\u0645\u064e\u0627\u0621\u064c"
+  },
+  {
+    "id": 273,
+    "Lesson": 13,
+    "En": "Guest",
+    "Ar": "\u0636\u064e\u064a\u0652\u0641\u064c"
+  },
+  {
+    "id": 274,
+    "Lesson": 13,
+    "En": "Guests",
+    "Ar": "\u0636\u064f\u064a\u064f\u0648\u0641\u064c"
+  },
+  {
+    "id": 275,
+    "Lesson": 13,
+    "En": "Husband",
+    "Ar": "\u0632\u064e\u0648\u0652\u062c\u064c"
+  },
+  {
+    "id": 276,
+    "Lesson": 13,
+    "En": "Strong",
+    "Ar": "\u0642\u064e\u0648\u0650\u064a\u0651\u064c"
+  },
+  {
+    "id": 277,
+    "Lesson": 13,
+    "En": "Strong (plural)",
+    "Ar": "\u0623\u064e\u0642\u0652\u0648\u0650\u064a\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 278,
+    "Lesson": 13,
+    "En": "Weak",
+    "Ar": "\u0636\u064e\u0639\u0650\u064a\u0652\u0641\u064c"
+  },
+  {
+    "id": 279,
+    "Lesson": 13,
+    "En": "Weak (plural)",
+    "Ar": "\u0636\u0650\u0639\u064e\u0627\u0641\u064c"
+  },
+  {
+    "id": 280,
+    "Lesson": 13,
+    "En": "Mothers",
+    "Ar": "\u0623\u064f\u0645\u0651\u064e\u0647\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 281,
+    "Lesson": 13,
+    "En": "Fathers",
+    "Ar": "\u0627\u0651\u0628\u064e\u0627\u0621\u064f"
+  },
+  {
+    "id": 282,
+    "Lesson": 13,
+    "En": "Notebook",
+    "Ar": "\u0627\u0644\u062f\u0651\u064e\u0641\u0652\u062a\u064e\u0631\u064f"
+  },
+  {
+    "id": 283,
+    "Lesson": 13,
+    "En": "Sir!",
+    "Ar": "\u064a\u064e\u0627 \u0633\u064e\u064a\u0651\u0650\u062f\u0650\u064a"
+  },
+  {
+    "id": 284,
+    "Lesson": 13,
+    "En": "Madam!",
+    "Ar": "\u064a\u064e\u0627 \u0633\u064e\u064a\u0651\u0650\u062f\u064e\u062a\u0650\u064a"
+  },
+  {
+    "id": 285,
+    "Lesson": 13,
+    "En": "Maternity hospital",
+    "Ar": "\u0645\u064f\u0633\u0652\u062a\u064e\u0634\u0652\u0641\u064e\u0649 \u0627\u0644\u0648\u0650\u0644\u0627\u064e\u062f\u064e\u0629\u0650"
+  },
+  {
+    "id": 286,
+    "Lesson": 13,
+    "En": "After",
+    "Ar": "\u0628\u064e\u0639\u0652\u062f\u064e"
+  },
+  {
+    "id": 287,
+    "Lesson": 13,
+    "En": "Kingdom of saudi arabia",
+    "Ar": "\u0627\u0644\u0645\u064e\u0645\u0652\u0644\u064e\u0643\u064e\u0629\u064f \u0627\u0644\u0652\u0639\u064e\u0631\u064e\u0628\u0650\u064a\u0651\u064e\u0629\u064f \u0627\u0644\u0633\u0651\u064f\u0639\u064f\u0648\u0652\u062f\u0650\u064a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 288,
+    "Lesson": 14,
+    "En": "Those",
+    "Ar": "\u0623\u064f\u0648\u0644\u064e\u0640\u0670\u0626\u0650\u0643\u064e"
+  },
+  {
+    "id": 289,
+    "Lesson": 14,
+    "En": "Some",
+    "Ar": "\u0628\u064e\u0639\u0652\u0636\u064f"
+  },
+  {
+    "id": 290,
+    "Lesson": 14,
+    "En": "He went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u064e"
+  },
+  {
+    "id": 291,
+    "Lesson": 14,
+    "En": "They went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u064f\u0648\u0627"
+  },
+  {
+    "id": 292,
+    "Lesson": 14,
+    "En": "She went",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u064e\u062a\u0652"
+  },
+  {
+    "id": 293,
+    "Lesson": 14,
+    "En": "They went (fem)",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u0646\u064e"
+  },
+  { "id": 294, "Lesson": 14, "En": "They", "Ar": "\u0647\u064f\u0645\u0652" },
+  {
+    "id": 295,
+    "Lesson": 14,
+    "En": "They (fem)",
+    "Ar": "\u0647\u064f\u0646\u0651\u064e"
+  },
+  {
+    "id": 296,
+    "Lesson": 14,
+    "En": "Italy",
+    "Ar": "\u0625\u0650\u064a\u0637\u064e\u0627\u0644\u0650\u064a\u064e\u0627"
+  },
+  {
+    "id": 297,
+    "Lesson": 14,
+    "En": "Visited",
+    "Ar": "\u0632\u064e\u0627\u0631\u064e"
+  },
+  {
+    "id": 298,
+    "Lesson": 14,
+    "En": "Christian",
+    "Ar": "\u0646\u064e\u0635\u0652\u0631\u064e\u0627\u0646\u0650\u064a\u0651\u064c"
+  },
+  {
+    "id": 299,
+    "Lesson": 14,
+    "En": "Christians",
+    "Ar": "\u0646\u064e\u0635\u064e\u0627\u0631\u064e\u0649"
+  },
+  {
+    "id": 300,
+    "Lesson": 14,
+    "En": "Playground",
+    "Ar": "\u0627\u0644\u0652\u0645\u064e\u0644\u0652\u0639\u064e\u0628\u064f"
+  },
+  {
+    "id": 301,
+    "Lesson": 14,
+    "En": "Village",
+    "Ar": "\u0642\u064e\u0631\u0652\u064a\u064e\u0629\u064c"
+  },
+  {
+    "id": 302,
+    "Lesson": 14,
+    "En": "Field",
+    "Ar": "\u062d\u064e\u0642\u0652\u0644\u064c"
+  },
+  {
+    "id": 303,
+    "Lesson": 14,
+    "En": "Fields (plural)",
+    "Ar": "\u062d\u064f\u0642\u064f\u0648\u0652\u0644\u064c"
+  },
+  {
+    "id": 304,
+    "Lesson": 14,
+    "En": "People",
+    "Ar": "\u0627\u0644\u0646\u0651\u064e\u0627\u0633\u064f"
+  },
+  {
+    "id": 305,
+    "Lesson": 14,
+    "En": "Restaurant, mess",
+    "Ar": "\u0627\u0644\u0645\u064e\u0637\u0652\u0639\u064e\u0645\u064f"
+  },
+  {
+    "id": 306,
+    "Lesson": 14,
+    "En": "Welcome",
+    "Ar": "\u0623\u064e\u0647\u0652\u0644\u0627\u064b \u0648\u064e\u0633\u064e\u0647\u0652\u0644\u0627\u064b \u0648\u064e\u0645\u064e\u0631\u0652\u062d\u064e\u0628\u064e\u0627\u064b"
+  },
+  {
+    "id": 307,
+    "Lesson": 14,
+    "En": "Child (feminine)",
+    "Ar": "\u0637\u0650\u0641\u0652\u0644\u064e\u0629\u064c"
+  },
+  {
+    "id": 308,
+    "Lesson": 14,
+    "En": "Faculty of medicine",
+    "Ar": "\u0643\u064f\u0644\u0651\u0650\u064a\u0651\u064e\u0629\u064f \u0627\u0644\u0637\u0651\u0650\u0628\u0651\u0650"
+  },
+  {
+    "id": 309,
+    "Lesson": 14,
+    "En": "Faculty of engineering",
+    "Ar": "\u0643\u064f\u0644\u0651\u0650\u064a\u0651\u064e\u0629\u064f \u0627\u0644\u0647\u064e\u0646\u0652\u062f\u064e\u0633\u064e\u0629\u0650"
+  },
+  {
+    "id": 310,
+    "Lesson": 14,
+    "En": "Faculty of commerce",
+    "Ar": "\u0643\u064f\u0644\u0651\u0650\u064a\u0651\u064e\u0629\u064f \u0627\u0644\u062a\u0651\u0650\u062c\u064e\u0627\u0631\u064e\u0629\u0650"
+  },
+  {
+    "id": 311,
+    "Lesson": 14,
+    "En": "Faculty of islamic law",
+    "Ar": "\u0643\u064f\u0644\u0651\u0650\u064a\u0651\u064e\u0629\u064f \u0627\u0644\u0634\u0651\u064e\u0631\u0650\u064a\u0652\u0639\u064e\u0629\u0650"
+  },
+  {
+    "id": 312,
+    "Lesson": 14,
+    "En": "Prophet",
+    "Ar": "\u0627\u0644\u0646\u0651\u064e\u0628\u0650\u064a\u0651\u064f"
+  },
+  {
+    "id": 313,
+    "Lesson": 14,
+    "En": "Religion",
+    "Ar": "\u0627\u0644\u062f\u0651\u0650\u064a\u0652\u0646\u064f"
+  },
+  {
+    "id": 314,
+    "Lesson": 14,
+    "En": "May allah grant him health",
+    "Ar": "\u0634\u064e\u0641\u064e\u0627\u0647\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064f"
+  },
+  {
+    "id": 315,
+    "Lesson": 14,
+    "En": "Constitution (law)",
+    "Ar": "\u0627\u0644\u062f\u0651\u064f\u0633\u0652\u062a\u064f\u0648\u0652\u0631\u064f"
+  },
+  {
+    "id": 316,
+    "Lesson": 14,
+    "En": "Prayer direction",
+    "Ar": "\u0627\u0644\u0642\u0650\u0628\u0652\u0644\u064e\u0629\u064f"
+  },
+  {
+    "id": 317,
+    "Lesson": 14,
+    "En": "Lawcourt",
+    "Ar": "\u0627\u0644\u0645\u064e\u062d\u0652\u0643\u064e\u0645\u064e\u0629\u064f"
+  },
+  {
+    "id": 318,
+    "Lesson": 14,
+    "En": "Grandson",
+    "Ar": "\u062d\u064e\u0641\u0650\u064a\u0652\u062f\u064c"
+  },
+  {
+    "id": 319,
+    "Lesson": 14,
+    "En": "Grandson (plural)",
+    "Ar": "\u062d\u064e\u0641\u064e\u062f\u064e\u0629\u064c"
+  },
+  {
+    "id": 320,
+    "Lesson": 14,
+    "En": "Garden",
+    "Ar": "\u0627\u0644\u062d\u064e\u062f\u0650\u064a\u0652\u0642\u064e\u0629\u064f"
+  },
+  {
+    "id": 321,
+    "Lesson": 14,
+    "En": "Lord",
+    "Ar": "\u0627\u0644\u0631\u0651\u064e\u0628\u0651\u064f"
+  },
+  {
+    "id": 322,
+    "Lesson": 14,
+    "En": "Saturday",
+    "Ar": "\u064a\u064e\u0648\u0652\u0645\u064f \u0627\u0644\u0633\u064e\u0651\u0628\u0652\u062a\u0650"
+  },
+  {
+    "id": 323,
+    "Lesson": 14,
+    "En": "The month of rajab",
+    "Ar": "\u0631\u064e\u062c\u064e\u0628\u064c"
+  },
+  {
+    "id": 324,
+    "Lesson": 14,
+    "En": "Greece",
+    "Ar": "\u0627\u0644\u064a\u064f\u0648\u0652\u0646\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 325,
+    "Lesson": 15,
+    "En": "You, your (plural suffix)",
+    "Ar": "\u0643\u064f\u0645\u0652"
+  },
+  {
+    "id": 326,
+    "Lesson": 15,
+    "En": "You (plural)",
+    "Ar": "\u0623\u064e\u0646\u0652\u062a\u064f\u0645\u0652"
+  },
+  {
+    "id": 327,
+    "Lesson": 15,
+    "En": "Which",
+    "Ar": "\u0623\u064e\u064a\u0651\u064f"
+  },
+  {
+    "id": 328,
+    "Lesson": 15,
+    "En": "Chinese",
+    "Ar": "\u0627\u0644\u0635\u0651\u0650\u064a\u0650\u0646\u0650\u064a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 329,
+    "Lesson": 15,
+    "En": "France",
+    "Ar": "\u0641\u064e\u0631\u064e\u0646\u0652\u0633\u064e\u0627"
+  },
+  {
+    "id": 330,
+    "Lesson": 15,
+    "En": "French",
+    "Ar": "\u0641\u064e\u0631\u064e\u0646\u0652\u0633\u0650\u064a\u0651\u064e\u0629\u064c"
+  },
+  {
+    "id": 331,
+    "Lesson": 15,
+    "En": "Month",
+    "Ar": "\u0627\u064e\u0644\u0634\u0651\u064e\u0647\u0652\u0631\u064f"
+  },
+  {
+    "id": 332,
+    "Lesson": 15,
+    "En": "Faculty",
+    "Ar": "\u0643\u064f\u0644\u0651\u0650\u064a\u0651\u064e\u0629\u064c"
+  },
+  {
+    "id": 333,
+    "Lesson": 15,
+    "En": "Commerce",
+    "Ar": "\u0627\u064e\u0644\u062a\u0651\u0650\u062c\u064e\u0627\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 334,
+    "Lesson": 15,
+    "En": "Engineering",
+    "Ar": "\u0627\u064e\u0644\u0652\u0647\u064e\u0646\u0652\u062f\u064e\u0633\u064e\u0629\u064f"
+  },
+  {
+    "id": 335,
+    "Lesson": 15,
+    "En": "Medicine",
+    "Ar": "\u0627\u064e\u0644\u0637\u0651\u0650\u0628\u0651\u064f"
+  },
+  {
+    "id": 336,
+    "Lesson": 15,
+    "En": "Primary school",
+    "Ar": "\u0627\u064e\u0644\u0652\u0645\u064e\u062f\u0652\u0631\u064e\u0633\u064e\u0629\u064f \u0627\u0644\u0627\u0628\u0652\u062a\u0650\u062f\u064e\u0627\u0626\u0650\u064a\u064e\u0629\u064f"
+  },
+  {
+    "id": 337,
+    "Lesson": 15,
+    "En": "Middle school",
+    "Ar": "\u0627\u064e\u0644\u0652\u0645\u064e\u062f\u0652\u0631\u064e\u0633\u064e\u0629\u064f \u0627\u0644\u0652\u0645\u064f\u062a\u064e\u0648\u064e\u0633\u0651\u0650\u0637\u064e\u0629\u064f"
+  },
+  {
+    "id": 338,
+    "Lesson": 15,
+    "En": "Jordan",
+    "Ar": "\u0627\u064e\u0644\u0623\u064f\u0631\u0652\u062f\u064f\u0646"
+  },
+  {
+    "id": 339,
+    "Lesson": 15,
+    "En": "Road",
+    "Ar": "\u0627\u064e\u0644\u0634\u0651\u064e\u0627\u0631\u0650\u0639\u064f"
+  },
+  {
+    "id": 340,
+    "Lesson": 15,
+    "En": "Airport",
+    "Ar": "\u0627\u064e\u0644\u0652\u0645\u064e\u0637\u064e\u0627\u0631\u064f"
+  },
+  {
+    "id": 341,
+    "Lesson": 15,
+    "En": "Islamic law",
+    "Ar": "\u0627\u064e\u0644\u0634\u0651\u064e\u0631\u0650\u064a\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 342,
+    "Lesson": 15,
+    "En": "Cairo",
+    "Ar": "\u0627\u0644\u0642\u064e\u0627\u0647\u0650\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 343,
+    "Lesson": 15,
+    "En": "Week",
+    "Ar": "\u0627\u0644\u0623\u064f\u0633\u0652\u0628\u064f\u0648\u0652\u0639\u064f"
+  },
+  {
+    "id": 344,
+    "Lesson": 15,
+    "En": "Lesson",
+    "Ar": "\u0627\u0644\u062f\u064e\u0631\u0652\u0633\u064f"
+  },
+  {
+    "id": 345,
+    "Lesson": 15,
+    "En": "Examination",
+    "Ar": "\u0627\u0644\u0627\u0650\u062e\u0652\u062a\u0650\u0628\u064e\u0627\u0631\u064f"
+  },
+  {
+    "id": 346,
+    "Lesson": 15,
+    "En": "Before",
+    "Ar": "\u0642\u064e\u0628\u0652\u0644\u064e"
+  },
+  {
+    "id": 347,
+    "Lesson": 15,
+    "En": "He returned",
+    "Ar": "\u0631\u064e\u062c\u064e\u0639\u064e"
+  },
+  {
+    "id": 348,
+    "Lesson": 15,
+    "En": "You (feminine plural)",
+    "Ar": "\u0623\u064e\u0646\u0652\u062a\u064f\u0646\u0651\u064e"
+  },
+  {
+    "id": 349,
+    "Lesson": 15,
+    "En": "Your (feminine plural)",
+    "Ar": "\u0643\u064f\u0646\u0651\u064e"
+  },
+  {
+    "id": 350,
+    "Lesson": 15,
+    "En": "You went (feminine singular)",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u062a\u0650"
+  },
+  {
+    "id": 351,
+    "Lesson": 15,
+    "En": "You went (feminine plural)",
+    "Ar": "\u0630\u064e\u0647\u064e\u0628\u0652\u062a\u064f\u0646\u0651\u064e"
+  },
+  {
+    "id": 352,
+    "Lesson": 15,
+    "En": "We",
+    "Ar": "\u0646\u064e\u062d\u0652\u0646\u064f"
+  },
+  {
+    "id": 353,
+    "Lesson": 16,
+    "En": "Rational",
+    "Ar": "\u0639\u064e\u0627\u0642\u0650\u0644\u064c                          "
+  },
+  {
+    "id": 354,
+    "Lesson": 16,
+    "En": "Irrational",
+    "Ar": "\u063a\u064e\u064a\u0652\u0631\u064f\u0639\u064e\u0627\u0642\u0650\u0644\u064d"
+  },
+  {
+    "id": 355,
+    "Lesson": 16,
+    "En": "Mosques",
+    "Ar": "\u0645\u064e\u0633\u064e\u0627\u062c\u0650\u062f\u064f "
+  },
+  {
+    "id": 356,
+    "Lesson": 16,
+    "En": "River",
+    "Ar": "\u0627\u0644\u0646\u0651\u064e\u0647\u0652\u0631\u064f"
+  },
+  {
+    "id": 357,
+    "Lesson": 16,
+    "En": "Sea",
+    "Ar": "\u0627\u0644\u0628\u064e\u062d\u0652\u0631\u064f"
+  },
+  {
+    "id": 358,
+    "Lesson": 16,
+    "En": "Aeroplane",
+    "Ar": "\u0627\u0644\u0637\u0651\u064e\u0627\u0621\u0650\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 359,
+    "Lesson": 17,
+    "En": "Firm, company",
+    "Ar": "\u0627\u0644\u0634\u0651\u064e\u0631\u0650\u0643\u0629\u064f"
+  },
+  {
+    "id": 360,
+    "Lesson": 17,
+    "En": "Cheap",
+    "Ar": "\u0631\u064e\u062e\u0650\u064a\u0652\u0635\u064f"
+  },
+  {
+    "id": 361,
+    "Lesson": 17,
+    "En": "Shirt (plural)",
+    "Ar": "\u0642\u064e\u0645\u0652\u0635\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 362,
+    "Lesson": 17,
+    "En": "Director of the company",
+    "Ar": "\u0645\u064f\u062f\u0650\u064a\u0652\u0631\u064f \u0627\u0644\u0634\u0651\u064e\u0631\u0650\u0643\u064e\u0629\u0650"
+  },
+  {
+    "id": 363,
+    "Lesson": 17,
+    "En": "Japanese",
+    "Ar": "\u064a\u064e\u0627\u0628\u0623\u0646\u0650\u064a\u0651\u0650\u0629\u064c"
+  },
+  {
+    "id": 364,
+    "Lesson": 17,
+    "En": "Donkeys",
+    "Ar": "\u062d\u064f\u0645\u064f\u0631\u064c"
+  },
+  {
+    "id": 365,
+    "Lesson": 17,
+    "En": "Donkeys",
+    "Ar": "\u062d\u064e\u0645\u0650\u064a\u0652\u0631\u064c"
+  },
+  {
+    "id": 366,
+    "Lesson": 18,
+    "En": "This (masculine dual)",
+    "Ar": "\u0647\u064e\u0630\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 367,
+    "Lesson": 18,
+    "En": "This (feminine dual)",
+    "Ar": "\u0647\u064e\u0627\u062a\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 368,
+    "Lesson": 18,
+    "En": "(two) books",
+    "Ar": "\u0643\u0650\u062a\u064e\u0627\u0628\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 369,
+    "Lesson": 18,
+    "En": "(two) cars",
+    "Ar": "\u0633\u064e\u064a\u0651\u064e\u0627\u0631\u064e\u062a\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 370,
+    "Lesson": 18,
+    "En": "They (male and female dual)",
+    "Ar": "\u0647\u064f\u0645\u064e\u0627"
+  },
+  {
+    "id": 371,
+    "Lesson": 18,
+    "En": "(two) students",
+    "Ar": "\u0637\u064e\u0627\u0644\u0650\u0628\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 372,
+    "Lesson": 18,
+    "En": "(two) sisters",
+    "Ar": "\u0627\u0644\u0623\u064f\u062e\u064e\u062a\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 373,
+    "Lesson": 18,
+    "En": "How many",
+    "Ar": "\u0643\u064e\u0645\u0652"
+  },
+  {
+    "id": 374,
+    "Lesson": 18,
+    "En": "(two) brothers",
+    "Ar": "\u0623\u064f\u062e\u064e\u0648\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 375,
+    "Lesson": 18,
+    "En": "Wheel",
+    "Ar": "\u0627\u0644\u0639\u064e\u062c\u0652\u0644\u064e\u0629\u064f"
+  },
+  {
+    "id": 376,
+    "Lesson": 18,
+    "En": "Festival",
+    "Ar": "\u0627\u0644\u0639\u0650\u064a\u0652\u062f\u064f"
+  },
+  {
+    "id": 377,
+    "Lesson": 18,
+    "En": "Year",
+    "Ar": "\u0627\u0644\u0633\u0651\u064e\u0646\u064e\u0629\u064f"
+  },
+  {
+    "id": 378,
+    "Lesson": 18,
+    "En": "Ruler",
+    "Ar": "\u0627\u0644\u0645\u0650\u0633\u0652\u0637\u064e\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 379,
+    "Lesson": 18,
+    "En": "Riyal",
+    "Ar": "\u0627\u0644\u0631\u0651\u0650 \u064a\u064e\u0627\u0644\u064f"
+  },
+  {
+    "id": 380,
+    "Lesson": 18,
+    "En": "City district",
+    "Ar": "\u0627\u0644\u062d\u064e\u064a\u0651\u064f"
+  },
+  {
+    "id": 381,
+    "Lesson": 18,
+    "En": "Rak'ah (a unit of salat)",
+    "Ar": "\u0627\u0644\u0631\u0651\u064e\u0643\u0652\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 382,
+    "Lesson": 18,
+    "En": "Rak'ah (plural)",
+    "Ar": "\u0631\u064e\u0643\u064e\u0639\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 383,
+    "Lesson": 19,
+    "En": "One",
+    "Ar": "\u0648\u064e\u0627\u062d\u0650\u062f\u064c"
+  },
+  {
+    "id": 384,
+    "Lesson": 19,
+    "En": "Two",
+    "Ar": "\u0627\u0650\u062b\u0652\u0646\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 385,
+    "Lesson": 19,
+    "En": "Three",
+    "Ar": "\u062b\u064e\u0644\u0627\u062b\u064e\u0629\u064f"
+  },
+  {
+    "id": 386,
+    "Lesson": 19,
+    "En": "Four",
+    "Ar": "\u0623\u064e\u0631\u0652\u0628\u064e\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 387,
+    "Lesson": 19,
+    "En": "Five",
+    "Ar": "\u062e\u064e\u0645\u0652\u0633\u064e\u0629\u064f"
+  },
+  {
+    "id": 388,
+    "Lesson": 19,
+    "En": "Six",
+    "Ar": "\u0633\u0650\u062a\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 389,
+    "Lesson": 19,
+    "En": "Seven",
+    "Ar": "\u0633\u064e\u0628\u0652\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 390,
+    "Lesson": 19,
+    "En": "Eight",
+    "Ar": "\u062b\u064e\u0645\u064e\u0627\u0646\u0650\u064a\u064e\u0629\u064f"
+  },
+  {
+    "id": 391,
+    "Lesson": 19,
+    "En": "Nine",
+    "Ar": "\u062a\u0650\u0633\u0652\u0639\u064e\u0629\u064f"
+  },
+  {
+    "id": 392,
+    "Lesson": 19,
+    "En": "Ten",
+    "Ar": "\u0639\u064e\u0634\u0652\u0631\u064e\u0629\u064f"
+  },
+  {
+    "id": 393,
+    "Lesson": 19,
+    "En": "The noun that denotes the thing numbered",
+    "Ar": "\u0645\u064e\u0639\u0652\u062f\u064f\u0648\u062f\u064c"
+  },
+  {
+    "id": 394,
+    "Lesson": 19,
+    "En": "All",
+    "Ar": "\u0643\u064f\u0644\u0651\u064f"
+  },
+  {
+    "id": 395,
+    "Lesson": 19,
+    "En": "Thanks",
+    "Ar": "\u0634\u064f\u0643\u0652\u0631\u0627\u064b"
+  },
+  {
+    "id": 396,
+    "Lesson": 19,
+    "En": "All of them",
+    "Ar": "\u0643\u064f\u0644\u0651\u064f\u0647\u064f\u0645\u0652"
+  },
+  {
+    "id": 397,
+    "Lesson": 19,
+    "En": "Days",
+    "Ar": "\u0623\u064e\u064a\u064e\u0627\u0645\u064c"
+  },
+  {
+    "id": 398,
+    "Lesson": 19,
+    "En": "All of you",
+    "Ar": "\u0643\u064f\u0644\u0651\u064f\u0643\u064f\u0645\u0652"
+  },
+  {
+    "id": 399,
+    "Lesson": 19,
+    "En": "Price",
+    "Ar": "\u0627\u0644\u062b\u064e\u0645\u0652\u0646\u064f"
+  },
+  {
+    "id": 400,
+    "Lesson": 19,
+    "En": "All of us",
+    "Ar": "\u0643\u064f\u0644\u0651\u064f\u0646\u064e\u0627"
+  },
+  {
+    "id": 401,
+    "Lesson": 19,
+    "En": "Half",
+    "Ar": "\u0627\u0644\u0646\u0650\u0635\u0652\u0641\u064f"
+  },
+  {
+    "id": 402,
+    "Lesson": 19,
+    "En": "Countries",
+    "Ar": "\u0628\u0650\u0644\u0627\u064e\u062f\u064c"
+  },
+  {
+    "id": 403,
+    "Lesson": 19,
+    "En": "1/10th of a riyal",
+    "Ar": "\u0627\u0644\u0642\u0650\u0631\u0652\u0634\u064f"
+  },
+  {
+    "id": 404,
+    "Lesson": 19,
+    "En": "1/10th of a riyal (plural)",
+    "Ar": "\u0642\u064f\u0631\u064f\u0648\u0652\u0634\u064c"
+  },
+  {
+    "id": 405,
+    "Lesson": 19,
+    "En": "Different",
+    "Ar": "\u0645\u064f\u062e\u0652\u062a\u064e\u0644\u0650\u0641\u064c"
+  },
+  {
+    "id": 406,
+    "Lesson": 19,
+    "En": "Bus",
+    "Ar": "\u0627\u0644\u062d\u064e\u0627\u0641\u0650\u0644\u064e\u0629\u064f"
+  },
+  {
+    "id": 407,
+    "Lesson": 19,
+    "En": "Of them (literally- from them)",
+    "Ar": "\u0645\u0650\u0646\u0652\u0647\u064f\u0645\u0652"
+  },
+  {
+    "id": 408,
+    "Lesson": 19,
+    "En": "Passenger (traveling by bus or plane)",
+    "Ar": "\u0627\u0644\u0631\u0651\u064e\u0627\u0643\u0650\u0628\u064f"
+  },
+  {
+    "id": 409,
+    "Lesson": 19,
+    "En": "Passenger (traveling by bus or plane plural)",
+    "Ar": "\u0631\u064f\u0643\u064e\u0627\u0628\u064c"
+  },
+  {
+    "id": 410,
+    "Lesson": 19,
+    "En": "Europe",
+    "Ar": "\u0623\u064f\u0648\u0652\u0631\u064f\u0628\u0651\u064e\u0627"
+  },
+  {
+    "id": 411,
+    "Lesson": 19,
+    "En": "Question",
+    "Ar": "\u0627\u0644\u0633\u064f\u0624\u064e\u0627\u0644\u064f"
+  },
+  {
+    "id": 412,
+    "Lesson": 19,
+    "En": "Yugoslavia",
+    "Ar": "\u064a\u064f\u0648\u0652\u063a\u064f\u0633\u064e\u0644\u0627\u0641\u0650\u064a\u064e\u0627"
+  },
+  {
+    "id": 413,
+    "Lesson": 19,
+    "En": "Pocket",
+    "Ar": "\u0627\u0644\u062c\u064e\u064a\u0652\u0628\u064f"
+  },
+  {
+    "id": 414,
+    "Lesson": 20,
+    "En": "Rooms",
+    "Ar": "\u063a\u064f\u0631\u064e\u0641\u064c"
+  },
+  {
+    "id": 415,
+    "Lesson": 20,
+    "En": "Houses",
+    "Ar": "\u0628\u064f\u064a\u064f\u0648\u0652\u062a\u064c"
+  },
+  {
+    "id": 416,
+    "Lesson": 20,
+    "En": "One (feminine)",
+    "Ar": "\u0648\u064e\u0627\u062d\u0650\u062f\u064e\u0629\u064c"
+  },
+  {
+    "id": 417,
+    "Lesson": 20,
+    "En": "Two (feminine)",
+    "Ar": "\u0627\u0650\u062b\u0652\u0646\u064e\u062a\u064e\u0627\u0646\u0650"
+  },
+  {
+    "id": 418,
+    "Lesson": 20,
+    "En": "Indonesia",
+    "Ar": "\u0625\u0650\u0646\u0652\u062f\u064f\u0648\u0652\u0646\u0650\u064a\u0652\u0633\u0650\u064a\u064e\u0627"
+  },
+  {
+    "id": 419,
+    "Lesson": 20,
+    "En": "Word",
+    "Ar": "\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064c"
+  },
+  {
+    "id": 420,
+    "Lesson": 20,
+    "En": "Words",
+    "Ar": "\u0643\u064e\u0644\u0650\u0645\u064e\u0627\u062a\u064c"
+  },
+  {
+    "id": 421,
+    "Lesson": 20,
+    "En": "Magazine, journal",
+    "Ar": "\u0645\u064e\u062c\u064e\u0644\u0651\u064e\u0629\u064c"
+  },
+  {
+    "id": 422,
+    "Lesson": 20,
+    "En": "Lessons",
+    "Ar": "\u062f\u064f\u0631\u064f\u0648\u0652\u0633\u064c"
+  },
+  {
+    "id": 423,
+    "Lesson": 20,
+    "En": "Letter (of the alphabet)",
+    "Ar": "\u062d\u064e\u0631\u0652\u0641\u064c"
+  },
+  {
+    "id": 424,
+    "Lesson": 20,
+    "En": "Letters (of the alphabet)",
+    "Ar": "\u062d\u064f\u0631\u064f\u0648\u0652\u0641\u064c"
+  },
+  {
+    "id": 425,
+    "Lesson": 21,
+    "En": "That",
+    "Ar": "\u0630\u064e\u0627\u0643\u064e"
+  },
+  {
+    "id": 426,
+    "Lesson": 21,
+    "En": "Colour",
+    "Ar": "\u0627\u0644\u0644\u0651\u064e\u0648\u0652\u0646\u064f"
+  },
+  {
+    "id": 427,
+    "Lesson": 21,
+    "En": "Colours",
+    "Ar": "\u0623\u064e\u0644\u0652\u0648\u064e\u0627\u0646\u064f"
+  },
+  {
+    "id": 428,
+    "Lesson": 21,
+    "En": "Spacious",
+    "Ar": "\u0648\u064e\u0627\u0633\u0650\u0639\u064c"
+  },
+  {
+    "id": 429,
+    "Lesson": 21,
+    "En": "We love",
+    "Ar": "\u0646\u064f\u062d\u0650\u0628\u0651\u064f"
+  },
+  {
+    "id": 430,
+    "Lesson": 21,
+    "En": "Asia",
+    "Ar": "\u0622\u0633\u0650\u064a\u064e\u0627"
+  },
+  {
+    "id": 431,
+    "Lesson": 21,
+    "En": "We love him",
+    "Ar": "\u0646\u064f\u062d\u0650\u0628\u0651\u064f\u0647\u064f"
+  },
+  {
+    "id": 432,
+    "Lesson": 22,
+    "En": "Diptotes (nouns and adjectives which never have tanwin)",
+    "Ar": "\u0627\u0644\u0645\u064e\u0645\u0652\u0646\u064f\u0648\u0652\u0639\u064f \u0645\u0650\u0646\u064e \u0627\u0644\u0635\u0651\u064e\u0631\u0652\u0641\u0650"
+  },
+  {
+    "id": 433,
+    "Lesson": 22,
+    "En": "Red",
+    "Ar": "\u0623\u064e\u062d\u0652\u0645\u064e\u0631\u064f"
+  },
+  {
+    "id": 434,
+    "Lesson": 22,
+    "En": "Blue",
+    "Ar": "\u0623\u064e\u0632\u0652\u0631\u064e\u0642\u064f"
+  },
+  {
+    "id": 435,
+    "Lesson": 22,
+    "En": "Green",
+    "Ar": "\u0623\u064e\u062e\u0652\u0636\u064e\u0631\u064f"
+  },
+  {
+    "id": 436,
+    "Lesson": 22,
+    "En": "Black",
+    "Ar": "\u0623\u064e\u0633\u0652\u0648\u064e\u062f\u064f"
+  },
+  {
+    "id": 437,
+    "Lesson": 22,
+    "En": "Yellow",
+    "Ar": "\u0623\u064e\u0635\u0652\u0641\u064e\u0631\u064f"
+  },
+  {
+    "id": 438,
+    "Lesson": 22,
+    "En": "White",
+    "Ar": "\u0623\u064e\u0628\u0652\u064a\u064e\u0636\u064f"
+  },
+  {
+    "id": 439,
+    "Lesson": 22,
+    "En": "Baghdad",
+    "Ar": "\u0628\u064e\u063a\u0652\u062f\u064e\u0627\u062f\u064f"
+  },
+  {
+    "id": 440,
+    "Lesson": 22,
+    "En": "Jeddah",
+    "Ar": "\u062c\u0650\u062f\u0651\u064e\u0629\u064f"
+  },
+  {
+    "id": 441,
+    "Lesson": 22,
+    "En": "Tea-cup",
+    "Ar": "\u0641\u0650\u0646\u0652\u062c\u064e\u0627\u0646\u064c"
+  },
+  {
+    "id": 442,
+    "Lesson": 22,
+    "En": "Tea-cups",
+    "Ar": "\u0641\u064e\u0646\u064e\u0627\u062c\u0650\u064a\u0652\u0646\u064f"
+  },
+  {
+    "id": 443,
+    "Lesson": 22,
+    "En": "Minute",
+    "Ar": "\u062f\u064e\u0642\u0650\u064a\u0652\u0642\u064e\u0629\u064c"
+  },
+  {
+    "id": 444,
+    "Lesson": 22,
+    "En": "Minutes",
+    "Ar": "\u062f\u064e\u0642\u064e\u0627\u0621\u0650\u0642\u064f"
+  },
+  {
+    "id": 445,
+    "Lesson": 22,
+    "En": "Handkerchief (plural)",
+    "Ar": "\u0645\u064e\u0646\u064e\u0627\u062f\u0650\u064a\u0652\u0644\u064f"
+  },
+  {
+    "id": 446,
+    "Lesson": 22,
+    "En": "Keys",
+    "Ar": "\u0645\u064e\u0641\u064e\u0627\u062a\u0650\u064a\u0652\u062d\u064f"
+  },
+  {
+    "id": 447,
+    "Lesson": 22,
+    "En": "He said",
+    "Ar": "\u0642\u064e\u0627\u0644\u064e"
+  },
+  {
+    "id": 448,
+    "Lesson": 22,
+    "En": "She said",
+    "Ar": "\u0642\u064e\u0627\u0644\u064e\u062a\u0652"
+  },
+  {
+    "id": 449,
+    "Lesson": 23,
+    "En": "Istanbul",
+    "Ar": "\u0625\u0650\u0635\u0652\u0637\u064e\u0646\u0652\u0628\u064f\u0648\u0652\u0644\u064f"
+  },
+  {
+    "id": 450,
+    "Lesson": 23,
+    "En": "Washington",
+    "Ar": "\u0648\u064e\u0627\u0634\u0650\u0646\u0637\u064f\u0646\u064f"
+  },
+  {
+    "id": 451,
+    "Lesson": 23,
+    "En": "Taif city",
+    "Ar": "\u0627\u0644\u0637\u0651\u064e\u0627\u0621\u0650\u0641\u064f"
+  },
+  {
+    "id": 452,
+    "Lesson": 23,
+    "En": "London",
+    "Ar": "\u0644\u064e\u0646\u0652\u062f\u064e\u0646\u064f"
+  }
+]
