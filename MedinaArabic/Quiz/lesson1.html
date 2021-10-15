@@ -12,28 +12,143 @@
 <body>
     <p id="english"> English</p>
     <p id="arabic">Arabic</p>
+
+    <p id="arabic2">Arabic</p>
     <br><br><br>
 
+    <h4>Question</h4>
+    <span id="question1">question</span>
+    <h5>options</h5>
+    <span id="first">1</span>
+    <span id="second">2</span>
+    <span id="third">3</span>
+    <span id="fourth">4</span>
+
     <input type="button" value="Hello"
-    onclick="console.log(myresponse.json)">
+    onclick="bookData()">
+    <input type="button" value="change"
+    onclick="arabic2.innerHTML = ar2">
+    <input type="button"
+    value="console.log"
+    onclick="start()">
+    <input type="button" value="Quiz"
+    onclick="createQuiz();">
+
+
+    <div id="myDIV">
+        A DIV element
+    </div>
 
 </body>
 <script>
     english = document.getElementById('english')
     arabic = document.getElementById('arabic')
+    arabic2 = document.getElementById('arabic2')
+
+    question1 = document.getElementById('question1')
+    first = document.getElementById('first')
+    second = document.getElementById('second')
+    third = document.getElementById('third')
+    fourth = document.getElementById('fourth')
 
     urlBook1 = '../book1edit.json'
+    let ar2
 
-    fetch(urlBook1)
-        .then(response => response.json())   // return json object
-        .then(data => {
-            // console.log(data[0].En)
-            english.innerHTML = data[0].En
-            arabic.innerHTML = data[0].Ar
+
+    let bookData = () => {
+        fetch(urlBook1)
+            .then(response => response.json())   // return json object
+            .then(data => {
+                // console.log(data[0])
+                english.innerHTML = data[0].En
+                arabic.innerHTML = data[0].Ar
+                ar2 = data[2].Ar
+                book1 = data
+                // lesson1 = data
+
+            })
+            .catch((error) => {
+                console.error('Error:', error)
+            })
+    }
+
+    let bookData2 = async () => {
+        let response = await fetch(urlBook1)
+        let data = await response.json()   // return json object
+        return data
+    }
+    // bookData2().then(data => console.log(data))
+
+    let result
+    let min = 0
+    let max
+    const randomAnswers = 4
+
+    let createQuiz = () => {
+        question1.innerHTML = book1[0].En
+        first.innerHTML = book1[0].Ar
+        second.innerHTML = book1[1].Ar
+        third.innerHTML = book1[2].Ar
+        fourth.innerHTML = book1[3].Ar
+
+        result = book1.filter(obj => {
+            return obj.Lesson === 1
         })
-        .catch((error) => {
-            console.error('Error:', error)
-        })
+        console.log(result)
+        // console.log(result.length)
+        max = result.length
+        console.log(min)
+        console.log(max)
+    }
+
+    let getRndInteger = (min, max) => {
+
+        var randomNums = [];
+        while (randomNums.length < randomAnswers) {
+            var r = Math.floor(Math.random() * (max - min)) + min;
+            if (randomNums.indexOf(r) === -1) randomNums.push(r);
+        }
+        console.log(randomNums)
+        // console.log(randomNums[0])
+        question1.innerHTML = book1[randomNums[0]].En
+
+        randomNums.forEach(makeQuiz);
+        function makeQuiz(value) {
+            console.log(book1[value])
+            // console.log(randomNums[0])
+            var para = document.createElement("P");
+            para.innerHTML = book1[value].Ar;
+            if (randomNums[0] === value) {
+                // console.log(randomNums[0] + " " + value)
+                para.id = "ans"
+                para.onclick = function () { alert("hello") };
+            }
+
+
+            document.getElementById("myDIV").appendChild(para);
+
+            // TODO: Randomise output order, 
+        }
+
+
+    }
+
+    let start = () => { getRndInteger(min, max) }
+
+
+
+
+
+
+    // // create a new div element
+            // const newDiv = document.createElement("div");
+            // // and give it some content
+            // const newContent = document.createTextNode("Hi there and greetings!");
+            // // add the text node to the newly created div
+            // newDiv.appendChild(newContent);
+            // // add the newly created element and its content into the DOM
+            // const currentDiv = document.getElementById("div1");
+            // document.body.insertBefore(newDiv, currentDiv);
 
 
 </script>
