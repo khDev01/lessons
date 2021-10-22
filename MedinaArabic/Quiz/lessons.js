@@ -8,8 +8,9 @@ second = document.getElementById("second")
 third = document.getElementById("third")
 fourth = document.getElementById("fourth")
 
+const answerOptions = document.getElementById("choices")
+
 urlBook1 = "../book1edit.json"
-// let ar2
 let result
 let min = 0
 let max
@@ -21,9 +22,6 @@ let getBookData = () => {
     .then((response) => response.json()) // return json object
     .then((data) => {
       // console.log(data[0])
-      //   english.innerHTML = data[0].En
-      //   arabic.innerHTML = data[0].Ar
-      //   ar2 = data[2].Ar
       book1 = data
       // lesson1 = data
     })
@@ -33,14 +31,8 @@ let getBookData = () => {
 }
 
 let chooseLesson = () => {
-  //   question1.innerHTML = book1[0].En
-  //   first.innerHTML = book1[0].Ar
-  //   second.innerHTML = book1[1].Ar
-  //   third.innerHTML = book1[2].Ar
-  //   fourth.innerHTML = book1[3].Ar
-
   result = book1.filter((obj) => {
-    return obj.Lesson === 1
+    return obj.L === 1
   })
   //   console.log(result)
   max = result.length
@@ -56,7 +48,7 @@ let questionText, questionValue
 var randomNums = []
 
 let getRndInteger = (min, max) => {
-  // var randomNums = []
+  randomNums = []
   while (randomNums.length < randomAnswers) {
     var r = Math.floor(Math.random() * (max - min)) + min
     if (randomNums.indexOf(r) === -1) randomNums.push(r)
@@ -83,7 +75,7 @@ let getRndInteger = (min, max) => {
       }
     }
 
-    document.getElementById("myDIV").appendChild(para)
+    answerOptions.appendChild(para)
 
     // TODO: Randomise output order,
   }
@@ -107,9 +99,7 @@ const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
-
-console.log(questionElement)
-
+const iterationElement = document.getElementById("iteration")
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", startQuiz)
@@ -121,28 +111,30 @@ nextButton.addEventListener("click", () => {
 function startQuiz() {
   startButton.classList.add("hide")
   // shuffledQuestions = questions.sort(() => Math.random() - 0.5)
-  start()
+
   currentQuestionIndex = 0
+
   questionContainerElement.classList.remove("hide")
   setNextQuestion()
 }
 
 function setNextQuestion() {
   resetState()
+  // showQuestion()
+  start()
   showQuestion()
 }
 
 function showQuestion() {
-  console.log(questionElement)
+  iterationElement.innerHTML = currentQuestionIndex
+
   questionElement.innerHTML = questionText
-  let mytestcounter = 0
   randomNums.forEach((answer) => {
     const button = document.createElement("button")
     button.innerText = book1[answer].Ar
     button.classList.add("btn")
     if (questonValue === answer) {
       button.dataset.correct = answer.correct
-      mytestcounter++
     }
     button.addEventListener("click", selectAnswer)
     answerButtonsElement.appendChild(button)
@@ -155,6 +147,9 @@ function resetState() {
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+  while (answerOptions.firstChild) {
+    answerOptions.removeChild(answerOptions.firstChild)
+  }
 }
 
 let maxNumberofQuestions = 5
@@ -166,12 +161,12 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct)
   })
-  if (currentQuestionIndex > maxNumberofQuestions) {
+  if (currentQuestionIndex < maxNumberofQuestions) {
     nextButton.classList.remove("hide")
   } else {
     startButton.innerText = "Restart"
     startButton.classList.remove("hide")
-    setTimeout(startQuiz, 1000)
+    setTimeout(startQuiz, 3000)
   }
 }
 
