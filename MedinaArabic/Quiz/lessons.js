@@ -1,3 +1,5 @@
+// TODO: randomise whole array
+
 english = document.getElementById("english")
 arabic = document.getElementById("arabic")
 arabic2 = document.getElementById("arabic2")
@@ -9,12 +11,14 @@ third = document.getElementById("third")
 fourth = document.getElementById("fourth")
 
 const answerOptions = document.getElementById("choices")
+const lessonsMenu = document.getElementById("lessonsMenu")
 
 urlBook1 = "../book1edit.json"
 let result
-let min = 0
+let min
 let max
 const randomAnswers = 4
+bookVocabNo = 0
 // let book1
 
 let getBookData = () => {
@@ -23,19 +27,53 @@ let getBookData = () => {
     .then((data) => {
       // console.log(data[0])
       book1 = data
-      // lesson1 = data
+      bookVocabNo = book1.length
+      console.log(bookVocabNo)
+      // // lesson1 = data
+      noOfLessons = book1[book1.length - 1].L
+      for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
+        // const element = array[lessonNo];
+
+        let lsn = document.createElement("h4")
+        lsn.innerHTML = lessonNo
+        lsn.onclick = function () {
+          chooseLesson(lessonNo)
+        }
+        lessonsMenu.appendChild(lsn)
+      }
     })
     .catch((error) => {
       console.error("Error:", error)
     })
 }
 
-let chooseLesson = () => {
+let chooseLesson = (chosenNo) => {
   result = book1.filter((obj) => {
-    return obj.L === 1
+    // console.log(obj.L === chosenNo)
+    return obj.L === chosenNo
   })
-  //   console.log(result)
-  max = result.length
+  min = result[0].id
+  max = result.length + min
+}
+
+// const rndWholeList = () => {
+//   let numberList = []
+//   for (let index = 0; index < book1.length; index++) {
+//     // const element = array[index]
+//     numberList.push(index)
+//   }
+//   newrandomList = shuffledArr(numberList)
+//   console.log(newrandomList)
+// }
+
+let startMegaQuiz = () => {
+  bookMin = 0
+  bookMax = book1.length
+  getRndInteger(bookMin, bookMax)
+}
+
+let start = () => {
+  getRndInteger(min, max)
 }
 
 const shuffledArr = (array) =>
@@ -48,14 +86,16 @@ let questionText, questionValue
 var randomNums = []
 
 let getRndInteger = (min, max) => {
+  console.log("min: " + min + "  Max" + max)
   randomNums = []
   while (randomNums.length < randomAnswers) {
     var r = Math.floor(Math.random() * (max - min)) + min
     if (randomNums.indexOf(r) === -1) randomNums.push(r)
   }
-  // console.log(randomNums)
+  console.log(randomNums)
   questonValue = randomNums[0]
   // console.log("First val: " + randomNums[0])
+  // console.log(book1[0].En)
   questionText = book1[randomNums[0]].En
   question1.innerHTML = questionText
   randomNums = shuffledArr(randomNums)
@@ -71,7 +111,7 @@ let getRndInteger = (min, max) => {
       // console.log(randomNums[0] + " " + value)
       para.id = "ans"
       para.onclick = function () {
-        alert("hello")
+        alert("corect")
       }
     }
 
@@ -79,10 +119,6 @@ let getRndInteger = (min, max) => {
 
     // TODO: Randomise output order,
   }
-}
-
-let start = () => {
-  getRndInteger(min, max)
 }
 
 //
@@ -197,5 +233,6 @@ function clearStatusClass(element) {
 // self executing function here / same as jquery document ready
 ;(function () {
   getBookData()
-  setTimeout(chooseLesson, 1000)
+  // setTimeout(chooseLesson, 1000)
+  setTimeout(startMegaQuiz, 1000)
 })()

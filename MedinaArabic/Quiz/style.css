@@ -103,10 +103,20 @@ body.wrong {
 
 /*/**/
 
-.flex{
+.flexgrid{
     display: grid;
     grid-template-columns: repeat(4, auto);
     width: 30vw;
+    gap: 1px;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    /* width: 30vw; */
     gap: 1px;
     margin: 8px 0;
     text-align: center;
