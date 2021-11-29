@@ -105,8 +105,9 @@ let getRndInteger = (min, max) => {
   function makeQuiz(value) {
     // console.log(book1[value])
     // console.log(randomNums[0])
-    var para = document.createElement("h2")
+    var para = document.createElement("p")
     para.innerHTML = book1[value].Ar
+    para.classList.add("optionchoice")
     if (questonValue === value) {
       // console.log(randomNums[0] + " " + value)
       para.id = "ans"

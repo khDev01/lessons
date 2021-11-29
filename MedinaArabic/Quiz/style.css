@@ -7,6 +7,7 @@
     --hue-correct: 145;
 }
 
+
 body {
     --hue: var(--hue-neutral);
     padding: 0;
@@ -20,9 +21,9 @@ body {
 }
 
 section {
-       display: flex;
-    width: 80vw;
-    height: 60vh;
+    display: flex;
+    /* max-width: 70vw; */
+    /* height: 60vh; */
     justify-content: center;
     align-items: center;
     background-color: rgba(210, 156, 156, 0.09);
@@ -38,8 +39,9 @@ body.wrong {
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
+    margin: auto 0.4em;
+    width: 100%;
+    /* max-width: 80%; */
     background-color: white;
     border-radius: 5px;
     padding: 10px;
@@ -51,9 +53,11 @@ body.wrong {
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
+    
 }
 
 .btn {
+    /* height: 5em; */
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
@@ -61,7 +65,7 @@ body.wrong {
     padding: 5px 10px;
     color: white;
     outline: none;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .btn:hover {
@@ -103,13 +107,17 @@ body.wrong {
 
 /*/**/
 
+.optionchoice {border:1px dashed black; padding: 5px; font-size: 2rem; width: fit-content;
+    margin: 0.2rem;
+}
+
 .flexgrid{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    width: 60vw;
-    gap: 1px;
-    margin: 8px 0;
+    /* display: grid;
+    grid-template-columns: repeat(auto, auto); */
+    margin: 0px 0;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .flex {
