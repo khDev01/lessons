@@ -111,7 +111,11 @@ let getRndInteger = (min, max) => {
       // console.log(randomNums[0] + " " + value)
       para.id = "ans"
       para.onclick = function () {
-        alert("corect")
+        // alert("corect")
+        while (answerOptions.hasChildNodes()) {
+          answerOptions.removeChild(answerOptions.firstChild)
+        }
+        getRndInteger(min, max)
       }
     }
 
@@ -120,15 +124,8 @@ let getRndInteger = (min, max) => {
     // TODO: Randomise output order,
   }
 }
-
-//
-//
-//
-
-//
-
 ///
-
+///
 ///
 const startButton = document.getElementById("start-btn")
 const nextButton = document.getElementById("next-btn")
@@ -138,13 +135,7 @@ const answerButtonsElement = document.getElementById("answer-buttons")
 const iterationElement = document.getElementById("iteration")
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener("click", startQuiz)
-nextButton.addEventListener("click", () => {
-  currentQuestionIndex++
-  setNextQuestion()
-})
-
-function startQuiz() {
+let startQuiz = () => {
   startButton.classList.add("hide")
   // shuffledQuestions = questions.sort(() => Math.random() - 0.5)
 
@@ -154,7 +145,19 @@ function startQuiz() {
   setNextQuestion()
 }
 
-function setNextQuestion() {
+startButton.addEventListener("click", startQuiz)
+nextButton.addEventListener("click", () => {
+  setNextQuestion()
+})
+
+// let nextQuestion = () => {
+//   currentQuestionIndex++
+//   setNextQuestion()
+//   // combine nextquestion and setnextquestion functions
+// }
+
+let setNextQuestion = () => {
+  currentQuestionIndex++
   resetState()
   // showQuestion()
   start()
@@ -193,16 +196,19 @@ let maxNumberofQuestions = 5
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
+
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct)
   })
   if (currentQuestionIndex < maxNumberofQuestions) {
     nextButton.classList.remove("hide")
+    setTimeout(setNextQuestion, 1000)
   } else {
     startButton.innerText = "Restart"
     startButton.classList.remove("hide")
     setTimeout(startQuiz, 3000)
+    // add(show) countdown timer to restart quiz in seconds
   }
 }
 

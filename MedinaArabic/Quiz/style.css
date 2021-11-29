@@ -106,7 +106,7 @@ body.wrong {
 .flexgrid{
     display: grid;
     grid-template-columns: repeat(4, auto);
-    width: 30vw;
+    width: 60vw;
     gap: 1px;
     margin: 8px 0;
     text-align: center;
