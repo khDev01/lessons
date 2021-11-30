@@ -17,7 +17,10 @@ body {
     /* height: 100vh; */
     /* justify-content: center; */
     /* align-items: center; */
-    background-color: hsl(var(--hue), 100%, 20%);
+    /* background-color: hsl(var(--hue), 100%, 20%); */
+    background: #262626;
+    color: #fff;
+    font-family: 'Traditional Arabic', Amiri, Calibri;
 }
 
 section {
@@ -42,10 +45,11 @@ body.wrong {
     margin: auto 0.4em;
     width: 100%;
     /* max-width: 80%; */
-    background-color: white;
+    background-color:#303032;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 10px 2px;
+    box-shadow: 0 0 10px 2px grey;
+    
 }
 
 .btn-grid {
@@ -107,8 +111,17 @@ body.wrong {
 
 /*/**/
 
-.optionchoice {border:1px dashed black; padding: 5px; font-size: 2rem; width: fit-content;
+.optionchoice {
+    border:1px dashed grey; 
+    padding: 5px; 
+    font-size: 2rem; 
+    width: fit-content;
     margin: 0.2rem;
+}
+
+.optionchoice:hover {
+    border:1px dashed lightgray; 
+    color: lightgrey
 }
 
 .flexgrid{
@@ -120,12 +133,16 @@ body.wrong {
     flex-wrap: wrap;
 }
 
-.flex {
+.lessonmenu {
     display: flex;
     display: grid;
-    grid-template-columns: repeat(12, auto);
+    grid-template-columns: repeat(10, auto);
     /* width: 30vw; */
     gap: 1px;
     margin: 8px 0;
     text-align: center;
+}
+
+.chooselessonno:hover{
+    background-color: hsl(var(--hue), 100%, 50%);
 }

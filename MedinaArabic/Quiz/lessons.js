@@ -34,8 +34,9 @@ let getBookData = () => {
       for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
         // const element = array[lessonNo];
 
-        let lsn = document.createElement("h4")
+        let lsn = document.createElement("span")
         lsn.innerHTML = lessonNo
+        lsn.classList.add("chooselessonno")
         lsn.onclick = function () {
           chooseLesson(lessonNo)
         }
@@ -192,7 +193,7 @@ function resetState() {
   }
 }
 
-let maxNumberofQuestions = 5
+let maxNumberofQuestions = 20
 
 function selectAnswer(e) {
   const selectedButton = e.target
@@ -204,11 +205,11 @@ function selectAnswer(e) {
   })
   if (currentQuestionIndex < maxNumberofQuestions) {
     nextButton.classList.remove("hide")
-    setTimeout(setNextQuestion, 1000)
+    setTimeout(setNextQuestion, 300)
   } else {
     startButton.innerText = "Restart"
     startButton.classList.remove("hide")
-    setTimeout(startQuiz, 3000)
+    setTimeout(startQuiz, 1000)
     // add(show) countdown timer to restart quiz in seconds
   }
 }
