@@ -103,7 +103,10 @@ body.wrong {
 }
 
 
-
+.correct {
+    --hue: var(--hue-correct);
+    color: green;
+}
 
 
 
