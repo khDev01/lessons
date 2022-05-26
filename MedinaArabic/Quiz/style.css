@@ -23,6 +23,11 @@ body {
     font-family: 'Traditional Arabic', Amiri, Calibri;
 }
 
+button {
+    font-family: inherit;
+    font-weight: bold;
+}
+
 section {
     display: flex;
     /* max-width: 70vw; */
@@ -63,17 +68,20 @@ body.wrong {
 .btn {
     /* height: 5em; */
     --hue: var(--hue-neutral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 50%);
+    border: 1px solid hsl(var(--hue), 100%, 20%);
+    background-color: hsl(var(--hue), 80%, 30%);
     border-radius: 5px;
     padding: 5px 10px;
-    color: white;
+    color: rgb(208, 208, 208);
     outline: none;
     font-size: 2rem;
 }
 
 .btn:hover {
-    border-color: black;
+    border-color: hsl(var(--hue), 100%, 10%);
+    border-radius: 8px;
+    color: rgb(242, 242, 242);
+    text-shadow: 0 0 4px #1100ff;
 }
 
 .btn.correct {
@@ -146,6 +154,6 @@ body.wrong {
     text-align: center;
 }
 
-.chooselessonno:hover{
+.lessonmenuitem:hover{
     background-color: hsl(var(--hue), 100%, 50%);
 }

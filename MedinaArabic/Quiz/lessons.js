@@ -1,71 +1,71 @@
-// TODO: randomise whole array
-
+// TODO: add more categories; ie colours, etc..
+// TODO: turn lessonNo list into dropdown
+// TODO: add score/display more info
+// TODO: ability to select no of answers to show
+// TODO: show which words are struggling with/show them more often
+// TODO:
+const urlBook1 = "../book1edit.json"
 english = document.getElementById("english")
 arabic = document.getElementById("arabic")
 arabic2 = document.getElementById("arabic2")
-
-question1 = document.getElementById("question1")
-first = document.getElementById("first")
-second = document.getElementById("second")
-third = document.getElementById("third")
-fourth = document.getElementById("fourth")
-
-const answerOptions = document.getElementById("choices")
-const lessonsMenu = document.getElementById("lessonsMenu")
-
-urlBook1 = "../book1edit.json"
+queText = document.getElementById("queText")
+// first = document.getElementById("first")
+// second = document.getElementById("second")
+// third = document.getElementById("third")
+// fourth = document.getElementById("fourth")
+answerOptions = document.getElementById("choices")
+lessonsMenu = document.getElementById("lessonsMenu")
 let result
 let min
 let max
-const randomAnswers = 4
+let NoOfAnsOptionsToShow = 6
 bookVocabNo = 0
-// let book1
 
-let getBookData = () => {
+// get lesson vocab from json file
+let getVocab = () => {
   fetch(urlBook1)
     .then((response) => response.json()) // return json object
     .then((data) => {
       // console.log(data[0])
       book1 = data
       bookVocabNo = book1.length
-      console.log(bookVocabNo)
-      // // lesson1 = data
+      // console.log("Total vocab: " + bookVocabNo)
       noOfLessons = book1[book1.length - 1].L
-      for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
-        // const element = array[lessonNo];
-
-        let lsn = document.createElement("span")
-        lsn.innerHTML = lessonNo
-        lsn.classList.add("chooselessonno")
-        lsn.onclick = function () {
-          chooseLesson(lessonNo)
-        }
-        lessonsMenu.appendChild(lsn)
-      }
+      createMenu(noOfLessons)
     })
     .catch((error) => {
       console.error("Error:", error)
     })
 }
 
-let chooseLesson = (chosenNo) => {
+let createMenu = () => {
+  for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
+    let lsnNo = document.createElement("span")
+    lsnNo.innerHTML = lessonNo
+    lsnNo.classList.add("lessonmenuitem")
+    lsnNo.onclick = function () {
+      filterLesson(lessonNo)
+      // style lesson itmes
+      lessnmenuitems = lessonsMenu.children
+      for (let i = 0; i < lessnmenuitems.length; i++) {
+        let itemmenu = lessnmenuitems[i]
+        itemmenu.style.backgroundColor = "transparent"
+      }
+      lsnNo.style.backgroundColor = "purple"
+    }
+    lessonsMenu.appendChild(lsnNo)
+  }
+}
+
+// return selected lesson vocab id
+let filterLesson = (selectedNo) => {
   result = book1.filter((obj) => {
-    // console.log(obj.L === chosenNo)
-    return obj.L === chosenNo
+    // console.log(obj.L === selectedNo)
+    return obj.L === selectedNo
   })
   min = result[0].id
   max = result.length + min
 }
-
-// const rndWholeList = () => {
-//   let numberList = []
-//   for (let index = 0; index < book1.length; index++) {
-//     // const element = array[index]
-//     numberList.push(index)
-//   }
-//   newrandomList = shuffledArr(numberList)
-//   console.log(newrandomList)
-// }
 
 let startMegaQuiz = () => {
   bookMin = 0
@@ -77,7 +77,7 @@ let start = () => {
   getRndInteger(min, max)
 }
 
-const shuffledArr = (array) =>
+const shuffleArr = (array) =>
   array
     .map((a) => ({ sort: Math.random(), value: a }))
     .sort((a, b) => a.sort - b.sort)
@@ -86,33 +86,35 @@ const shuffledArr = (array) =>
 let questionText, questionValue
 var randomNums = []
 
+// Randomise and start quiz
 let getRndInteger = (min, max) => {
-  console.log("min: " + min + "  Max" + max)
+  // console.log("min: " + min + "  Max" + max)
   randomNums = []
-  while (randomNums.length < randomAnswers) {
+  while (randomNums.length < NoOfAnsOptionsToShow) {
     var r = Math.floor(Math.random() * (max - min)) + min
     if (randomNums.indexOf(r) === -1) randomNums.push(r)
   }
-  console.log(randomNums)
+  // console.log(randomNums)
   questonValue = randomNums[0]
   // console.log("First val: " + randomNums[0])
   // console.log(book1[0].En)
   questionText = book1[randomNums[0]].En
-  question1.innerHTML = questionText
-  randomNums = shuffledArr(randomNums)
+  queText.innerHTML = questionText
+  randomNums = shuffleArr(randomNums)
   // console.log("random" + randomNums)
 
-  randomNums.forEach(makeQuiz)
-  function makeQuiz(value) {
+  let makeQuiz = (value) => {
     // console.log(book1[value])
     // console.log(randomNums[0])
-    var para = document.createElement("p")
-    para.innerHTML = book1[value].Ar
-    para.classList.add("optionchoice")
+    var ansOption = document.createElement("p")
+    // var ansOption = document.createElement("button")
+
+    ansOption.innerHTML = book1[value].Ar
+    ansOption.classList.add("optionchoice")
     if (questonValue === value) {
       // console.log(randomNums[0] + " " + value)
-      para.id = "ans"
-      para.onclick = function () {
+      ansOption.id = "ans"
+      ansOption.onclick = function () {
         // alert("corect")
         while (answerOptions.hasChildNodes()) {
           answerOptions.removeChild(answerOptions.firstChild)
@@ -121,11 +123,14 @@ let getRndInteger = (min, max) => {
       }
     }
 
-    answerOptions.appendChild(para)
+    answerOptions.appendChild(ansOption)
 
     // TODO: Randomise output order,
   }
+
+  randomNums.forEach(makeQuiz)
 }
+
 ///
 ///
 ///
@@ -152,12 +157,6 @@ nextButton.addEventListener("click", () => {
   setNextQuestion()
 })
 
-// let nextQuestion = () => {
-//   currentQuestionIndex++
-//   setNextQuestion()
-//   // combine nextquestion and setnextquestion functions
-// }
-
 let setNextQuestion = () => {
   currentQuestionIndex++
   resetState()
@@ -168,7 +167,6 @@ let setNextQuestion = () => {
 
 function showQuestion() {
   iterationElement.innerHTML = currentQuestionIndex
-
   questionElement.innerHTML = questionText
   randomNums.forEach((answer) => {
     const button = document.createElement("button")
@@ -205,7 +203,7 @@ function selectAnswer(e) {
   })
   if (currentQuestionIndex < maxNumberofQuestions) {
     nextButton.classList.remove("hide")
-    setTimeout(setNextQuestion, 300)
+    setTimeout(setNextQuestion, 1000)
   } else {
     startButton.innerText = "Restart"
     startButton.classList.remove("hide")
@@ -240,7 +238,7 @@ function clearStatusClass(element) {
 
 // self executing function here / same as jquery document ready
 ;(function () {
-  getBookData()
-  // setTimeout(chooseLesson, 1000)
+  getVocab()
+  // setTimeout(filterLesson, 1000)
   setTimeout(startMegaQuiz, 1000)
 })()
