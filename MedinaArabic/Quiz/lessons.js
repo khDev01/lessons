@@ -9,10 +9,6 @@ english = document.getElementById("english")
 arabic = document.getElementById("arabic")
 arabic2 = document.getElementById("arabic2")
 queText = document.getElementById("queText")
-// first = document.getElementById("first")
-// second = document.getElementById("second")
-// third = document.getElementById("third")
-// fourth = document.getElementById("fourth")
 answerOptions = document.getElementById("choices")
 lessonsMenu = document.getElementById("lessonsMenu")
 let result
@@ -39,6 +35,9 @@ let getVocab = () => {
 }
 
 let createMenu = () => {
+  let lsnNo = document.createElement("span")
+  lsnNo.innerText = "Lesson"
+  lessonsMenu.appendChild(lsnNo)
   for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
     let lsnNo = document.createElement("span")
     lsnNo.innerHTML = lessonNo
@@ -49,9 +48,10 @@ let createMenu = () => {
       lessnmenuitems = lessonsMenu.children
       for (let i = 0; i < lessnmenuitems.length; i++) {
         let itemmenu = lessnmenuitems[i]
-        itemmenu.style.backgroundColor = "transparent"
+        itemmenu.style.removeProperty("background-color")
       }
       lsnNo.style.backgroundColor = "purple"
+      setNextQuestion()
     }
     lessonsMenu.appendChild(lsnNo)
   }
@@ -86,11 +86,14 @@ const shuffleArr = (array) =>
 let questionText, questionValue
 var randomNums = []
 
-// Randomise and start quiz
+// Randomise and begin quiz
 let getRndInteger = (min, max) => {
   // console.log("min: " + min + "  Max" + max)
+  vocabAmount = max - min
+  NoOfAnsOptions =
+    vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
   randomNums = []
-  while (randomNums.length < NoOfAnsOptionsToShow) {
+  while (randomNums.length < NoOfAnsOptions) {
     var r = Math.floor(Math.random() * (max - min)) + min
     if (randomNums.indexOf(r) === -1) randomNums.push(r)
   }
@@ -137,6 +140,7 @@ let getRndInteger = (min, max) => {
 const startButton = document.getElementById("start-btn")
 const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
+const BoxquizContainerElement = document.getElementById("boxQuizcontainer")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 const iterationElement = document.getElementById("iteration")
@@ -144,11 +148,11 @@ let shuffledQuestions, currentQuestionIndex
 
 let startQuiz = () => {
   startButton.classList.add("hide")
+
   // shuffledQuestions = questions.sort(() => Math.random() - 0.5)
-
   currentQuestionIndex = 0
-
   questionContainerElement.classList.remove("hide")
+  // BoxquizContainerElement.classList.remove("hide")
   setNextQuestion()
 }
 
@@ -173,7 +177,8 @@ function showQuestion() {
     button.innerText = book1[answer].Ar
     button.classList.add("btn")
     if (questonValue === answer) {
-      button.dataset.correct = answer.correct
+      // button.dataset.correct = answer.correct
+      button.dataset.correct = "x"
     }
     button.addEventListener("click", selectAnswer)
     answerButtonsElement.appendChild(button)
@@ -196,19 +201,18 @@ let maxNumberofQuestions = 20
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
-
+  console.log(correct)
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct)
   })
   if (currentQuestionIndex < maxNumberofQuestions) {
     nextButton.classList.remove("hide")
-    setTimeout(setNextQuestion, 1000)
+    setTimeout(setNextQuestion, 800)
   } else {
-    startButton.innerText = "Restart"
-    startButton.classList.remove("hide")
-    setTimeout(startQuiz, 1000)
-    // add(show) countdown timer to restart quiz in seconds
+    // startButton.innerText = "Restart"
+    // startButton.classList.remove("hide")
+    setTimeout(setNextQuestion, 800) // auto restart quiz
   }
 }
 
@@ -222,22 +226,14 @@ function setStatusClass(element, correct) {
 }
 
 function clearStatusClass(element) {
-  element.classList.remove("correct")
-  element.classList.remove("wrong")
+  element.classList.remove("correct", "wrong")
+  // element.classList.remove("wrong")
 }
-
-// // create a new div element
-// const newDiv = document.createElement("div");
-// // and give it some content
-// const newContent = document.createTextNode("Hi there and greetings!");
-// // add the text node to the newly created div
-// newDiv.appendChild(newContent);
-// // add the newly created element and its content into the DOM
-// const currentDiv = document.getElementById("div1");
-// document.body.insertBefore(newDiv, currentDiv);
 
 // self executing function here / same as jquery document ready
 ;(function () {
+  // startButton.classList.add("hide")
+  // BoxquizContainerElement.classList.add("hide")
   getVocab()
   // setTimeout(filterLesson, 1000)
   setTimeout(startMegaQuiz, 1000)

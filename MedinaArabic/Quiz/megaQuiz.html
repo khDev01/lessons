@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet"
+    href="style.css">
+    <link rel="icon"
+    href="./favicon.png">
+</head>
+
+<body>
+    <h4 id="queText"></h4>
+    <div class="flexgrid" id="choices">
+    </div>
+</body>
+<script>
+    const urlBook1 = "../book1edit.json"
+
+    queText = document.getElementById("queText")
+    answerOptions = document.getElementById("choices")
+    let result, min, max, questionText, questionValue
+    let NoOfAnsOptionsToShow = 6
+    let bookVocabNo = 0
+    var randomNums = []
+
+    // get lesson vocab from json file
+    let getVocab = () => {
+        fetch(urlBook1)
+            .then((response) => response.json()) // return json object
+            .then((data) => {
+                book1 = data
+            })
+            .catch((error) => {
+                console.error("Error:", error)
+            })
+    }
+
+    let startMegaQuiz = () => {
+        bookMin = 0
+        bookMax = book1.length
+        getRndInteger(bookMin, bookMax)
+    }
+
+    const shuffleArr = (array) =>
+        array
+            .map((a) => ({ sort: Math.random(), value: a }))
+            .sort((a, b) => a.sort - b.sort)
+            .map((a) => a.value)
+
+    // Randomise and begin quiz
+    let getRndInteger = (min, max) => {
+        randomNums = []
+        while (randomNums.length < NoOfAnsOptionsToShow) {
+            var r = Math.floor(Math.random() * (max - min)) + min
+            if (randomNums.indexOf(r) === -1) randomNums.push(r)
+        }
+        questonValue = randomNums[0]
+        questionText = book1[randomNums[0]].En
+        queText.innerHTML = questionText
+        randomNums = shuffleArr(randomNums)
+
+        let makeQuiz = (value) => {
+            var ansOption = document.createElement("p")
+            ansOption.innerHTML = book1[value].Ar
+            ansOption.classList.add("optionchoice")
+            if (questonValue === value) {
+                ansOption.id = "ans"
+                ansOption.onclick = function () {
+                    // alert("corect")
+                    while (answerOptions.hasChildNodes()) {
+                        answerOptions.removeChild(answerOptions.firstChild)
+                    }
+                    getRndInteger(min, max)
+                }
+            }
+            answerOptions.appendChild(ansOption)
+        }
+        randomNums.forEach(makeQuiz)
+    }
+
+        // self executing function here / same as jquery document ready
+        ; (function () {
+            getVocab()
+            setTimeout(startMegaQuiz, 1000)
+        })()
+
+</script>
+
+</html>
