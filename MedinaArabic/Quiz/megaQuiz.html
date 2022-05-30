@@ -72,10 +72,16 @@
                 ansOption.id = "ans"
                 ansOption.onclick = function () {
                     // alert("corect")
+                    //.. remove answers for next selection (reset state)
                     while (answerOptions.hasChildNodes()) {
                         answerOptions.removeChild(answerOptions.firstChild)
                     }
+                    //..
                     getRndInteger(min, max)
+                }
+            } else {
+                ansOption.onclick = function () {
+                    ansOption.style.backgroundColor = "darkred"
                 }
             }
             answerOptions.appendChild(ansOption)

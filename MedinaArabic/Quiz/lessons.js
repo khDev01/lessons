@@ -73,10 +73,6 @@ let startMegaQuiz = () => {
   getRndInteger(bookMin, bookMax)
 }
 
-let start = () => {
-  getRndInteger(min, max)
-}
-
 const shuffleArr = (array) =>
   array
     .map((a) => ({ sort: Math.random(), value: a }))
@@ -92,7 +88,6 @@ let getRndInteger = (min, max) => {
   vocabAmount = max - min
   NoOfAnsOptions =
     vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
-  randomNums = []
   while (randomNums.length < NoOfAnsOptions) {
     var r = Math.floor(Math.random() * (max - min)) + min
     if (randomNums.indexOf(r) === -1) randomNums.push(r)
@@ -124,13 +119,13 @@ let getRndInteger = (min, max) => {
         }
         getRndInteger(min, max)
       }
+    } else {
+      ansOption.onclick = function () {
+        ansOption.style.backgroundColor = "darkred"
+      }
     }
-
     answerOptions.appendChild(ansOption)
-
-    // TODO: Randomise output order,
   }
-
   randomNums.forEach(makeQuiz)
 }
 
@@ -138,34 +133,31 @@ let getRndInteger = (min, max) => {
 ///
 ///
 const startButton = document.getElementById("start-btn")
-const nextButton = document.getElementById("next-btn")
+// const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
-const BoxquizContainerElement = document.getElementById("boxQuizcontainer")
+// const BoxquizContainerElement = document.getElementById("boxQuizcontainer")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 const iterationElement = document.getElementById("iteration")
 let shuffledQuestions, currentQuestionIndex
+let maxNumberofQuestions = 20
 
 let startQuiz = () => {
   startButton.classList.add("hide")
-
-  // shuffledQuestions = questions.sort(() => Math.random() - 0.5)
   currentQuestionIndex = 0
   questionContainerElement.classList.remove("hide")
-  // BoxquizContainerElement.classList.remove("hide")
   setNextQuestion()
 }
 
 startButton.addEventListener("click", startQuiz)
-nextButton.addEventListener("click", () => {
-  setNextQuestion()
-})
+// nextButton.addEventListener("click", () => {
+//   setNextQuestion()
+// })
 
 let setNextQuestion = () => {
   currentQuestionIndex++
   resetState()
-  // showQuestion()
-  start()
+  getRndInteger(min, max)
   showQuestion()
 }
 
@@ -187,7 +179,8 @@ function showQuestion() {
 
 function resetState() {
   clearStatusClass(document.body)
-  nextButton.classList.add("hide")
+  // nextButton.classList.add("hide")
+  randomNums = [] //empty array
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
@@ -196,18 +189,18 @@ function resetState() {
   }
 }
 
-let maxNumberofQuestions = 20
-
 function selectAnswer(e) {
   const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  console.log(correct)
-  setStatusClass(document.body, correct)
+  const buttonData = selectedButton.dataset.correct
+  setStatusClass(document.body, buttonData)
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct)
   })
+  autoNextQuestion()
+}
+
+function autoNextQuestion() {
   if (currentQuestionIndex < maxNumberofQuestions) {
-    nextButton.classList.remove("hide")
     setTimeout(setNextQuestion, 800)
   } else {
     // startButton.innerText = "Restart"
@@ -233,7 +226,6 @@ function clearStatusClass(element) {
 // self executing function here / same as jquery document ready
 ;(function () {
   // startButton.classList.add("hide")
-  // BoxquizContainerElement.classList.add("hide")
   getVocab()
   // setTimeout(filterLesson, 1000)
   setTimeout(startMegaQuiz, 1000)
