@@ -20,13 +20,11 @@
 </body>
 <script>
     const urlBook1 = "../book1edit.json"
-
     queText = document.getElementById("queText")
-    answerOptions = document.getElementById("choices")
-    let result, min, max, questionText, questionValue
+    optionsContainer = document.getElementById("choices")
+    let min, max, questionText
     let NoOfAnsOptionsToShow = 6
-    let bookVocabNo = 0
-    var randomNums = []
+    let outputIDs = []
 
     // get lesson vocab from json file
     let getVocab = () => {
@@ -41,9 +39,52 @@
     }
 
     let startMegaQuiz = () => {
-        bookMin = 0
-        bookMax = book1.length
-        getRndInteger(bookMin, bookMax)
+        min = 0
+        max = book1.length
+        newQuestion()
+    }
+
+    let newQuestion = () => {
+        // Get new vocab ID
+        getRndIDs(min, max)
+        // Select first ID as answer result
+        resultID = outputIDs[0]
+        // Update question text 
+        questionText = book1[outputIDs[0]].En
+        queText.innerHTML = questionText
+        // Randomise ID order for output
+        outputIDs = shuffleArr(outputIDs)
+        // display output options
+        outputIDs.forEach(createOptions)
+    }
+
+    let getRndIDs = (min, max) => {
+        outputIDs = [] // Clear array
+        while (outputIDs.length < NoOfAnsOptionsToShow) {
+            var r = Math.floor(Math.random() * (max - min)) + min
+            if (outputIDs.indexOf(r) === -1) outputIDs.push(r)
+        }
+    }
+
+    let createOptions = (value) => {
+        var ansOption = document.createElement("p")
+        ansOption.innerHTML = book1[value].Ar
+        ansOption.classList.add("optionchoice")
+        if (resultID === value) {
+            ansOption.id = "ans"
+            ansOption.onclick = function () { // alert("corect")
+                //.. remove answers for next selection (reset state)
+                while (optionsContainer.hasChildNodes()) {
+                    optionsContainer.removeChild(optionsContainer.firstChild)
+                }
+                newQuestion()
+            }
+        } else { // if wrong answer selected
+            ansOption.onclick = function () {
+                ansOption.style.backgroundColor = "darkred"
+            }
+        }
+        optionsContainer.appendChild(ansOption)
     }
 
     const shuffleArr = (array) =>
@@ -51,43 +92,6 @@
             .map((a) => ({ sort: Math.random(), value: a }))
             .sort((a, b) => a.sort - b.sort)
             .map((a) => a.value)
-
-    // Randomise and begin quiz
-    let getRndInteger = (min, max) => {
-        randomNums = []
-        while (randomNums.length < NoOfAnsOptionsToShow) {
-            var r = Math.floor(Math.random() * (max - min)) + min
-            if (randomNums.indexOf(r) === -1) randomNums.push(r)
-        }
-        questonValue = randomNums[0]
-        questionText = book1[randomNums[0]].En
-        queText.innerHTML = questionText
-        randomNums = shuffleArr(randomNums)
-
-        let makeQuiz = (value) => {
-            var ansOption = document.createElement("p")
-            ansOption.innerHTML = book1[value].Ar
-            ansOption.classList.add("optionchoice")
-            if (questonValue === value) {
-                ansOption.id = "ans"
-                ansOption.onclick = function () {
-                    // alert("corect")
-                    //.. remove answers for next selection (reset state)
-                    while (answerOptions.hasChildNodes()) {
-                        answerOptions.removeChild(answerOptions.firstChild)
-                    }
-                    //..
-                    getRndInteger(min, max)
-                }
-            } else {
-                ansOption.onclick = function () {
-                    ansOption.style.backgroundColor = "darkred"
-                }
-            }
-            answerOptions.appendChild(ansOption)
-        }
-        randomNums.forEach(makeQuiz)
-    }
 
         // self executing function here / same as jquery document ready
         ; (function () {
