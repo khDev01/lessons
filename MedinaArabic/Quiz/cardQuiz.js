@@ -7,7 +7,7 @@ let result, min, max
 let NoOfAnsOptionsToShow = 6
 bookVocabNo = 0
 let questionText, questionValue
-var randomNums = []
+var outputIDs = []
 const startButton = document.getElementById("start-btn")
 const questionContainerElement = document.getElementById("question-container")
 const BoxquizContainerElement = document.getElementById("boxQuizcontainer")
@@ -71,18 +71,15 @@ const shuffleArr = (array) =>
     .map((a) => a.value)
 
 // Randomise and begin quiz
-let getRndInteger = (min, max) => {
+let getRndIDs = (min, max) => {
   vocabAmount = max - min
   NoOfAnsOptions =
     vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
-  // randomNums = []
-  while (randomNums.length < NoOfAnsOptions) {
+  // outputIDs = []
+  while (outputIDs.length < NoOfAnsOptions) {
     var r = Math.floor(Math.random() * (max - min)) + min
-    if (randomNums.indexOf(r) === -1) randomNums.push(r)
+    if (outputIDs.indexOf(r) === -1) outputIDs.push(r)
   }
-  questonValue = randomNums[0]
-  questionText = book1[randomNums[0]].En
-  randomNums = shuffleArr(randomNums)
 }
 
 let startQuiz = () => {
@@ -97,14 +94,17 @@ startButton.addEventListener("click", startQuiz)
 let setNextQuestion = () => {
   currentQuestionIndex++
   resetState()
-  getRndInteger(min, max) // start quiz
+  getRndIDs(min, max) // start quiz
+  questonValue = outputIDs[0]
+  questionText = book1[outputIDs[0]].En
+  outputIDs = shuffleArr(outputIDs)
   showQuestion()
 }
 
 function showQuestion() {
   iterationElement.innerHTML = currentQuestionIndex
   questionElement.innerHTML = questionText
-  randomNums.forEach((answer) => {
+  outputIDs.forEach((answer) => {
     const button = document.createElement("button")
     button.innerText = book1[answer].Ar
     button.classList.add("btn")
@@ -117,7 +117,7 @@ function showQuestion() {
 }
 
 function resetState() {
-  randomNums = [] //empty array
+  outputIDs = [] //empty array
   clearStatusClass(document.body)
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)

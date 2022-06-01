@@ -14,16 +14,29 @@
 </head>
 
 <body>
-    <h4 id="queText"></h4>
-    <div class="flexgrid" id="choices">
+    <div class="flex">
+        <div class="lessonmenu"
+        id="lessonsMenu">
+        </div>
+        <main>
+            <h4 id="queText"></h4>
+
+            <div class="flexgrid"
+            id="choices">
+            </div>
+        </main>
+
     </div>
+
+
 </body>
 <script>
     const urlBook1 = "../book1edit.json"
     queText = document.getElementById("queText")
     optionsContainer = document.getElementById("choices")
+
     let min, max, questionText
-    let NoOfAnsOptionsToShow = 6
+    let NoOfAnsOptionsToShow = 6, NoOfAnsOptions
     let outputIDs = []
 
     // get lesson vocab from json file
@@ -32,10 +45,47 @@
             .then((response) => response.json()) // return json object
             .then((data) => {
                 book1 = data
+                noOfLessons = book1[book1.length - 1].L
+                createMenu(noOfLessons)
             })
             .catch((error) => {
                 console.error("Error:", error)
             })
+    }
+
+    lessonsMenu = document.getElementById("lessonsMenu")
+    let createMenu = () => {
+        let menuHeader = document.createElement("span")
+        menuHeader.innerText = "Lesson"
+        menuHeader.onclick = function () {
+            startMegaQuiz()
+        }
+        lessonsMenu.appendChild(menuHeader)
+        for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
+            let lsnNo = document.createElement("span")
+            lsnNo.innerHTML = lessonNo
+            lsnNo.classList.add("lessonmenuitem")
+            lsnNo.onclick = function () {
+                filterLesson(lessonNo)
+                // style lesson itmes
+                lessnmenuitems = lessonsMenu.children
+                for (let i = 0; i < lessnmenuitems.length; i++) {
+                    let itemmenu = lessnmenuitems[i]
+                    itemmenu.style.removeProperty("background-color")
+                }
+                lsnNo.style.backgroundColor = "purple"
+                newQuestion()
+            }
+            lessonsMenu.appendChild(lsnNo)
+        }
+    }
+
+    let filterLesson = (selectedNo) => {
+        result = book1.filter((obj) => {
+            return obj.L === selectedNo
+        })
+        min = result[0].id
+        max = result.length + min
     }
 
     let startMegaQuiz = () => {
@@ -45,6 +95,14 @@
     }
 
     let newQuestion = () => {
+        //remove previous options for next selection (reset state)
+        while (optionsContainer.hasChildNodes()) {
+            optionsContainer.removeChild(optionsContainer.firstChild)
+        }
+        // show less options if a smaller lesson is chosen
+        vocabAmount = max - min
+        NoOfAnsOptions =
+            vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
         // Get new vocab ID
         getRndIDs(min, max)
         // Select first ID as answer result
@@ -60,7 +118,7 @@
 
     let getRndIDs = (min, max) => {
         outputIDs = [] // Clear array
-        while (outputIDs.length < NoOfAnsOptionsToShow) {
+        while (outputIDs.length < NoOfAnsOptions) {
             var r = Math.floor(Math.random() * (max - min)) + min
             if (outputIDs.indexOf(r) === -1) outputIDs.push(r)
         }
@@ -73,10 +131,6 @@
         if (resultID === value) {
             ansOption.id = "ans"
             ansOption.onclick = function () { // alert("corect")
-                //.. remove answers for next selection (reset state)
-                while (optionsContainer.hasChildNodes()) {
-                    optionsContainer.removeChild(optionsContainer.firstChild)
-                }
                 newQuestion()
             }
         } else { // if wrong answer selected
