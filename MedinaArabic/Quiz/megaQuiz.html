@@ -16,28 +16,38 @@
 <body>
     <div class="flex">
         <div class="lessonmenu"
-        id="lessonsMenu">
+        id="menuContainer">
         </div>
         <main>
             <h4 id="queText"></h4>
-
             <div class="flexgrid"
             id="choices">
             </div>
         </main>
-
     </div>
 
 
 </body>
-<script>
+<script type="module">
+    import createMenu, { newmin, newmax } from './quizmenu.js'
     const urlBook1 = "../book1edit.json"
-    queText = document.getElementById("queText")
-    optionsContainer = document.getElementById("choices")
-
+    const queText = document.getElementById("queText")
+    const optionsContainer = document.getElementById("choices")
+    const menuContainer = document.getElementById("menuContainer")
     let min, max, questionText
     let NoOfAnsOptionsToShow = 6, NoOfAnsOptions
-    let outputIDs = []
+    let outputIDs = [], resultID
+    let book1
+
+    // quickly fire through each question
+    document.onkeydown = function (evt) {
+        evt = evt || window.event;
+        // on z keypress
+        if (evt.keyCode == 90) {
+            setNextQuestion()
+        }
+
+    }
 
     // get lesson vocab from json file
     let getVocab = () => {
@@ -45,62 +55,32 @@
             .then((response) => response.json()) // return json object
             .then((data) => {
                 book1 = data
-                noOfLessons = book1[book1.length - 1].L
-                createMenu(noOfLessons)
+                let noOfLessons = book1[book1.length - 1].L
+                createMenu(noOfLessons, book1, setNextQuestion)
             })
             .catch((error) => {
                 console.error("Error:", error)
             })
     }
 
-    lessonsMenu = document.getElementById("lessonsMenu")
-    let createMenu = () => {
-        let menuHeader = document.createElement("span")
-        menuHeader.innerText = "Lesson"
-        menuHeader.onclick = function () {
-            startMegaQuiz()
-        }
-        lessonsMenu.appendChild(menuHeader)
-        for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
-            let lsnNo = document.createElement("span")
-            lsnNo.innerHTML = lessonNo
-            lsnNo.classList.add("lessonmenuitem")
-            lsnNo.onclick = function () {
-                filterLesson(lessonNo)
-                // style lesson itmes
-                lessnmenuitems = lessonsMenu.children
-                for (let i = 0; i < lessnmenuitems.length; i++) {
-                    let itemmenu = lessnmenuitems[i]
-                    itemmenu.style.removeProperty("background-color")
-                }
-                lsnNo.style.backgroundColor = "purple"
-                newQuestion()
-            }
-            lessonsMenu.appendChild(lsnNo)
-        }
-    }
-
-    let filterLesson = (selectedNo) => {
-        result = book1.filter((obj) => {
-            return obj.L === selectedNo
-        })
-        min = result[0].id
-        max = result.length + min
-    }
-
     let startMegaQuiz = () => {
         min = 0
         max = book1.length
-        newQuestion()
+        setNextQuestion()
     }
 
-    let newQuestion = () => {
+
+
+    let setNextQuestion = () => {
+        min = newmin() == undefined ? min : newmin()
+        max = newmax() == undefined ? max : newmax()
+        // console.log("min: " + min + "  Max" + max)
         //remove previous options for next selection (reset state)
         while (optionsContainer.hasChildNodes()) {
             optionsContainer.removeChild(optionsContainer.firstChild)
         }
         // show less options if a smaller lesson is chosen
-        vocabAmount = max - min
+        let vocabAmount = max - min
         NoOfAnsOptions =
             vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
         // Get new vocab ID
@@ -131,7 +111,7 @@
         if (resultID === value) {
             ansOption.id = "ans"
             ansOption.onclick = function () { // alert("corect")
-                newQuestion()
+                setNextQuestion()
             }
         } else { // if wrong answer selected
             ansOption.onclick = function () {
