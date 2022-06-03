@@ -7,6 +7,16 @@ let NoOfAnsOptionsToShow = 6,
 let outputIDs = [],
   resultID
 
+// quickly fire through each question
+document.addEventListener("keypress", function onPress(event) {
+  if (event.key === "z") {
+    algo(true)
+    newQuestion()
+  } else if (event.key === "x") {
+    console.log(algoarray)
+  }
+})
+
 // get lesson vocab from json file
 let getVocab = () => {
   fetch(urlBook1)
@@ -34,6 +44,8 @@ let createMenu = () => {
     lsnNo.innerHTML = lessonNo
     lsnNo.classList.add("lessonmenuitem")
     lsnNo.onclick = function () {
+      algoarray = [] // clear array
+      mostWrongID = undefined
       filterLesson(lessonNo)
       // style lesson itmes
       lessnmenuitems = lessonsMenu.children
@@ -112,8 +124,8 @@ let algo = (iscorrect) => {
     wrongstart = iscorrect ? 0 : 1
     let addNewarrItem = {
       id: resultID,
-      correct: correctstart,
-      wrong: wrongstart,
+      c: correctstart,
+      w: wrongstart,
       // correct: correctCount,
       // wrong: wrongCount,
     }
@@ -126,20 +138,20 @@ let algo = (iscorrect) => {
       if (obj.id == found.id) {
         // console.log(obj)
         if (iscorrect) {
-          obj.correct = obj.correct + 1
+          obj.c = obj.c + 1
           if (Math.random() < 0.8) {
-            obj.wrong = obj.wrong - 1
+            obj.w = obj.w - 1
             console.log(book1[obj.id].En + " -1")
           }
-        } else obj.wrong = obj.wrong + 1
+        } else obj.w = obj.w + 1
         break
       }
     }
     // console.log(algoarray)
   }
 
-  //sort array from most wrong
-  algoarray.sort((a, b) => b.wrong - a.wrong)
+  //sort array from most w
+  algoarray.sort((a, b) => b.w - a.w)
   // console.log(algoarray)
   if (algoarray.length > 5) {
     // console.log(algoarray[0].id)
