@@ -30,14 +30,15 @@
 </body>
 <script type="module">
     import createMenu, { newmin, newmax } from './quizmenu.js'
-    const urlBook1 = "../book1edit.json"
+    import getVocab, { mybookdata } from "./quizgetdata.js"
+    const bookjson = "../book1edit.json"
     const queText = document.getElementById("queText")
     const optionsContainer = document.getElementById("choices")
     const menuContainer = document.getElementById("menuContainer")
     let min, max, questionText
     let NoOfAnsOptionsToShow = 6, NoOfAnsOptions
     let outputIDs = [], resultID
-    let book1
+    let book, totalVocab
 
     // quickly fire through each question
     document.onkeydown = function (evt) {
@@ -48,27 +49,12 @@
         }
     }
 
-    // get lesson vocab from json file
-    let getVocab = () => {
-        fetch(urlBook1)
-            .then((response) => response.json()) // return json object
-            .then((data) => {
-                book1 = data
-                let noOfLessons = book1[book1.length - 1].L
-                createMenu(noOfLessons, book1, setNextQuestion)
-            })
-            .catch((error) => {
-                console.error("Error:", error)
-            })
-    }
-
     let startMegaQuiz = () => {
+        book = mybookdata()
         min = 0
-        max = book1.length
+        max = book.length
         setNextQuestion()
     }
-
-
 
     let setNextQuestion = () => {
         min = newmin() == undefined ? min : newmin()
@@ -87,7 +73,7 @@
         // Select first ID as answer result
         resultID = outputIDs[0]
         // Update question text 
-        questionText = book1[outputIDs[0]].En
+        questionText = book[outputIDs[0]].En
         queText.innerHTML = questionText
         // Randomise ID order for output
         outputIDs = shuffleArr(outputIDs)
@@ -105,7 +91,7 @@
 
     let createOptions = (value) => {
         var ansOption = document.createElement("p")
-        ansOption.innerHTML = book1[value].Ar
+        ansOption.innerHTML = book[value].Ar
         ansOption.classList.add("optionchoice")
         if (resultID === value) {
             ansOption.id = "ans"
@@ -128,8 +114,8 @@
 
         // self executing function here / same as jquery document ready
         ; (function () {
-            getVocab()
-            setTimeout(startMegaQuiz, 1000)
+            getVocab(bookjson, totalVocab, setNextQuestion)
+            setTimeout(startMegaQuiz, 600)
         })()
 
 </script>
