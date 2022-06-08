@@ -1,17 +1,17 @@
-const urlBook1 = "../book1edit.json"
-queText = document.getElementById("queText")
-optionsContainer = document.getElementById("choices")
-let min, max, questionText
+import createMenu, { newmin, newmax } from "./quizmenu.js"
+const bookjson = "../book1edit.json"
+const queText = document.getElementById("queText")
+const optionsContainer = document.getElementById("choices")
+let min, max, questionText, NoOfAnsOptions, resultID
 let NoOfAnsOptionsToShow = 6,
-  NoOfAnsOptions
-let outputIDs = [],
-  resultID
+  outputIDs = []
+let book, totalVocab
 
 // quickly fire through each question
 document.addEventListener("keypress", function onPress(event) {
   if (event.key === "z") {
     algo(true)
-    newQuestion()
+    setNextQuestion()
   } else if (event.key === "x") {
     console.log(algoarray)
   }
@@ -19,82 +19,59 @@ document.addEventListener("keypress", function onPress(event) {
 
 // get lesson vocab from json file
 let getVocab = () => {
-  fetch(urlBook1)
+  fetch(bookjson)
     .then((response) => response.json()) // return json object
     .then((data) => {
-      book1 = data
-      noOfLessons = book1[book1.length - 1].L
-      createMenu(noOfLessons)
+      book = data
+      let noOfLessons = book[book.length - 1].L
+      createMenu(noOfLessons, book, setNextQuestion)
     })
     .catch((error) => {
       console.error("Error:", error)
     })
 }
 
-lessonsMenu = document.getElementById("lessonsMenu")
-let createMenu = () => {
-  let menuHeader = document.createElement("span")
-  menuHeader.innerText = "Lesson"
-  menuHeader.onclick = function () {
-    startMegaQuiz()
-  }
-  lessonsMenu.appendChild(menuHeader)
-  for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
-    let lsnNo = document.createElement("span")
-    lsnNo.innerHTML = lessonNo
-    lsnNo.classList.add("lessonmenuitem")
-    lsnNo.onclick = function () {
-      algoarray = [] // clear array
-      mostWrongID = undefined
-      filterLesson(lessonNo)
-      // style lesson itmes
-      lessnmenuitems = lessonsMenu.children
-      for (let i = 0; i < lessnmenuitems.length; i++) {
-        let itemmenu = lessnmenuitems[i]
-        itemmenu.style.removeProperty("background-color")
-      }
-      lsnNo.style.backgroundColor = "purple"
-      newQuestion()
-    }
-    lessonsMenu.appendChild(lsnNo)
-  }
-}
-
-let filterLesson = (selectedNo) => {
-  result = book1.filter((obj) => {
-    return obj.L === selectedNo
-  })
-  min = result[0].id
-  max = result.length + min
-}
+// let menuContainer = document.getElementById("menuContainer")
 
 let startMegaQuiz = () => {
   min = 0
-  max = book1.length
-  newQuestion()
+  max = book.length
+  setNextQuestion()
 }
 
-let newQuestion = () => {
+let focusEl = document.createElement("p")
+optionsContainer.insertAdjacentElement("afterEnd", focusEl)
+
+let setNextQuestion = () => {
+  focusEl.innerHTML =
+    mostWrongID != undefined ? "Focus: " + book[mostWrongID].En : ""
+  // console.log("")
+  min = newmin() == undefined ? min : newmin()
+  max = newmax() == undefined ? max : newmax()
   //remove previous options for next selection (reset state)
   while (optionsContainer.hasChildNodes()) {
     optionsContainer.removeChild(optionsContainer.firstChild)
   }
   // show less options if a smaller lesson is chosen
-  vocabAmount = max - min
+  totalVocab = max - min
   NoOfAnsOptions =
-    vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
+    totalVocab < NoOfAnsOptionsToShow ? totalVocab : NoOfAnsOptionsToShow
   // Get new vocab ID
   getRndIDs(min, max)
   // change first ID to most answerd incorrectly
-  if (mostWrongID != undefined && Math.random() < 0.5) {
-    outputIDs[0] = mostWrongID
-    console.log("Focus: " + book1[outputIDs[0]].En)
+  if (mostWrongID != undefined && Math.random() < 0.9) {
+    let idalreadyexist = outputIDs.find((num) => num == mostWrongID)
+    // do not duplicate id
+    if (idalreadyexist == undefined) {
+      outputIDs[0] = mostWrongID
+    }
+    console.log("Focus active: " + book[outputIDs[0]].En)
   }
   // Select first ID as answer result
   resultID = outputIDs[0]
 
   // Update question text
-  questionText = book1[outputIDs[0]].En
+  questionText = book[outputIDs[0]].En
   queText.innerHTML = questionText
   // Randomise ID order for output
   outputIDs = shuffleArr(outputIDs)
@@ -120,8 +97,8 @@ let algo = (iscorrect) => {
   let found = algoarray.find((found) => found.id === resultID)
   if (found == undefined) {
     // console.log("Not found: " + resultID + " Added")
-    correctstart = iscorrect ? 1 : 0
-    wrongstart = iscorrect ? 0 : 1
+    let correctstart = iscorrect ? 1 : 0
+    let wrongstart = iscorrect ? 0 : 1
     let addNewarrItem = {
       id: resultID,
       c: correctstart,
@@ -141,9 +118,10 @@ let algo = (iscorrect) => {
           obj.c = obj.c + 1
           if (Math.random() < 0.8) {
             obj.w = obj.w - 1
-            console.log(book1[obj.id].En + " -1")
+            // console.log(book[obj.id].En + " -1")
           }
         } else obj.w = obj.w + 1
+        // console.log(book[obj.id].En + " w:" + obj.w)
         break
       }
     }
@@ -156,33 +134,46 @@ let algo = (iscorrect) => {
   if (algoarray.length > 5) {
     // console.log(algoarray[0].id)
     mostWrongID = algoarray[0].id
+    console.log("Focus on: " + book[mostWrongID].En)
   }
 
   // // get IDs in order
   // let getIncIDs = () => {
   //   smin = 0
-  //   smax = book1.length
+  //   smax = book.length
   //   // console.log("start:" + smin + " end:" + smax)
   // }
 }
 
 let createOptions = (value) => {
   var ansOption = document.createElement("p")
-  ansOption.innerHTML = book1[value].Ar
+  let badcount = 0
+  ansOption.innerHTML = book[value].Ar
   ansOption.classList.add("optionchoice")
+  ansOption.classList.add("optionchoicehover")
   if (resultID === value) {
     ansOption.id = "ans"
     ansOption.onclick = function () {
       // alert("corect")
-      algo(true)
-      newQuestion()
+      if (badcount > 2) {
+        algo(false)
+      } else {
+        algo(true)
+      }
+      setNextQuestion()
     }
   } else {
     // if wrong answer selected
+    let firstclicked = false
     ansOption.onclick = function () {
-      ansOption.style.backgroundColor = "darkred"
-      setTimeout(newQuestion, 200)
-      algo(false)
+      if (!firstclicked) {
+        firstclicked = true
+        ansOption.style.backgroundColor = "darkred"
+        ansOption.classList.remove("optionchoicehover")
+        // setTimeout(setNextQuestion, 200)
+        // console.log("clicked")
+        algo(false)
+      }
     }
   }
   optionsContainer.appendChild(ansOption)
