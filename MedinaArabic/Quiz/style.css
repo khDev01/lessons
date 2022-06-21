@@ -11,6 +11,7 @@ body {
     background: #262626;
     color: #fff;
     font-family: 'Traditional Arabic', Amiri, Calibri;
+    width: 100vw;
 }
 body.correct {
     --hue: var(--hue-correct);
@@ -111,6 +112,13 @@ section {
 
 /*/**/
 
+.queText {
+    font-size: 2.4em;
+    margin: 0;
+    color: turquoise;
+    text-shadow: 1px 1px 4px rgba(145, 39, 0, 0.742);
+}
+
 .optionchoice {
     border:1px dashed grey; 
     padding: 5px; 
@@ -133,6 +141,7 @@ section {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    width: 90%;
 }
 
 
@@ -181,14 +190,25 @@ main{
     .lessonmenu {
         /* display: flex; */
         display: grid;
-        grid-template-columns: repeat(10, auto);
+        grid-template-columns: repeat(8, auto);
         /* width: 30vw; */
         gap: 2px;
         margin: 1em 0;
         text-align: center;
+        font-size: 1em;
+        /* max-width: 50%; */
         /* height: max-content; */
     }
     .flex{
         display: block;
     }
+    .optionchoice {
+        border:1px dashed grey; 
+        /* padding: 5px;  */
+        font-size: 3rem; 
+        width: fit-content;
+        margin: 0.2rem;
+        cursor: default;
+    }
+    
   }
