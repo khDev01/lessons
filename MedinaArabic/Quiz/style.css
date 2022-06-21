@@ -3,6 +3,7 @@
     --hue-wrong: 0;
     --hue-correct: 145;
 }
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 body {
     --hue: var(--hue-neutral);
