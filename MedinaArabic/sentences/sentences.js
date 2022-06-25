@@ -1,5 +1,6 @@
 // Abreviations: sentence as s, and as wa, question as Q, answer as A, this as hatha
 // Note: single letter words join with next word (no space )
+// TODO:  update randomproperty funct and code to use single json file
 const urlbook = "./sentence.json"
 const objectsjson = "../data/obj.json"
 const book1json = "../book1Complete.json"
@@ -20,6 +21,7 @@ let getVocab = () => {
   fetch(book1json)
     .then((response) => response.json()) // return json object
     .then((data) => {
+      book = data
       booklength = data.length
     })
     .catch((error) => {
@@ -28,15 +30,9 @@ let getVocab = () => {
 }
 // const starters = { This: "\u0647\u064e\u0640\u0670\u0630\u064e\u0627" }
 let starterArr = [
-  // ["This", "\u0647\u0630\u0627"],˙
   ["This", "\u0647\u0630\u0627"],
   ["That", "\u0630\u0644\u0643"],
   ["What", "\u0645\u064e\u0627 "],
-  // ["What", "\u0645\u064e\u0627"],
-  // [
-  //   "What is that?",
-  //   "\u0645\u064e\u0627 \u0630\u064e\u0644\u0650\u0643\u064e\u061f",
-  // ],
   ["and", "\u0648\u064e"],
   ["is", "أ"],
   ["yes", "نعم"],
@@ -102,6 +98,26 @@ String.prototype.replaceLast = function (what, replacement) {
     .join(" ")
 }
 
+var randomProperty = function (obj, isall) {
+  // Only key and val as English and Arabic
+  if (!isall) {
+    // console.log(obj)
+    let keys = Object.keys(obj)
+    randomize = Math.floor(keys.length * Math.random())
+    objectKey = keys[randomize]
+    objectValue = obj[keys[randomize]]
+    keyvalArr = [objectKey, objectValue] // [] allows key to be variable
+    return keyvalArr
+  }
+  // Get all data
+  else {
+    bookrnd = Math.floor(Math.random() * booklength)
+    bookvocab = book[bookrnd]
+    return bookvocab
+    // console.log(bookvocab)
+  }
+}
+
 let createRandomSentence = () => {
   let display = (sentence) => {
     let para = document.createElement("p")
@@ -115,12 +131,16 @@ let createRandomSentence = () => {
     // console.log(sentence)
   }
 
-  let getrndvocab = () => {
-    return randomProperty(objects)[1]
+  let getrndvocab = (isall) => {
+    if (!isall) {
+      // console.log(randomProperty(objects))
+      return randomProperty(objects)[1]
+    } else {
+      // console.log(randomProperty(book, true))
+      return randomProperty(book, true)
+    }
   }
 
-  // thissentence()
-  // thatsentence()
   hatha = starters.get("This")
   that = starters.get("That")
   thisis = thisthat("This")
@@ -143,6 +163,7 @@ let createRandomSentence = () => {
   thisother = thisthat("This")
   thatother = thisthat("That")
   is = starters.get("is")
+
   let Qis = (statement) => {
     return is + statement + questionMark
   }
@@ -181,73 +202,57 @@ let createRandomSentence = () => {
 
   where = starters.get("where")
   wheres = where + " " + alobj + questionMark
-  // book1rnd = Math.floor(Math.random() * booklength)
 
   let whereis = () => {
     wheres = where + " " + alobj + questionMark
   }
 
-  display(thisis)
-  display(thatis)
-  display(thisandthat)
-  linebreak()
+  moredataobj = getrndvocab(true)
+  // display(thisis)
+  // display(thatis)
+  // display(thisandthat)
+  // linebreak()
 
-  display(whatsthis)
-  display(whatsthat)
-  // display(whatsthisandthat)
-  linebreak()
+  // display(whatsthis)
+  // display(whatsthat)
+  // // display(whatsthisandthat)
+  // linebreak()
 
-  display(whosthis)
-  display(whosthat)
-  display(whosthisandthat)
-  linebreak()
+  // display(whosthis)
+  // display(whosthat)
+  // display(whosthisandthat)
+  // linebreak()
 
-  display(isthis)
-  display(yesisthis)
-  display(noisthis)
-  linebreak()
+  // display(isthis)
+  // display(yesisthis)
+  // display(noisthis)
+  // linebreak()
 
-  display(isthat)
-  display(yesisthat)
-  display(noisthat)
-  linebreak()
-  display(rndobj1)
-  display(alobj)
-  linebreak()
-  display(objin)
-  display(objon)
-  display(objto)
-  display(objfrom)
+  // display(isthat)
+  // display(yesisthat)
+  // display(noisthat)
+  // linebreak()
+  // display(rndobj1)
+  // display(alobj)
+  // linebreak()
+  // display(objin)
+  // display(objon)
+  // display(objto)
+  // display(objfrom)
 
   linebreak()
   display(wheres)
 }
 
-// let thissentence = () => {
-//   thisis = hatha
-//   nounobj1 = randomProperty(objects)
-//   // console.log(nounobj1)
-//   nouneng1 = nounobj1[0]
-//   nounarb1 = nounobj1[1]
-//   console.log(thisis + " " + nounarb1)
-// }
-
-// let thatsentence = () => {
-//   thatis = that
-//   nounobj2 = randomProperty(objects)
-//   // console.log(nounobj2)
-//   nouneng2 = nounobj2[0]
-//   nounarb2 = nounobj2[1]
-//   console.log(thatis + " " + nounarb2)
-// }
 rndomnum = Math.floor(Math.random() * 2)
 
 let thisthat = (starter) => {
   start = starters.get(starter)
   nounobj = randomProperty(objects)
-  // console.log(nounobj2)
+  // console.log(nounobj)
   nouneng = nounobj[0]
   nounarb = nounobj[1]
+  // console.log(n)
   // nounarb = nounarb
   //   .replaceAll(fatha, "")
   //   .replaceAll(doma, "")
@@ -260,17 +265,6 @@ let thisthat = (starter) => {
 
   switch (rndomnum) {
     case 1:
-      // console.log("case1")
-      // nounarb = nounarb
-      //   .replaceAll(fatha, "")
-      //   .replaceAll(doma, "")
-      //   .replaceAll(kasra, "")
-      //   .replaceAll(fatha2, "")
-      //   .replaceAll(doma2, "")
-      //   .replaceAll(kasra2, "")
-      //   .replaceAll(sukun, "")
-      //   .replaceAll(shadda, "")
-
       const myStr = nounarb
       // console.log(myStr)
       const lastIndex = myStr.lastIndexOf(doma2)
@@ -310,58 +304,49 @@ let and = () => {
 // continue after research
 //
 
-var randomProperty = function (obj) {
-  let keys = Object.keys(obj)
-  randomize = Math.floor(keys.length * Math.random())
-  objectKey = keys[randomize]
-  objectValue = obj[keys[randomize]]
-  object = [objectKey, objectValue] // [] allows key to be variable
-  return object
-}
-
 setTimeout(() => {
   // console.log(objects)
   createRandomSentence()
 }, 1000)
 
-lessonsMenu = document.getElementById("lessonsMenu")
-let createMenu = () => {
-  let menuHeader = document.createElement("span")
-  menuHeader.innerText = "Lesson"
-  menuHeader.onclick = function () {
-    //
-  }
-  lessonsMenu.appendChild(menuHeader)
-  for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
-    let lsnNo = document.createElement("span")
-    lsnNo.innerHTML = lessonNo
-    lsnNo.classList.add("lessonmenuitem")
-    lsnNo.onclick = function () {
-      filterLesson(lessonNo)
-      // creates(lessonNo)
-      // style lesson itmes
-      lessnmenuitems = lessonsMenu.children
-      for (let i = 0; i < lessnmenuitems.length; i++) {
-        let itemmenu = lessnmenuitems[i]
-        itemmenu.style.removeProperty("background-color")
-      }
-      lsnNo.style.backgroundColor = "purple"
-    }
-    lessonsMenu.appendChild(lsnNo)
-  }
-}
+// lessonsMenu = document.getElementById("lessonsMenu")
+// let createMenu = () => {
+//   let menuHeader = document.createElement("span")
+//   menuHeader.innerText = "Lesson"
+//   menuHeader.onclick = function () {
+//     //
+//   }
+//   lessonsMenu.appendChild(menuHeader)
+//   for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
+//     let lsnNo = document.createElement("span")
+//     lsnNo.innerHTML = lessonNo
+//     lsnNo.classList.add("lessonmenuitem")
+//     lsnNo.onclick = function () {
+//       filterLesson(lessonNo)
+//       // creates(lessonNo)
+//       // style lesson itmes
+//       lessnmenuitems = lessonsMenu.children
+//       for (let i = 0; i < lessnmenuitems.length; i++) {
+//         let itemmenu = lessnmenuitems[i]
+//         itemmenu.style.removeProperty("background-color")
+//       }
+//       lsnNo.style.backgroundColor = "purple"
+//     }
+//     lessonsMenu.appendChild(lsnNo)
+//   }
+// }
 
-let filterLesson = (selectedNo) => {
-  result = book.filter((obj) => {
-    return obj.L === selectedNo
-  })
-  if (selectedNo == 1) {
-    console.log(selectedNo)
-    console.log(result[0].Ar + " " + result[1].Ar)
-  } else {
-    console.log("oops")
-  }
-}
+// let filterLesson = (selectedNo) => {
+//   result = book.filter((obj) => {
+//     return obj.L === selectedNo
+//   })
+//   if (selectedNo == 1) {
+//     console.log(selectedNo)
+//     console.log(result[0].Ar + " " + result[1].Ar)
+//   } else {
+//     console.log("oops")
+//   }
+// }
 
 // let creates = (lessonNo) => {
 
@@ -376,10 +361,10 @@ document.addEventListener("keypress", function onPress(event) {
   }
 })
 
-function swapKeysAndValues(obj) {
-  const swapped = Object.entries(obj).map(([key, value]) => [value, key])
-  return Object.fromEntries(swapped)
-}
+// function swapKeysAndValues(obj) {
+//   const swapped = Object.entries(obj).map(([key, value]) => [value, key])
+//   return Object.fromEntries(swapped)
+// }
 
 // self executing function here / same as jquery document ready
 ;(function () {
