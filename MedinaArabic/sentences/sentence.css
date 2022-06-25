@@ -1,0 +1,33 @@
+:root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+/* html, body {margin: 0; height: 100%; overflow: hidden} */
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    background: #262626;
+    color: #fff;
+    font-family: 'Traditional Arabic', Amiri, Calibri;
+    width: 100vw;
+    font-size: 2.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+p{
+    padding: 0 5px;
+    margin: 4px 4px;
+    border: 1px solid green;
+    width: max-content;
+    height: fit-content;
+    text-shadow: 0 0 4px #393838f9;
+}
+
+.line-break,div {
+    width: 100%;
+  }
