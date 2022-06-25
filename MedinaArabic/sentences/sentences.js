@@ -2,8 +2,30 @@
 // Note: single letter words join with next word (no space )
 const urlbook = "./sentence.json"
 const objectsjson = "../data/obj.json"
+const book1json = "../book1Complete.json"
 let sContainer = document.getElementById("sentenceContainer")
-let result, book, objects
+let result, book, objects, booklength
+
+// get lesson vocab from json file
+let getVocab = () => {
+  fetch(objectsjson)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      objects = data
+      // console.log(objects)
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+  fetch(book1json)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      booklength = data.length
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+}
 // const starters = { This: "\u0647\u064e\u0640\u0670\u0630\u064e\u0627" }
 let starterArr = [
   // ["This", "\u0647\u0630\u0627"],˙
@@ -20,7 +42,7 @@ let starterArr = [
   ["yes", "نعم"],
   ["no", "لا"],
   ["who", "\u0645\u064e\u0646\u0652"],
-  // ["is", "أ"],
+  ["where", "\u0623\u064e\u064a\u0652\u0646\u064e"],
   // ["is", "أ"],
   // ["is", "أ"],
   // ["is", "أ"],
@@ -62,11 +84,13 @@ reyal = "\ufdfc"
 bism = "\ufdfd"
 yes = starters.get("yes") + comma
 no = starters.get("no") + comma
-al = "\u0627\u064e\u0644\u0652"
+al = "\u0627\u0644"
 fe = "\u0641\u0650\u064a"
-on = "\u0639\u064e\u0644\u064e\u0649\u0670"
-to = "\u0625\u0650\u0644\u064e\u0649\u0670"
+on = "\u0639\u064e\u0644\u064e\u0649"
+to = "\u0625\u0650\u0644\u064e\u0649"
 from = "\u0645\u0650\u0646\u0652"
+he = "\u0647\u064f\u0648\u064e"
+she = "\u0647\u0650\u064a\u064e"
 
 String.prototype.replaceLast = function (what, replacement) {
   return this.split(" ")
@@ -140,41 +164,63 @@ let createRandomSentence = () => {
 
   rndobj1 = getrndvocab()
   alobj = al + rndobj1.replaceLast(doma2, doma)
+  objforal = rndobj1.replaceLast(doma2, doma)
 
   let majroor = (prep) => {
-    return prep + " " + alobj
+    majobj = al + objforal.replaceLast(doma, kasra)
+    if (prep == "\u0645\u0650\u0646\u0652") {
+      prep = prep.replace(sukun, fatha)
+      return prep + " " + majobj
+    }
+    return prep + " " + majobj
   }
   objin = majroor(fe)
   objon = majroor(on)
   objfrom = majroor(from)
   objto = majroor(to)
-  // display(thisis)
-  // display(thatis)
-  // display(thisandthat)
-  // linebreak()
 
-  // display(whatsthis)
-  // display(whatsthat)
-  // // display(whatsthisandthat)
-  // linebreak()
+  where = starters.get("where")
+  wheres = where + " " + alobj + questionMark
+  // book1rnd = Math.floor(Math.random() * booklength)
 
-  // display(whosthis)
-  // display(whosthat)
-  // display(whosthisandthat)
-  // linebreak()
+  let whereis = () => {
+    wheres = where + " " + alobj + questionMark
+  }
 
-  // display(isthis)
-  // display(yesisthis)
-  // display(noisthis)
-  // linebreak()
+  display(thisis)
+  display(thatis)
+  display(thisandthat)
+  linebreak()
 
-  // display(isthat)
-  // display(yesisthat)
-  // display(noisthat)
+  display(whatsthis)
+  display(whatsthat)
+  // display(whatsthisandthat)
+  linebreak()
+
+  display(whosthis)
+  display(whosthat)
+  display(whosthisandthat)
+  linebreak()
+
+  display(isthis)
+  display(yesisthis)
+  display(noisthis)
+  linebreak()
+
+  display(isthat)
+  display(yesisthat)
+  display(noisthat)
   linebreak()
   display(rndobj1)
   display(alobj)
   linebreak()
+  display(objin)
+  display(objon)
+  display(objto)
+  display(objfrom)
+
+  linebreak()
+  display(wheres)
 }
 
 // let thissentence = () => {
@@ -264,18 +310,6 @@ let and = () => {
 // continue after research
 //
 
-// get lesson vocab from json file
-let getVocab = () => {
-  fetch(objectsjson)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      objects = data
-      // console.log(objects)
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
-}
 var randomProperty = function (obj) {
   let keys = Object.keys(obj)
   randomize = Math.floor(keys.length * Math.random())
@@ -338,7 +372,7 @@ document.addEventListener("keypress", function onPress(event) {
     rndomnum = Math.floor(Math.random() * 4)
     createRandomSentence()
   } else if (event.key === "x") {
-    console.log(algoarray)
+    console.log(Math.floor(Math.random() * 4))
   }
 })
 
