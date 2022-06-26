@@ -1,34 +1,28 @@
 // Abreviations: sentence as s, and as wa, question as Q, answer as A, this as hatha
 // Note: single letter words join with next word (no space )
-// TODO:  update randomproperty funct and code to use single json file
-const urlbook = "./sentence.json"
-const objectsjson = "../data/obj.json"
+// TODO: use indefinite tense of word to add shadda to alobj?
+// const urlbook = "./sentence.json"
 const book1json = "../book1Complete.json"
 let sContainer = document.getElementById("sentenceContainer")
-let result, book, objects, booklength
+let result, book, booklength //objects
 
-// get lesson vocab from json file
-let getVocab = () => {
-  fetch(objectsjson)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      objects = data
-      // console.log(objects)
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
-  fetch(book1json)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      book = data
-      booklength = data.length
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
-}
-// const starters = { This: "\u0647\u064e\u0640\u0670\u0630\u064e\u0627" }
+let moonLetters = [
+  "ه",
+  "ي",
+  "و",
+  "م",
+  "ك",
+  "ق",
+  "ف",
+  "غ",
+  "ع",
+  "خ",
+  "ح",
+  "ج",
+  "ب",
+  "أ",
+  "إ",
+]
 let starterArr = [
   ["This", "\u0647\u0630\u0627"],
   ["That", "\u0630\u0644\u0643"],
@@ -50,7 +44,6 @@ let starterArr = [
 
 // // Create a Map
 const starters = new Map(starterArr)
-// console.log(starters)
 
 fatha = "\u064e"
 kasra = "\u0650"
@@ -87,7 +80,18 @@ to = "\u0625\u0650\u0644\u064e\u0649"
 from = "\u0645\u0650\u0646\u0652"
 he = "\u0647\u064f\u0648\u064e"
 she = "\u0647\u0650\u064a\u064e"
-
+// function toUnicode(str) {
+//   return str
+//     .split("")
+//     .map(function (value, index, array) {
+//       var temp = value.charCodeAt(0).toString(16).toUpperCase()
+//       if (temp.length > 2) {
+//         return "\\u" + temp
+//       }
+//       return value
+//     })
+//     .join("")
+// }
 String.prototype.replaceLast = function (what, replacement) {
   return this.split(" ")
     .reverse()
@@ -98,24 +102,10 @@ String.prototype.replaceLast = function (what, replacement) {
     .join(" ")
 }
 
-var randomProperty = function (obj, isall) {
-  // Only key and val as English and Arabic
-  if (!isall) {
-    // console.log(obj)
-    let keys = Object.keys(obj)
-    randomize = Math.floor(keys.length * Math.random())
-    objectKey = keys[randomize]
-    objectValue = obj[keys[randomize]]
-    keyvalArr = [objectKey, objectValue] // [] allows key to be variable
-    return keyvalArr
-  }
-  // Get all data
-  else {
-    bookrnd = Math.floor(Math.random() * booklength)
-    bookvocab = book[bookrnd]
-    return bookvocab
-    // console.log(bookvocab)
-  }
+var randomProperty = function (obj) {
+  bookrnd = Math.floor(Math.random() * booklength)
+  bookvocab = obj[bookrnd]
+  return bookvocab
 }
 
 let createRandomSentence = () => {
@@ -131,14 +121,8 @@ let createRandomSentence = () => {
     // console.log(sentence)
   }
 
-  let getrndvocab = (isall) => {
-    if (!isall) {
-      // console.log(randomProperty(objects))
-      return randomProperty(objects)[1]
-    } else {
-      // console.log(randomProperty(book, true))
-      return randomProperty(book, true)
-    }
+  let getrndvocab = () => {
+    return randomProperty(book)
   }
 
   hatha = starters.get("This")
@@ -184,8 +168,9 @@ let createRandomSentence = () => {
   isthisandthat = is + " " + thisandthat + questionMark
 
   rndobj1 = getrndvocab()
-  alobj = al + rndobj1.replaceLast(doma2, doma)
-  objforal = rndobj1.replaceLast(doma2, doma)
+  rndobj1Ar = rndobj1.Ar
+  alobj = al + rndobj1Ar.replaceLast(doma2, doma)
+  objforal = rndobj1Ar.replaceLast(doma2, doma)
 
   let majroor = (prep) => {
     majobj = al + objforal.replaceLast(doma, kasra)
@@ -202,96 +187,80 @@ let createRandomSentence = () => {
 
   where = starters.get("where")
   wheres = where + " " + alobj + questionMark
+  rndobj1pronoun = rndobj1.M ? he : she
+  whereAns = rndobj1pronoun + " " + majroor(on)
+  var a = alobj
+  var b = shadda
+  var position = 3
+  let alobjshadornot = alobj
 
-  let whereis = () => {
-    wheres = where + " " + alobj + questionMark
+  letterAfterAl = a.charAt(2)
+  if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
+    alobjshadornot = [a.slice(0, position), b, a.slice(position)].join("")
   }
 
-  moredataobj = getrndvocab(true)
-  // display(thisis)
-  // display(thatis)
-  // display(thisandthat)
-  // linebreak()
+  // let whereis = () => {
+  //   wheres = where + " " + alobj + questionMark
+  // }
 
-  // display(whatsthis)
-  // display(whatsthat)
-  // // display(whatsthisandthat)
-  // linebreak()
+  display(thisis)
+  display(thatis)
+  display(thisandthat)
+  linebreak()
 
-  // display(whosthis)
-  // display(whosthat)
-  // display(whosthisandthat)
-  // linebreak()
+  display(whatsthis)
+  display(whatsthat)
+  // display(whatsthisandthat)
+  linebreak()
 
-  // display(isthis)
-  // display(yesisthis)
-  // display(noisthis)
-  // linebreak()
+  display(whosthis)
+  display(whosthat)
+  display(whosthisandthat)
+  linebreak()
 
-  // display(isthat)
-  // display(yesisthat)
-  // display(noisthat)
-  // linebreak()
-  // display(rndobj1)
-  // display(alobj)
-  // linebreak()
-  // display(objin)
-  // display(objon)
-  // display(objto)
-  // display(objfrom)
+  display(isthis)
+  display(yesisthis)
+  display(noisthis)
+  linebreak()
+
+  display(isthat)
+  display(yesisthat)
+  display(noisthat)
+  linebreak()
+  display(rndobj1Ar)
+  display(alobj)
+  linebreak()
+  display(objin)
+  display(objon)
+  display(objto)
+  display(objfrom)
 
   linebreak()
   display(wheres)
+  display(whereAns)
+  linebreak()
+  display(alobjshadornot)
 }
 
-rndomnum = Math.floor(Math.random() * 2)
-
+let removeharakat = (str) => {
+  return str
+    .replaceAll(fatha, "")
+    .replaceAll(doma, "")
+    .replaceAll(kasra, "")
+    .replaceAll(fatha2, "")
+    .replaceAll(doma2, "")
+    .replaceAll(kasra2, "")
+    .replaceAll(sukun, "")
+    .replaceAll(shadda, "")
+}
 let thisthat = (starter) => {
   start = starters.get(starter)
-  nounobj = randomProperty(objects)
+  nounobj = randomProperty(book)
   // console.log(nounobj)
-  nouneng = nounobj[0]
-  nounarb = nounobj[1]
-  // console.log(n)
-  // nounarb = nounarb
-  //   .replaceAll(fatha, "")
-  //   .replaceAll(doma, "")
-  //   .replaceAll(kasra, "")
-  //   .replaceAll(fatha2, "")
-  //   .replaceAll(doma2, "")
-  //   .replaceAll(kasra2, "")
-  //   .replaceAll(sukun, "")
-  //   .replaceAll(shadda, "")
-
-  switch (rndomnum) {
-    case 1:
-      const myStr = nounarb
-      // console.log(myStr)
-      const lastIndex = myStr.lastIndexOf(doma2)
-      const replacement = doma
-      const replaced =
-        myStr.substring(0, lastIndex) +
-        replacement +
-        myStr.substring(lastIndex + 1)
-      // console.log(replaced)
-      break
-
-    case 2:
-      // console.log("case2")
-      nounarb = nounarb.replaceLast(doma2, doma)
-
-      break
-    default:
-      // console.log("defuala")
-      break
-  }
+  nouneng = nounobj.En
+  nounarb = nounobj.Ar
 
   sent = start + " " + nounarb
-  // console.log(sent)
-  // wa = starters.get("and")
-  // console.log(start + " " + nounarb2 + " " + wa)
-  // sent2 = start + " " + nounarb2 + " " + and() +
-
   return sent
 }
 
@@ -365,6 +334,19 @@ document.addEventListener("keypress", function onPress(event) {
 //   const swapped = Object.entries(obj).map(([key, value]) => [value, key])
 //   return Object.fromEntries(swapped)
 // }
+
+// get lesson vocab from json file
+let getVocab = () => {
+  fetch(book1json)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      book = data
+      booklength = data.length
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+}
 
 // self executing function here / same as jquery document ready
 ;(function () {
