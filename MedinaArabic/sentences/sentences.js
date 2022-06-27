@@ -1,7 +1,6 @@
 // Abreviations: sentence as s, and as wa, question as Q, answer as A, this as hatha
 // Note: single letter words join with next word (no space )
 // TODO: use indefinite tense of word to add shadda to alobj?
-// TODO: Seperate out into each lesson;
 // const urlbook = "./sentence.json"
 const book1json = "../book1Complete.json"
 const nounobjects = "../data/obj.json"
@@ -10,43 +9,11 @@ let result, book, booklength //objects
 let keysArr = []
 // get lesson vocab from json file
 let getVocab = () => {
-  fetch(nounobjects)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      for (const key in data) {
-        keysArr.push(key)
-      }
-      // console.log(keysArr)
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
   fetch(book1json)
     .then((response) => response.json()) // return json object
     .then((data) => {
       book = data
       booklength = data.length
-      let newArr = book
-      keysArr.forEach((el) => {
-        console.log(el)
-        newArr = newArr.map((obj) => {
-          if (obj.En === el) {
-            console.log(obj.En)
-            return { ...obj, T: "NounObj" }
-          }
-          return obj
-        })
-      })
-      // console.log(keysArr)
-
-      console.log(newArr)
-      // keysArr.forEach((element) => {
-      //   console.log(keysArr.length)
-      // })
-
-      // book.forEach((element) => {
-      //   console.log(element.En)
-      // })
     })
     .catch((error) => {
       console.error("Error:", error)
