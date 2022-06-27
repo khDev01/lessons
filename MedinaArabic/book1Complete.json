@@ -1,320 +1,1892 @@
 [
-  { "En": "bed", "Ar": "سَرِيْرٌ", "M": true },
-  { "En": "book", "Ar": "كِتابٌ", "M": true },
-  { "En": "boy", "Ar": "وَلَدٌ", "M": true },
-  { "En": "camel", "Ar": "جَمَلٌ", "M": true },
-  { "En": "cat", "Ar": "قِطٌّ", "M": true },
-  { "En": "chair", "Ar": "كُرْسِيٌّ", "M": true },
-  { "En": "desk", "Ar": "مَكْتَبٌ", "M": true },
-  { "En": "doctor", "Ar": "طَبِيْبٌ", "M": true },
-  { "En": "dog", "Ar": "كَلْبٌ", "M": true },
-  { "En": "donkey", "Ar": "حِمَارٌ", "M": true },
-  { "En": "door", "Ar": "بَابٌ", "M": true },
-  { "En": "horse", "Ar": "حِصَانٌ", "M": true },
-  { "En": "house", "Ar": "بَيْتٌ", "M": true },
-  { "En": "handkerchief", "Ar": "مِنْدِيْلٌ", "M": true },
-  { "En": "key ", "Ar": "مِفْتَاحٌ", "M": true },
-  { "En": "man", "Ar": "رَجُلٌ", "M": true },
-  { "En": "masjid", "Ar": "مَسْجِدٌ", "M": true },
-  { "En": "merchant", "Ar": "تَاجِرٌ", "M": true },
-  { "En": "pen", "Ar": "قَلَمٌ", "M": true },
-  { "En": "rooster", "Ar": "دِيْكٌ", "M": true },
-  { "En": "shirt", "Ar": "قَمِيْصٌ", "M": true },
-  { "En": "star", "Ar": "نَجْمٌ", "M": true },
-  { "En": "student", "Ar": "طَالِبٌ", "M": true },
-  { "En": "teacher", "Ar": "مُدَرِّسٌ", "M": true },
-  { "En": "imam", "Ar": "إِمَامٌ", "M": true },
-  { "En": "milk", "Ar": "لَبَنٌ", "M": true },
-  { "En": "stone", "Ar": "حَجَرٌ", "M": true },
-  { "En": "sugar", "Ar": "سُكَّرٌ", "M": true },
-  { "En": "apple", "Ar": "تُفَّاحٌ", "M": true },
-  { "En": "beautiful", "Ar": "جَمِيْلٌ", "M": true },
-  { "En": "big", "Ar": "كَبِيْرٌ", "M": true },
-  { "En": "clean", "Ar": "نَظِيْفٌ", "M": true },
-  { "En": "cold", "Ar": "بَارِدٌ", "M": true },
-  { "En": "dirty", "Ar": "وَسِخٌ", "M": true },
-  { "En": "far away", "Ar": "بَعِيْدٌ", "M": true },
-  { "En": "heavy", "Ar": "ثَقِيْلٌ", "M": true },
-  { "En": "hot", "Ar": "حَارٌّ", "M": true },
-  { "En": "light", "Ar": "خَفِيْفٌ", "M": true },
-  { "En": "near", "Ar": "قَرِيْبٌ", "M": true },
-  { "En": "new", "Ar": "جَدِيْدٌ", "M": true },
-  { "En": "old", "Ar": "قَدِيْمٌ", "M": true },
-  { "En": "paper", "Ar": "وَرَقٌ", "M": true },
-  { "En": "poor", "Ar": "فَقِيْرٌ", "M": true },
-  { "En": "rich", "Ar": "غَنِيٌّ", "M": true },
-  { "En": "shop", "Ar": "دُكَّانٌ", "M": true },
-  { "En": "short", "Ar": "قَصِيْرٌ", "M": true },
-  { "En": "sick", "Ar": "مَرِيْضٌ", "M": true },
-  { "En": "sitting", "Ar": "جَالِسٌ", "M": true },
-  { "En": "small", "Ar": "صَغِيْرٌ", "M": true },
-  { "En": "standing", "Ar": "وَاقِفٌ", "M": true },
-  { "En": "sweet", "Ar": "حُلْوٌ", "M": true },
-  { "En": "tall", "Ar": "طَوِيْلٌ", "M": true },
-  { "En": "water", "Ar": "مَاءٌ", "M": true },
-  { "En": "bathroom", "Ar": "حَمَّامٌ", "M": true },
-  { "En": "China", "Ar": "الصِّيْنُ", "M": true },
-  { "En": "classroom", "Ar": "فَصْلٌ", "M": true },
-  { "En": "from", "Ar": "مِنْ", "M": true },
-  { "En": "headmaster", "Ar": "مُدِيْرٌ", "M": true },
-  { "En": "in", "Ar": "فِيْ", "M": true },
-  { "En": "India", "Ar": "الهِنْدُ", "M": true },
-  { "En": "Japan", "Ar": "اليَابَانُ", "M": true },
-  { "En": "kitchen", "Ar": "مَطْبَخٌ", "M": true },
-  { "En": "market", "Ar": "سُوْقٌ", "M": true },
-  { "En": "on", "Ar": "عَلَى", "M": true },
-  { "En": "room", "Ar": "غُرْفَةٌ", "M": true },
-  { "En": "school", "Ar": "مَدْرَسَةٌ", "M": true },
-  { "En": "sky", "Ar": "السَّمَاءُ", "M": true },
-  { "En": "The Philippines", "Ar": "الفِلِبِيْنُ", "M": true },
-  { "En": "to", "Ar": "إِلَى", "M": true },
-  { "En": "toilet", "Ar": "مِرْحَاضٌ", "M": true },
-  { "En": "university", "Ar": "جَامِعَةٌ", "M": true },
-  { "En": "where", "Ar": "أَيْنَ", "M": true },
-  { "En": "bag, case", "Ar": "حَقِيْبَةٌ", "M": false },
-  { "En": "car", "Ar": "سَيَّارَةٌ", "M": false },
-  { "En": "closed, shut", "Ar": "مُغْلَقٌ", "M": true },
-  { "En": "daughter, girl", "Ar": "بِنْتٌ", "M": false },
-  { "En": "here", "Ar": "هُنَا", "M": true },
-  { "En": "Ka'bah (the)", "Ar": "الكَعْبَةُ", "M": true },
-  { "En": "maternal uncle", "Ar": "خَالٌ", "M": true },
-  { "En": "messenger", "Ar": "رَسُوْلٌ", "M": true },
-  { "En": "name", "Ar": "اِسْمٌ", "M": true },
-  { "En": "paternal uncle", "Ar": "عَمٌّ", "M": true },
-  { "En": "son", "Ar": "اِبْنٌ", "M": true },
-  { "En": "street", "Ar": "شَارِعٌ", "M": true },
-  { "En": "there", "Ar": "هُنَاكَ", "M": true },
-  { "En": "under, beneath", "Ar": "تَحْتَ", "M": true },
-  { "En": "bicycle", "Ar": "دَرَّاجَةٌ", "M": false },
-  { "En": "coffee", "Ar": "قَهْوَةٌ", "M": false },
-  { "En": "pot (f)", "Ar": "قِدْرٌ", "M": false },
-  { "En": "cow", "Ar": "بَقَرَةٌ", "M": false },
-  { "En": "ear", "Ar": "أُذُنٌ", "M": false },
-  { "En": "east", "Ar": "شَرْقٌ", "M": true },
-  { "En": "eye", "Ar": "عَيْنٌ", "M": false },
-  { "En": "face", "Ar": "وَجْهٌ", "M": true },
-  { "En": "farmer", "Ar": "فَلاَّحٌ", "M": true },
-  { "En": "fast", "Ar": "سَرِيْعٌ", "M": true },
-  { "En": "father", "Ar": "أَبٌ", "M": true },
-  { "En": "fridge", "Ar": "ثَلاَّجَةٌ", "M": false },
-  { "En": "hand ", "Ar": "يَدٌ", "M": false },
-  { "En": "head", "Ar": "رَأْسٌ", "M": true },
-  { "En": "iron (for ironing)", "Ar": "مِكْوَاةٌ", "M": false },
-  { "En": "leg", "Ar": "رِجْلٌ", "M": false },
-  { "En": "mother", "Ar": "أُمٌّ", "M": false },
-  { "En": "mouth", "Ar": "فَمٌ", "M": true },
-  { "En": "nose", "Ar": "أَنْفٌ", "M": true },
-  { "En": "spoon", "Ar": "مِلْعَقَةٌ", "M": false },
-  { "En": "tea", "Ar": "شَايٌ", "M": false },
-  { "En": "west", "Ar": "مَغْرِبٌ", "M": true },
-  { "En": "window", "Ar": "نَافِذَةٌ", "M": false },
-  { "En": "duck", "Ar": "بَطَّةٌ", "M": false },
-  { "En": "egg", "Ar": "بَيْضَةٌ", "M": false },
-  { "En": "hen", "Ar": "دَجَاجَةٌ", "M": false },
-  { "En": "mu'adhdhin", "Ar": "مُؤَذِّنٌ", "M": true },
-  { "En": "nurse", "Ar": "مُمَرِّضَةٌ", "M": false },
-  { "En": "she-camel", "Ar": "نَاقَةٌ", "M": false },
-  { "En": "America", "Ar": "أَمْرِيْكَا", "M": true },
-  { "En": "England", "Ar": "إِنْكَلْتَرَا", "M": true },
-  { "En": "Germany", "Ar": "أَلْمَانِيَا", "M": true },
-  { "En": "hospital", "Ar": "مُسْتَشْفَى", "M": true },
-  { "En": "Iraq", "Ar": "العِرَاقُ", "M": true },
-  { "En": "knife", "Ar": "سِكِّيْنٌ", "M": true },
-  { "En": "Switzerland", "Ar": "سُوِيْسَرا", "M": true },
-  { "En": "arabic", "Ar": "عَرَبِيَّةٌ", "M": true },
-  { "En": "bird", "Ar": "طَائِرٌ", "M": true },
-  { "En": "Cairo", "Ar": "القَاهِرَةُ", "M": true },
-  { "En": "city", "Ar": "مَدِيْنَةٌ", "M": true },
-  { "En": "clinic, small hospital", "Ar": "مُستَوْصَفٌ", "M": true },
-  { "En": "cup", "Ar": "كُوْبٌ", "M": true },
-  { "En": "difficult", "Ar": "صَعْبٌ", "M": true },
-  { "En": "easy", "Ar": "سَهْلٌ", "M": true },
-  { "En": "English (language)", "Ar": "الإِنْكِلِيْزِيَّةُ", "M": true },
-  { "En": "famous", "Ar": "شَهِيْرٌ", "M": true },
-  { "En": "fan", "Ar": "مِرْوَحَةٌ", "M": true },
-  { "En": "fruit", "Ar": "فَاكِهَةٌ", "M": true },
-  { "En": "hardworking", "Ar": "مُجْتَهِدٌ", "M": true },
-  { "En": "Indonesia", "Ar": "إِنْدُوْنِيْسِيَا", "M": true },
-  { "En": "Kuwait", "Ar": "الكُوَيْتُ", "M": true },
-  { "En": "language", "Ar": "لُغَةٌ", "M": true },
-  { "En": "library", "Ar": "مَكْتَبَةٌ", "M": true },
-  { "En": "minister", "Ar": "وَزِيْرٌ", "M": true },
-  { "En": "now, just now", "Ar": "الآنَ", "M": true },
-  { "En": "secondary (the)", "Ar": "الثَّانَوِيَّةُ", "M": true },
-  { "En": "sparrow", "Ar": "عُصْفُوْرٌ", "M": true },
-  { "En": "today", "Ar": "اليَوْمَ", "M": true },
-  { "En": "why", "Ar": "لِمَاذَا", "M": true },
-  { "En": "child", "Ar": "طِفْلٌ", "M": true },
-  { "En": "colleague, class-mate", "Ar": "زَمِيْلٌ", "M": true },
-  { "En": "husband", "Ar": "زَوْجٌ", "M": true },
-  { "En": "one", "Ar": "وَاحِدٌ", "M": true },
-  { "En": "young man", "Ar": "فَتًى", "M": true },
-  { "En": "I love, I like", "Ar": "أُحِبُّ", "M": true },
-  { "En": "after", "Ar": "بَعْدَ", "M": true },
-  { "En": "fathers", "Ar": "آبَاءٌ", "M": true },
-  { "En": "how are you? How do you do?", "Ar": "كَيْفَ حَالُكَ", "M": true },
-  { "En": "I am fine", "Ar": "أَنَا بِخَيْرٍ", "M": true },
-  { "En": "inspector", "Ar": "مُفَتِّشٌ", "M": true },
+  {
+    "En": "bed",
+    "Ar": "سَرِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "book",
+    "Ar": "كِتابٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "boy",
+    "Ar": "وَلَدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "camel",
+    "Ar": "جَمَلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "cat",
+    "Ar": "قِطٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "chair",
+    "Ar": "كُرْسِيٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "desk",
+    "Ar": "مَكْتَبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "doctor",
+    "Ar": "طَبِيْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "dog",
+    "Ar": "كَلْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "donkey",
+    "Ar": "حِمَارٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "door",
+    "Ar": "بَابٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "horse",
+    "Ar": "حِصَانٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "house",
+    "Ar": "بَيْتٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "handkerchief",
+    "Ar": "مِنْدِيْلٌ",
+    "M": true,
+    "Pl": "مَنَادِيْلُ",
+    "T": "NounObj"
+  },
+  {
+    "En": "key ",
+    "Ar": "مِفْتَاحٌ",
+    "M": true,
+    "Pl": "مَفَاتِيْحُ",
+    "T": "NounObj"
+  },
+  {
+    "En": "man",
+    "Ar": "رَجُلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "masjid",
+    "Ar": "مَسْجِدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "merchant",
+    "Ar": "تَاجِرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "pen",
+    "Ar": "قَلَمٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "rooster",
+    "Ar": "دِيْكٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "shirt",
+    "Ar": "قَمِيْصٌ",
+    "M": true,
+    "Pl": "قُمْصَانٌ",
+    "T": "NounObj"
+  },
+  {
+    "En": "star",
+    "Ar": "نَجْمٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "student",
+    "Ar": "طَالِبٌ",
+    "M": true,
+    "Pl": "طُلاَّبٌ",
+    "T": "obj"
+  },
+  {
+    "En": "teacher",
+    "Ar": "مُدَرِّسٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "imam",
+    "Ar": "إِمَامٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "milk",
+    "Ar": "لَبَنٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "stone",
+    "Ar": "حَجَرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "sugar",
+    "Ar": "سُكَّرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "apple",
+    "Ar": "تُفَّاحٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "beautiful",
+    "Ar": "جَمِيْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "big",
+    "Ar": "كَبِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "clean",
+    "Ar": "نَظِيْفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "cold",
+    "Ar": "بَارِدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "dirty",
+    "Ar": "وَسِخٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "far away",
+    "Ar": "بَعِيْدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "heavy",
+    "Ar": "ثَقِيْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "hot",
+    "Ar": "حَارٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "light",
+    "Ar": "خَفِيْفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "near",
+    "Ar": "قَرِيْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "new",
+    "Ar": "جَدِيْدٌ",
+    "M": true,
+    "Pl": "جُدُدٌ",
+    "T": "obj"
+  },
+  {
+    "En": "old",
+    "Ar": "قَدِيْمٌ",
+    "M": true,
+    "Pl": "قُدَامَى",
+    "T": "obj"
+  },
+  {
+    "En": "paper",
+    "Ar": "وَرَقٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "poor",
+    "Ar": "فَقِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "rich",
+    "Ar": "غَنِيٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "shop",
+    "Ar": "دُكَّانٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "short",
+    "Ar": "قَصِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "sick",
+    "Ar": "مَرِيْضٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "sitting",
+    "Ar": "جَالِسٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "small",
+    "Ar": "صَغِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "standing",
+    "Ar": "وَاقِفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "sweet",
+    "Ar": "حُلْوٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "tall",
+    "Ar": "طَوِيْلٌ",
+    "M": true,
+    "Pl": "طِوَالٌ",
+    "T": "obj"
+  },
+  {
+    "En": "water",
+    "Ar": "مَاءٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "bathroom",
+    "Ar": "حَمَّامٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "China",
+    "Ar": "الصِّيْنُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "classroom",
+    "Ar": "فَصْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "from",
+    "Ar": "مِنْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "headmaster",
+    "Ar": "مُدِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "in",
+    "Ar": "فِيْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "India",
+    "Ar": "الهِنْدُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Japan",
+    "Ar": "اليَابَانُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "kitchen",
+    "Ar": "مَطْبَخٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "market",
+    "Ar": "سُوْقٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "on",
+    "Ar": "عَلَى",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "room",
+    "Ar": "غُرْفَةٌ",
+    "M": true,
+    "Pl": "غُرَفٌ",
+    "T": "NounObj"
+  },
+  {
+    "En": "school",
+    "Ar": "مَدْرَسَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "sky",
+    "Ar": "السَّمَاءُ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "The Philippines",
+    "Ar": "الفِلِبِيْنُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "to",
+    "Ar": "إِلَى",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "toilet",
+    "Ar": "مِرْحَاضٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "university",
+    "Ar": "جَامِعَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "where",
+    "Ar": "أَيْنَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "bag, case",
+    "Ar": "حَقِيْبَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "car",
+    "Ar": "سَيَّارَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "closed, shut",
+    "Ar": "مُغْلَقٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "daughter, girl",
+    "Ar": "بِنْتٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "here",
+    "Ar": "هُنَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Ka'bah (the)",
+    "Ar": "الكَعْبَةُ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "maternal uncle",
+    "Ar": "خَالٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "messenger",
+    "Ar": "رَسُوْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "name",
+    "Ar": "اِسْمٌ",
+    "M": true,
+    "Pl": "أَسْمَاءٌ",
+    "T": "obj"
+  },
+  {
+    "En": "paternal uncle",
+    "Ar": "عَمٌّ",
+    "M": true,
+    "Pl": "أَعْمَامٌ",
+    "T": "obj"
+  },
+  {
+    "En": "son",
+    "Ar": "اِبْنٌ",
+    "M": true,
+    "Pl": "أَبْنَاءٌ",
+    "T": "obj"
+  },
+  {
+    "En": "street",
+    "Ar": "شَارِعٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "there",
+    "Ar": "هُنَاكَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "under, beneath",
+    "Ar": "تَحْتَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "bicycle",
+    "Ar": "دَرَّاجَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "coffee",
+    "Ar": "قَهْوَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "pot",
+    "Ar": "قِدْرٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "cow",
+    "Ar": "بَقَرَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "ear",
+    "Ar": "أُذُنٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "east",
+    "Ar": "شَرْقٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "eye",
+    "Ar": "عَيْنٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "face",
+    "Ar": "وَجْهٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "farmer",
+    "Ar": "فَلاَّحٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "fast",
+    "Ar": "سَرِيْعٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "father",
+    "Ar": "أَبٌ",
+    "M": true,
+    "Pl": "آبَاءٌ",
+    "T": "obj"
+  },
+  {
+    "En": "fridge",
+    "Ar": "ثَلاَّجَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "hand ",
+    "Ar": "يَدٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "head",
+    "Ar": "رَأْسٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "iron (for ironing)",
+    "Ar": "مِكْوَاةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "leg",
+    "Ar": "رِجْلٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "mother",
+    "Ar": "أُمٌّ",
+    "M": false,
+    "Pl": "أُمَّهَاتٌ",
+    "T": "obj"
+  },
+  {
+    "En": "mouth",
+    "Ar": "فَمٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "nose",
+    "Ar": "أَنْفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "spoon",
+    "Ar": "مِلْعَقَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "tea",
+    "Ar": "شَايٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "west",
+    "Ar": "مَغْرِبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "window",
+    "Ar": "نَافِذَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "duck",
+    "Ar": "بَطَّةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "egg",
+    "Ar": "بَيْضَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "hen",
+    "Ar": "دَجَاجَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "mu'adhdhin",
+    "Ar": "مُؤَذِّنٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "nurse",
+    "Ar": "مُمَرِّضَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "she-camel",
+    "Ar": "نَاقَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "America",
+    "Ar": "أَمْرِيْكَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "England",
+    "Ar": "إِنْكَلْتَرَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Germany",
+    "Ar": "أَلْمَانِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "hospital",
+    "Ar": "مُسْتَشْفَى",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "Iraq",
+    "Ar": "العِرَاقُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "knife",
+    "Ar": "سِكِّيْنٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "Switzerland",
+    "Ar": "سُوِيْسَرا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "arabic",
+    "Ar": "عَرَبِيَّةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "bird",
+    "Ar": "طَائِرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Cairo",
+    "Ar": "القَاهِرَةُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "city",
+    "Ar": "مَدِيْنَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "clinic, small hospital",
+    "Ar": "مُستَوْصَفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "cup",
+    "Ar": "كُوْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "difficult",
+    "Ar": "صَعْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "easy",
+    "Ar": "سَهْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "English (language)",
+    "Ar": "الإِنْكِلِيْزِيَّةُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "famous",
+    "Ar": "شَهِيْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "fan",
+    "Ar": "مِرْوَحَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "fruit",
+    "Ar": "فَاكِهَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "hardworking",
+    "Ar": "مُجْتَهِدٌ",
+    "M": true,
+    "Pl": "مُجْتَهِدُوْنَ",
+    "T": "obj"
+  },
+  {
+    "En": "Indonesia",
+    "Ar": "إِنْدُوْنِيْسِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Kuwait",
+    "Ar": "الكُوَيْتُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "language",
+    "Ar": "لُغَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "library",
+    "Ar": "مَكْتَبَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "minister",
+    "Ar": "وَزِيْرٌ",
+    "M": true,
+    "Pl": "وُزَرَاءُ",
+    "T": "obj"
+  },
+  {
+    "En": "now, just now",
+    "Ar": "الآنَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "secondary (the)",
+    "Ar": "الثَّانَوِيَّةُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "sparrow",
+    "Ar": "عُصْفُوْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "today",
+    "Ar": "اليَوْمَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "why",
+    "Ar": "لِمَاذَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "child",
+    "Ar": "طِفْلٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "colleague, class-mate",
+    "Ar": "زَمِيْلٌ",
+    "M": true,
+    "Pl": "زُمَلاَءُ",
+    "T": "obj"
+  },
+  {
+    "En": "husband",
+    "Ar": "زَوْجٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "one",
+    "Ar": "وَاحِدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "young man",
+    "Ar": "فَتًى",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "I love, I like",
+    "Ar": "أُحِبُّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "after",
+    "Ar": "بَعْدَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "how are you? How do you do?",
+    "Ar": "كَيْفَ حَالُكَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "I am fine",
+    "Ar": "أَنَا بِخَيْرٍ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "inspector",
+    "Ar": "مُفَتِّشٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
   {
     "En": "Kingdom of Saudi Arabia",
     "Ar": "المَمْلَكَةُ الْعَرَبِيَّةُ السَّعُوْدِيَّةُ",
-    "M": true
+    "M": true,
+    "Pl": "",
+    "T": "obj"
   },
-  { "En": "madam", "Ar": "يَا سيِّدَتِي", "M": false },
-  { "En": "Malaysia", "Ar": "مَالِيْزِيَا", "M": true },
-  { "En": "maternal aunt", "Ar": "خَالَةٌ", "M": false },
-  { "En": "maternity hospital", "Ar": "مُسْتَشْفَى الوِلاَدَةِ", "M": false },
-  { "En": "middle school", "Ar": "المَدْرَسَةُ الْمُتَوَسِّطَةُ", "M": false },
-  { "En": "ministers", "Ar": "وُزَرَاءُ", "M": true },
-  { "En": "mothers", "Ar": "أُمَّهَاتٌ", "M": false },
-  { "En": "notebook", "Ar": "دَفْتَرٌ", "M": true },
-  { "En": "paternal aunt", "Ar": "عَمَّةٌ", "M": true },
-  { "En": "scholar", "Ar": "عَالِمٌ", "M": true },
-  { "En": "scholars", "Ar": "عُلَمَاءُ", "M": true },
-  { "En": "sir", "Ar": "سيِّدي", "M": true },
-  { "En": "strong", "Ar": "قَوِيٌّ", "M": true },
-  { "En": "strong (p)", "Ar": "أَقْوِيَاءُ", "M": true },
-  { "En": "Syria", "Ar": "سُوْرِيَا", "M": true },
-  { "En": "tree", "Ar": "شَجَرَةٌ", "M": false },
-  { "En": "weak", "Ar": "ضَعِيْفٌ", "M": true },
-  { "En": "weak (p)", "Ar": "ضِعَافٌ", "M": true },
-  { "En": "young lady", "Ar": "فَتَاةٌ", "M": false },
-  { "En": "class-mates", "Ar": "زُمَلاَءُ", "M": true },
-  { "En": "field", "Ar": "حَقْلٌ", "M": true },
-  { "En": "fields", "Ar": "حُقُوْلٌ", "M": true },
-  { "En": "friend", "Ar": "صَدِيْقٌ", "M": true },
-  { "En": "friends", "Ar": "أَصْدِقَاءُ", "M": true },
-  { "En": "guest", "Ar": "ضَيْفٌ", "M": true },
-  { "En": "guests", "Ar": "ضُيُوْفٌ", "M": true },
-  { "En": "hardworking (p)", "Ar": "مُجْتَهِدُوْنَ", "M": true },
-  { "En": "professor (f)", "Ar": "أُسْتَاذَةٌ", "M": true },
-  { "En": "men", "Ar": "رِجَالٌ", "M": true },
-  { "En": "names", "Ar": "أَسْمَاءٌ", "M": true },
-  { "En": "new (p)", "Ar": "جُدُدٌ", "M": true },
-  { "En": "old man, learned man", "Ar": "شَيْخٌ", "M": true },
-  { "En": "old men, learned men", "Ar": "شُيُوْخٌ", "M": true },
-  { "En": "people", "Ar": "النَّاسُ", "M": true },
-  { "En": "pilgrim", "Ar": "حَاجٌّ", "M": true },
-  { "En": "pilgrims", "Ar": "حُجَّاجٌ", "M": true },
-  { "En": "restaurant, mess", "Ar": "مَطْعَمٌ", "M": true },
-  { "En": "short", "Ar": "قِصَارٌ", "M": true },
-  { "En": "sons", "Ar": "أَبْنَاءٌ", "M": true },
-  { "En": "students", "Ar": "طُلاَّبٌ", "M": true },
-  { "En": "tall (p)", "Ar": "طِوَالٌ", "M": true },
-  { "En": "village", "Ar": "قَرْيَةٌ", "M": true },
-  { "En": "wife", "Ar": "زَوْجَةٌ", "M": false },
-  { "En": "women", "Ar": "نِسَاءٌ", "M": false },
-  { "En": "women", "Ar": "مَرْآةٌ", "M": false },
-  { "En": "young men", "Ar": "فِتْيَةٌ", "M": true },
-  { "En": "airport", "Ar": "مَطَارٌ", "M": true },
-  { "En": "brother", "Ar": "أَخٌ", "M": true },
-  { "En": "brothers", "Ar": "إِخْوَةٌ", "M": true },
-  { "En": "child (f)", "Ar": "طِفْلَةٌ", "M": true },
-  { "En": "Christian", "Ar": "نَصْرَانِىٌ", "M": true },
-  { "En": "Christians", "Ar": "نَصَارَى", "M": true },
-  { "En": "constitution (law)", "Ar": "دُسْتُوْرٌ", "M": true },
-  { "En": "faculty of commerce", "Ar": "كُلِّيَّةُ التِّجَارَةِ", "M": true },
+  {
+    "En": "madam",
+    "Ar": "يَا سيِّدَتِي",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Malaysia",
+    "Ar": "مَالِيْزِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "maternal aunt",
+    "Ar": "خَالَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "maternity hospital",
+    "Ar": "مُسْتَشْفَى الوِلاَدَةِ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "middle school",
+    "Ar": "المَدْرَسَةُ الْمُتَوَسِّطَةُ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "notebook",
+    "Ar": "دَفْتَرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "paternal aunt",
+    "Ar": "عَمَّةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "scholar",
+    "Ar": "عَالِمٌ",
+    "M": true,
+    "Pl": "عُلَمَاءُ",
+    "T": "obj"
+  },
+  {
+    "En": "sir",
+    "Ar": "سيِّدي",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "strong",
+    "Ar": "قَوِيٌّ",
+    "M": true,
+    "Pl": "أَقْوِيَاءُ",
+    "T": "obj"
+  },
+  {
+    "En": "Syria",
+    "Ar": "سُوْرِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "tree",
+    "Ar": "شَجَرَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "weak",
+    "Ar": "ضَعِيْفٌ",
+    "M": true,
+    "Pl": "ضِعَافٌ",
+    "T": "obj"
+  },
+  {
+    "En": "young lady",
+    "Ar": "فَتَاةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "field",
+    "Ar": "حَقْلٌ",
+    "M": true,
+    "Pl": "حُقُوْلٌ",
+    "T": "NounObj"
+  },
+  {
+    "En": "friend",
+    "Ar": "صَدِيْقٌ",
+    "M": true,
+    "Pl": "أَصْدِقَاءُ",
+    "T": "obj"
+  },
+  {
+    "En": "guest",
+    "Ar": "ضَيْفٌ",
+    "M": true,
+    "Pl": "ضُيُوْفٌ",
+    "T": "obj"
+  },
+  {
+    "En": "professor (f)",
+    "Ar": "أُسْتَاذَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "men",
+    "Ar": "رِجَالٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "old man, learned man",
+    "Ar": "شَيْخٌ",
+    "M": true,
+    "Pl": "شُيُوْخٌ",
+    "T": "obj"
+  },
+  {
+    "En": "people",
+    "Ar": "النَّاسُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "pilgrim",
+    "Ar": "حَاجٌّ",
+    "M": true,
+    "Pl": "حُجَّاجٌ",
+    "T": "obj"
+  },
+  {
+    "En": "restaurant",
+    "Ar": "مَطْعَمٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "short",
+    "Ar": "قِصَارٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "village",
+    "Ar": "قَرْيَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "wife",
+    "Ar": "زَوْجَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "women",
+    "Ar": "نِسَاءٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "women",
+    "Ar": "مَرْآةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "young men",
+    "Ar": "فِتْيَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "airport",
+    "Ar": "مَطَارٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "brother",
+    "Ar": "أَخٌ",
+    "M": true,
+    "Pl": "إِخْوَةٌ",
+    "T": "obj"
+  },
+  {
+    "En": "child (f)",
+    "Ar": "طِفْلَةٌ",
+    "M": false,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Christian",
+    "Ar": "نَصْرَانِىٌ",
+    "M": true,
+    "Pl": "نَصَارَى",
+    "T": "obj"
+  },
+  {
+    "En": "constitution (law)",
+    "Ar": "دُسْتُوْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "faculty of commerce",
+    "Ar": "كُلِّيَّةُ التِّجَارَةِ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
   {
     "En": "faculty of engineering",
     "Ar": "كُلِّيَّةُ الْهَنْدَسَةِ",
-    "M": true
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
   },
   {
     "En": "faculty of islamic law",
     "Ar": "كُلِّيَّةُ الشَّرِيْعَةِ",
-    "M": true
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
   },
-  { "En": "faculty of medicine", "Ar": "كُلِّيَّةُ الطِّبِّ", "M": true },
-  { "En": "faculty,college", "Ar": "كُلِّيَّةٌ", "M": true },
-  { "En": "garden", "Ar": "حَدِيْقَةٌ", "M": true },
-  { "En": "grandson", "Ar": "حَفِيْدٌ", "M": true },
-  { "En": "grandsons", "Ar": "حَفَدَةٌ", "M": true },
-  { "En": "Greece", "Ar": "اَلْيُوْنَانُ", "M": true },
-  { "En": "lawcourt", "Ar": "مَحْكَمَةٌ", "M": true },
-  { "En": "Lord (the)", "Ar": "اَلرَّبُ", "M": true },
-  { "En": "May Allah grant him health", "Ar": "شَفَاهُ اللَّهُ", "M": true },
-  { "En": "month", "Ar": "شَهْرٌ", "M": true },
-  { "En": "prayer direction (the)", "Ar": "اَلْقِبْلَةُ", "M": true },
-  { "En": "Prophet", "Ar": "نَبِيٌّ", "M": true },
-  { "En": "religion", "Ar": "دِيْنٌ", "M": true },
-  { "En": "Saturday", "Ar": "يَوْمُ السَّبْتِ", "M": true },
-  { "En": "the month of Rajab", "Ar": "رَجَبٌ", "M": true },
-  { "En": "welcome", "Ar": "أَحلاً وَسَهْلاً وَمَرْحَبًا", "M": true },
-  { "En": "examination", "Ar": "اِخْتِبَارٌ", "M": true },
-  { "En": "lesson", "Ar": "دَرْسٌ", "M": true },
-  { "En": "week", "Ar": "أُسْبُوْعٌ", "M": true },
-  { "En": "airplane", "Ar": "طَائِرَةٌ", "M": true },
-  { "En": "hotel", "Ar": "فُنْدُقٌ", "M": true },
-  { "En": "river", "Ar": "نَهْرٌ", "M": true },
-  { "En": "sea", "Ar": "بَحْرٌ", "M": true },
-  { "En": "cheap", "Ar": "رَخِيْصٌ", "M": true },
-  { "En": "director of the company", "Ar": "مُدِيْرُ الشَّرِكَةِ", "M": true },
-  { "En": "firm,company", "Ar": "شَرِكَةٌ", "M": true },
-  { "En": "Japanese", "Ar": "يَابَانِيَّةٌ", "M": true },
-  { "En": "shirts", "Ar": "قُمْصَانٌ", "M": true },
-  { "En": "city district", "Ar": "حَيٌّ", "M": true },
-  { "En": "festival ", "Ar": "عِيْدٌ", "M": true },
-  { "En": "rak'ah (part of salat)", "Ar": "رَكْعَةٌ", "M": true },
-  { "En": "rak'ats", "Ar": "رَكَعَاتٌ", "M": true },
-  { "En": "riyal", "Ar": "رِيَالٌ", "M": true },
-  { "En": "ruler", "Ar": "مِسْطَرَةٌ", "M": true },
-  { "En": "wheel", "Ar": "عَجَلَةٌ", "M": true },
-  { "En": "writing board", "Ar": "سَبُوْرَةٌ", "M": true },
-  { "En": "year", "Ar": "سَنَةٌ", "M": true },
-  { "En": "1/10th of a riyal", "Ar": "قِرْشٌ", "M": true },
-  { "En": "1/10ths of riyal", "Ar": "قُرُوْشٌ", "M": true },
-  { "En": "all", "Ar": "كُلٌّ", "M": true },
-  { "En": "all of them", "Ar": "كُلُّهُمْ", "M": true },
-  { "En": "all of us", "Ar": "كُلُّنَا", "M": true },
-  { "En": "all of you", "Ar": "كُلُّكُمْ", "M": true },
-  { "En": "bus", "Ar": "حَافِلَةٌ", "M": true },
-  { "En": "countries", "Ar": "بِلاَدٌ", "M": true },
-  { "En": "country", "Ar": "بَلَدٌ", "M": true },
-  { "En": "days", "Ar": "أَيَامٌ", "M": true },
-  { "En": "different", "Ar": "مُخْتَلِفٌ", "M": true },
-  { "En": "Europe", "Ar": "أُوْرُبَّا", "M": true },
-  { "En": "half", "Ar": "نَصْفٌ", "M": true },
-  { "En": "of them (literally, from them)", "Ar": "مِنْهُمْ", "M": true },
-  { "En": "old (p)", "Ar": "قُدَامَى", "M": true },
-  { "En": "passenger (bus or plane)", "Ar": "رَاكِبٌ", "M": true },
-  { "En": "passengers", "Ar": "رُكَّابٌ", "M": true },
-  { "En": "pocket", "Ar": "جَيْبٌ", "M": true },
-  { "En": "price", "Ar": "ثَمَنٌ", "M": true },
-  { "En": "question", "Ar": "سُؤَالٌ", "M": true },
-  { "En": "thanks", "Ar": "شُكْرًا", "M": true },
-  { "En": "Yugoslavia", "Ar": "يُوْغُسَلافِيَا", "M": true },
-  { "En": "lessons", "Ar": "دُرُوْسٌ", "M": true },
-  { "En": "letter (of the alphabet)", "Ar": "حَرْفٌ", "M": true },
-  { "En": "letters (of the alphabet)", "Ar": "حُرُوْفٌ", "M": true },
-  { "En": "magazine, journal", "Ar": "مَجَلَّةٌ", "M": true },
-  { "En": "paternal uncles", "Ar": "أَعْمَامٌ", "M": true },
-  { "En": "rooms", "Ar": "غُرَفٌ", "M": true },
-  { "En": "word", "Ar": "كَلِمَةٌ", "M": true },
-  { "En": "words", "Ar": "كَلِمَاتٌ", "M": true },
-  { "En": "Asia", "Ar": "آسِيَا", "M": true },
-  { "En": "colour", "Ar": "لَوْنٌ", "M": true },
-  { "En": "colours", "Ar": "أَلْوَانٌ", "M": true },
-  { "En": "spacious", "Ar": "وَاسِعٌ", "M": true },
-  { "En": "that", "Ar": "ذلِكَ", "M": true },
-  { "En": "we love him, we like him", "Ar": "نُحِبُّهُ", "M": true },
-  { "En": "we love, we like", "Ar": "نُحِبُّ", "M": true },
-  { "En": "Baghdad", "Ar": "بَغْدَادُ", "M": true },
-  { "En": "black", "Ar": "أَسْوَدُ", "M": true },
-  { "En": "blue", "Ar": "أَزْرَقُ", "M": true },
-  { "En": "green", "Ar": "أَخْضَرُ", "M": true },
-  { "En": "said (he)", "Ar": "قَالَ", "M": true },
-  { "En": "Jeddah", "Ar": "جِدَّةُ", "M": true },
-  { "En": "kercheifs", "Ar": "مَنَادِيْلُ", "M": true },
-  { "En": "keys", "Ar": "مَفَاتِيْحُ", "M": true },
-  { "En": "minute", "Ar": "دَقِيْقَةٌ", "M": true },
-  { "En": "minutes", "Ar": "دَقَائِقُ", "M": true },
-  { "En": "red", "Ar": "أَحْمَرُ", "M": true },
-  { "En": "said (she)", "Ar": "قَالَتْ", "M": true },
-  { "En": "tea-cup", "Ar": "فِنْجَانٌ", "M": true },
-  { "En": "tea-cups", "Ar": "فَنَاجِيْنُ", "M": true },
-  { "En": "white", "Ar": "أَبْيَضُ", "M": true },
-  { "En": "yellow", "Ar": "أَصْفَرُ", "M": true },
-  { "En": "Istanbul", "Ar": "إِصْطَنْبُوْلُ", "M": true },
-  { "En": "Taif City", "Ar": "الطَّائِفُ", "M": true },
-  { "En": "Washington", "Ar": "وَاشِنْطُنُ", "M": true }
+  {
+    "En": "faculty of medicine",
+    "Ar": "كُلِّيَّةُ الطِّبِّ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "faculty,college",
+    "Ar": "كُلِّيَّةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "garden",
+    "Ar": "حَدِيْقَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "grandson",
+    "Ar": "حَفِيْدٌ",
+    "M": true,
+    "Pl": "حَفَدَةٌ",
+    "T": "obj"
+  },
+  {
+    "En": "Greece",
+    "Ar": "اَلْيُوْنَانُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "lawcourt",
+    "Ar": "مَحْكَمَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "Lord (the)",
+    "Ar": "اَلرَّبُ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "May Allah grant him health",
+    "Ar": "شَفَاهُ اللَّهُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "month",
+    "Ar": "شَهْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "prayer direction (the)",
+    "Ar": "اَلْقِبْلَةُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Prophet",
+    "Ar": "نَبِيٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "religion",
+    "Ar": "دِيْنٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Saturday",
+    "Ar": "يَوْمُ السَّبْتِ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "the month of Rajab",
+    "Ar": "رَجَبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "welcome",
+    "Ar": "أَحلاً وَسَهْلاً وَمَرْحَبًا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "examination",
+    "Ar": "اِخْتِبَارٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "lesson",
+    "Ar": "دَرْسٌ",
+    "M": true,
+    "Pl": "دُرُوْسٌ",
+    "T": "obj"
+  },
+  {
+    "En": "week",
+    "Ar": "أُسْبُوْعٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "airplane",
+    "Ar": "طَائِرَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "hotel",
+    "Ar": "فُنْدُقٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "river",
+    "Ar": "نَهْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "sea",
+    "Ar": "بَحْرٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "cheap",
+    "Ar": "رَخِيْصٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "director of the company",
+    "Ar": "مُدِيْرُ الشَّرِكَةِ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "firm,company",
+    "Ar": "شَرِكَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "Japanese",
+    "Ar": "يَابَانِيَّةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "city district",
+    "Ar": "حَيٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "festival ",
+    "Ar": "عِيْدٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "rak'ah",
+    "Ar": "رَكْعَةٌ",
+    "M": true,
+    "Pl": "رَكَعَاتٌ",
+    "T": "obj"
+  },
+  {
+    "En": "riyal",
+    "Ar": "رِيَالٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "ruler",
+    "Ar": "مِسْطَرَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "wheel",
+    "Ar": "عَجَلَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "writing board",
+    "Ar": "سَبُوْرَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "year",
+    "Ar": "سَنَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "1/10th of a riyal",
+    "Ar": "قِرْشٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "1/10ths of riyal",
+    "Ar": "قُرُوْشٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "all",
+    "Ar": "كُلٌّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "all of them",
+    "Ar": "كُلُّهُمْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "all of us",
+    "Ar": "كُلُّنَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "all of you",
+    "Ar": "كُلُّكُمْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "bus",
+    "Ar": "حَافِلَةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "country",
+    "Ar": "بَلَدٌ",
+    "M": true,
+    "Pl": "بِلاَدٌ",
+    "T": "NounObj"
+  },
+  {
+    "En": "days",
+    "Ar": "أَيَامٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "different",
+    "Ar": "مُخْتَلِفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Europe",
+    "Ar": "أُوْرُبَّا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "half",
+    "Ar": "نَصْفٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "of them (literally, from them)",
+    "Ar": "مِنْهُمْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "passenger (bus or plane)",
+    "Ar": "رَاكِبٌ",
+    "M": true,
+    "Pl": "رُكَّابٌ",
+    "T": "obj"
+  },
+  {
+    "En": "pocket",
+    "Ar": "جَيْبٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "price",
+    "Ar": "ثَمَنٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "question",
+    "Ar": "سُؤَالٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "thanks",
+    "Ar": "شُكْرًا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Yugoslavia",
+    "Ar": "يُوْغُسَلافِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "letter (of the alphabet)",
+    "Ar": "حَرْفٌ",
+    "M": true,
+    "Pl": "حُرُوْفٌ",
+    "T": "obj"
+  },
+  {
+    "En": "magazine, journal",
+    "Ar": "مَجَلَّةٌ",
+    "M": true,
+    "Pl": "",
+    "T": "NounObj"
+  },
+  {
+    "En": "word",
+    "Ar": "كَلِمَةٌ",
+    "M": true,
+    "Pl": "كَلِمَاتٌ",
+    "T": "NounObj"
+  },
+  {
+    "En": "Asia",
+    "Ar": "آسِيَا",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "colour",
+    "Ar": "لَوْنٌ",
+    "M": true,
+    "Pl": "أَلْوَانٌ",
+    "T": "obj"
+  },
+  {
+    "En": "spacious",
+    "Ar": "وَاسِعٌ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "that",
+    "Ar": "ذلِكَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "we love him, we like him",
+    "Ar": "نُحِبُّهُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "we love, we like",
+    "Ar": "نُحِبُّ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Baghdad",
+    "Ar": "بَغْدَادُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "black",
+    "Ar": "أَسْوَدُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "blue",
+    "Ar": "أَزْرَقُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "green",
+    "Ar": "أَخْضَرُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "said (he)",
+    "Ar": "قَالَ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Jeddah",
+    "Ar": "جِدَّةُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "minute",
+    "Ar": "دَقِيْقَةٌ",
+    "M": true,
+    "Pl": "دَقَائِقُ",
+    "T": "obj"
+  },
+  {
+    "En": "red",
+    "Ar": "أَحْمَرُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "said (she)",
+    "Ar": "قَالَتْ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "tea-cup",
+    "Ar": "فِنْجَانٌ",
+    "M": true,
+    "Pl": "فَنَاجِيْنُ",
+    "T": "NounObj"
+  },
+  {
+    "En": "white",
+    "Ar": "أَبْيَضُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "yellow",
+    "Ar": "أَصْفَرُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Istanbul",
+    "Ar": "إِصْطَنْبُوْلُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Taif City",
+    "Ar": "الطَّائِفُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  },
+  {
+    "En": "Washington",
+    "Ar": "وَاشِنْطُنُ",
+    "M": true,
+    "Pl": "",
+    "T": "obj"
+  }
 ]

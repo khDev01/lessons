@@ -1,28 +1,59 @@
 // Abreviations: sentence as s, and as wa, question as Q, answer as A, this as hatha
 // Note: single letter words join with next word (no space )
 // TODO: use indefinite tense of word to add shadda to alobj?
+// TODO: Seperate out into each lesson;
 // const urlbook = "./sentence.json"
 const book1json = "../book1Complete.json"
+const nounobjects = "../data/obj.json"
 let sContainer = document.getElementById("sentenceContainer")
 let result, book, booklength //objects
+let keysArr = []
+// get lesson vocab from json file
+let getVocab = () => {
+  fetch(nounobjects)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      for (const key in data) {
+        keysArr.push(key)
+      }
+      // console.log(keysArr)
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+  fetch(book1json)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      book = data
+      booklength = data.length
+      let newArr = book
+      keysArr.forEach((el) => {
+        console.log(el)
+        newArr = newArr.map((obj) => {
+          if (obj.En === el) {
+            console.log(obj.En)
+            return { ...obj, T: "NounObj" }
+          }
+          return obj
+        })
+      })
+      // console.log(keysArr)
 
-let moonLetters = [
-  "ه",
-  "ي",
-  "و",
-  "م",
-  "ك",
-  "ق",
-  "ف",
-  "غ",
-  "ع",
-  "خ",
-  "ح",
-  "ج",
-  "ب",
-  "أ",
-  "إ",
-]
+      console.log(newArr)
+      // keysArr.forEach((element) => {
+      //   console.log(keysArr.length)
+      // })
+
+      // book.forEach((element) => {
+      //   console.log(element.En)
+      // })
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+}
+
+let moonLetters = ["ه", "ي", "و", "م", "ك", "ق", "ف", "غ", "ع", "خ", "ح", "ج", "ب", "أ", "إ"]
 let starterArr = [
   ["This", "\u0647\u0630\u0627"],
   ["That", "\u0630\u0644\u0643"],
@@ -35,6 +66,8 @@ let starterArr = [
   ["where", "\u0623\u064e\u064a\u0652\u0646\u064e"],
   // ["is", "أ"],
   // ["is", "أ"],
+  ["Thisf", "\u0647\u064e\u0640\u0670\u0630\u0650\u0647\u0650"],
+  ["Thatf", "\u062a\u0650\u0644\u0652\u0643\u064e"],
   // ["is", "أ"],
   // ["is", "أ"],
 ]
@@ -108,23 +141,99 @@ var randomProperty = function (obj) {
   return bookvocab
 }
 
+let getrndvocab = () => {
+  return randomProperty(book)
+}
+
+let display = (sentence) => {
+  let para = document.createElement("p")
+  para.innerHTML = sentence
+  document.body.appendChild(para)
+  // console.log(sentence)
+}
+
+let displaySection = (array) => {
+  array.forEach((element) => {
+    display(element)
+  })
+  linebreak()
+}
+let linebreak = () => {
+  let div = document.createElement("div")
+  document.body.appendChild(div)
+  // console.log(sentence)
+}
+
 let createRandomSentence = () => {
-  let display = (sentence) => {
-    let para = document.createElement("p")
-    para.innerHTML = sentence
-    document.body.appendChild(para)
-    // console.log(sentence)
+  thisAndThat()
+
+  lesson3()
+
+  let majroor = (prep) => {
+    majobj = al + objforal.replaceLast(doma, kasra)
+    if (prep == "\u0645\u0650\u0646\u0652") {
+      prep = prep.replace(sukun, fatha)
+      return prep + " " + majobj
+    }
+    return prep + " " + majobj
   }
-  let linebreak = () => {
-    let div = document.createElement("div")
-    document.body.appendChild(div)
-    // console.log(sentence)
+  objin = majroor(fe)
+  objon = majroor(on)
+  objfrom = majroor(from)
+  objto = majroor(to)
+
+  where = starters.get("where")
+  wheres = where + " " + alobj + questionMark
+  rndWordpronoun = rndWord.M ? he : she
+  whereAns = rndWordpronoun + " " + majroor(on)
+  var a = alobj
+  var b = shadda
+  var position = 3
+  let alobjshadornot = alobj
+
+  letterAfterAl = a.charAt(2)
+  if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
+    alobjshadornot = [a.slice(0, position), b, a.slice(position)].join("")
   }
 
-  let getrndvocab = () => {
-    return randomProperty(book)
-  }
+  // let whereis = () => {
+  //   wheres = where + " " + alobj + questionMark
+  // }
 
+  displaySection([thisis, thatis, thisandthat])
+
+  displaySection([whatsthis, whatsthat]) //whatsthisandthat
+
+  displaySection([whosthis, whosthat, whosthisandthat])
+
+  displaySection([isthis, yesisthis, noisthis])
+  displaySection([isthat, yesisthat, noisthat])
+
+  // display("Lesson 3")
+  // linebreak()
+  // display(rndWordAr)
+  // display(alobj)
+  // linebreak()
+  // display(objin)
+  // display(objon)
+  // display(objto)
+  // display(objfrom)
+
+  // linebreak()
+  // display(wheres)
+  // display(whereAns)
+  // linebreak()
+  // display(alobjshadornot)
+}
+
+let lesson3 = () => {
+  rndWord = getrndvocab()
+  rndWordAr = rndWord.Ar
+  alobj = al + rndWordAr.replaceLast(doma2, doma)
+  objforal = rndWordAr.replaceLast(doma2, doma)
+}
+
+let thisAndThat = () => {
   hatha = starters.get("This")
   that = starters.get("That")
   thisis = thisthat("This")
@@ -166,82 +275,7 @@ let createRandomSentence = () => {
   yesisthat = yes + thatis
   noisthat = no + thatother
   isthisandthat = is + " " + thisandthat + questionMark
-
-  rndobj1 = getrndvocab()
-  rndobj1Ar = rndobj1.Ar
-  alobj = al + rndobj1Ar.replaceLast(doma2, doma)
-  objforal = rndobj1Ar.replaceLast(doma2, doma)
-
-  let majroor = (prep) => {
-    majobj = al + objforal.replaceLast(doma, kasra)
-    if (prep == "\u0645\u0650\u0646\u0652") {
-      prep = prep.replace(sukun, fatha)
-      return prep + " " + majobj
-    }
-    return prep + " " + majobj
-  }
-  objin = majroor(fe)
-  objon = majroor(on)
-  objfrom = majroor(from)
-  objto = majroor(to)
-
-  where = starters.get("where")
-  wheres = where + " " + alobj + questionMark
-  rndobj1pronoun = rndobj1.M ? he : she
-  whereAns = rndobj1pronoun + " " + majroor(on)
-  var a = alobj
-  var b = shadda
-  var position = 3
-  let alobjshadornot = alobj
-
-  letterAfterAl = a.charAt(2)
-  if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
-    alobjshadornot = [a.slice(0, position), b, a.slice(position)].join("")
-  }
-
-  // let whereis = () => {
-  //   wheres = where + " " + alobj + questionMark
-  // }
-
-  display(thisis)
-  display(thatis)
-  display(thisandthat)
-  linebreak()
-
-  display(whatsthis)
-  display(whatsthat)
-  // display(whatsthisandthat)
-  linebreak()
-
-  display(whosthis)
-  display(whosthat)
-  display(whosthisandthat)
-  linebreak()
-
-  display(isthis)
-  display(yesisthis)
-  display(noisthis)
-  linebreak()
-
-  display(isthat)
-  display(yesisthat)
-  display(noisthat)
-  linebreak()
-  display(rndobj1Ar)
-  display(alobj)
-  linebreak()
-  display(objin)
-  display(objon)
-  display(objto)
-  display(objfrom)
-
-  linebreak()
-  display(wheres)
-  display(whereAns)
-  linebreak()
-  display(alobjshadornot)
 }
-
 let removeharakat = (str) => {
   return str
     .replaceAll(fatha, "")
@@ -254,12 +288,14 @@ let removeharakat = (str) => {
     .replaceAll(shadda, "")
 }
 let thisthat = (starter) => {
-  start = starters.get(starter)
   nounobj = randomProperty(book)
   // console.log(nounobj)
+  isM = nounobj.M
   nouneng = nounobj.En
   nounarb = nounobj.Ar
-
+  f = isM ? "" : "f"
+  start = starters.get(starter + f)
+  // console.log(start)
   sent = start + " " + nounarb
   return sent
 }
@@ -275,7 +311,7 @@ let and = () => {
 
 setTimeout(() => {
   // console.log(objects)
-  createRandomSentence()
+  // createRandomSentence()
 }, 1000)
 
 // lessonsMenu = document.getElementById("lessonsMenu")
@@ -335,17 +371,29 @@ document.addEventListener("keypress", function onPress(event) {
 //   return Object.fromEntries(swapped)
 // }
 
-// get lesson vocab from json file
-let getVocab = () => {
-  fetch(book1json)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      book = data
-      booklength = data.length
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
+function createElement(type, options = {}) {
+  const element = document.createElement(type)
+  Object.entries(options).forEach(([key, value]) => {
+    if (key === "class") {
+      element.classList.add(value)
+      return
+    }
+
+    if (key === "dataset") {
+      Object.entries(value).forEach(([dataKey, dataValue]) => {
+        element.dataset[dataKey] = dataValue
+      })
+      return
+    }
+
+    if (key === "text") {
+      element.textContent = value
+      return
+    }
+
+    element.setAttribute(key, value)
+  })
+  return element
 }
 
 // self executing function here / same as jquery document ready
