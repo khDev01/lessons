@@ -2,6 +2,8 @@ const book1json = "../book1Complete.json"
 const objects = "../data/adj.json"
 let keysArr = []
 let getkey = false
+let Modify = true
+let addnew = false
 let changeString = "Adjs"
 
 let modifyData = () => {
@@ -29,7 +31,7 @@ let modifyData = () => {
         newArr = newArr.map((obj) => {
           if (obj.En === el) {
             // console.log(obj.En)
-            return { ...obj, T: changeString }
+            return { ...obj, str: changeString }
           }
           return obj
         })
@@ -41,6 +43,35 @@ let modifyData = () => {
       console.error("Error:", error)
     })
 }
+let addNewData = () => {
+  fetch(book1json)
+    .then((response) => response.json()) // return json object
+    .then((data) => {
+      let newArr = data
+      newArr.forEach((object) => {
+        object.L = 1
+      })
+
+      console.log(newArr)
+      console.log("Complete")
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+    })
+}
 ;(function () {
-  modifyData()
+  if (Modify) {
+    console.log("will update data")
+    modifyData()
+  }
+  if (addnew) {
+    4
+    console.log("will add data")
+
+    addNewData()
+  }
+  // if (filterLesson)
+  //   {
+  //     filterbyL
+  //   }
 })()

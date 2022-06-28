@@ -3,10 +3,10 @@
 // TODO: use indefinite tense of word to add shadda to alobj?
 // const urlbook = "./sentence.json"
 const book1json = "../book1Complete.json"
-const nounobjects = "../data/obj.json"
 let sContainer = document.getElementById("sentenceContainer")
 let result, book, booklength //objects
 let keysArr = []
+let vocabArr = []
 // get lesson vocab from json file
 let getVocab = () => {
   fetch(book1json)
@@ -39,7 +39,7 @@ let starterArr = [
   // ["is", "أ"],
 ]
 // remove instances within string
-// let strin = randomProperty(objects)[1]
+// let strin = getrandomdata(objects)[1]
 //   strin = strin.replaceAll("\u064e", "")
 
 // // Create a Map
@@ -102,21 +102,51 @@ String.prototype.replaceLast = function (what, replacement) {
     .join(" ")
 }
 
-var randomProperty = function (obj) {
-  bookrnd = Math.floor(Math.random() * booklength)
-  bookvocab = obj[bookrnd]
+let getType = (type) => {
+  let newArrbook = book.filter(function (el) {
+    return el.T === type
+  })
+  return newArrbook
+}
+
+let getrandomdata = (type = "NounObj", maxVocab = 5) => {
+  filtered = getType(type)
+  let TypevocabArr = []
+  for (let s = 0; s < maxVocab; s++) {
+    randomID = Math.floor(Math.random() * filtered.length)
+    bookvocab = filtered[randomID]
+    TypevocabArr.push(bookvocab)
+  }
+
+  // console.log(bookvocab)
+  // console.log(TypevocabArr)
   return bookvocab
 }
 
-let getrndvocab = () => {
-  return randomProperty(book)
-}
+// let getrndvocab = () => {
+//   return getrandomdata()
+// }
 
-let display = (sentence) => {
+let display = (text, options = {}) => {
   let para = document.createElement("p")
-  para.innerHTML = sentence
+  para.innerHTML = text
+  Object.entries(options).forEach(([key, value]) => {
+    if (key === "class") {
+      para.classList.add(value)
+      return
+    }
+
+    if (key === "dataset") {
+      Object.entries(value).forEach(([dataKey, dataValue]) => {
+        para.dataset[dataKey] = dataValue
+      })
+      return
+    }
+
+    para.setAttribute(key, value)
+  })
   document.body.appendChild(para)
-  // console.log(sentence)
+  // console.log(text)
 }
 
 let displaySection = (array) => {
@@ -131,15 +161,37 @@ let linebreak = () => {
   // console.log(sentence)
 }
 
+hatha = starters.get("This")
+that = starters.get("That")
+
 let createRandomSentence = () => {
-  thisAndThat()
+  // lesson1and2()
+  // definiteWords()
+  lesson4()
+  // let whereis = () => {
+  //   wheres = where + " " + alobj + questionMark
+  // }
+  // display(alobjshadornot)
+}
+let Questions = () => {}
+lesson6 = () => {}
+lesson5 = () => {}
+lesson4 = () => {
+  getdefiniteWord()
+  let majroor = (prep, getNewWord) => {
+    if (getNewWord) {
+      if (prep === fe) {
+        console.log("palece")
+        getdefiniteWord("Place")
+      } else {
+        console.log("new word")
+        getdefiniteWord()
+      }
+    }
 
-  lesson3()
-
-  let majroor = (prep) => {
-    majobj = al + objforal.replaceLast(doma, kasra)
+    majobj = changeharakat(alobj, kasra)
     if (prep == "\u0645\u0650\u0646\u0652") {
-      prep = prep.replace(sukun, fatha)
+      prep = changeharakat(prep, fatha)
       return prep + " " + majobj
     }
     return prep + " " + majobj
@@ -152,7 +204,39 @@ let createRandomSentence = () => {
   where = starters.get("where")
   wheres = where + " " + alobj + questionMark
   rndWordpronoun = rndWord.M ? he : she
-  whereAns = rndWordpronoun + " " + majroor(on)
+  whereAns = rndWordpronoun + " " + majroor(on, true)
+
+  person = getrandomdata("Name")
+  personPronoun = person.M ? he : she
+  wheresPerson = where + " " + person.Ar + questionMark
+  wheresPersonAns = personPronoun + " " + majroor(fe, true)
+
+  // displaySection([objin, objon, objto, objfrom])
+  // displaySection([wheres, whereAns])
+  displaySection([wheresPerson, wheresPersonAns])
+}
+
+let changeharakat = (str, changeTo = doma) => {
+  // make definite
+  if (changeTo === doma) {
+    return str.replaceLast(doma2, changeTo)
+  }
+  // make majroor
+  if (changeTo === kasra) {
+    return str.replaceLast(doma, changeTo)
+  }
+  // Change Prep ending
+  if (changeTo === fatha) {
+    return str.replace(sukun, changeTo)
+  }
+}
+
+let getdefiniteWord = (vocabget) => {
+  rndWord = getrandomdata(vocabget)
+  rndWordAr = rndWord.Ar
+  alobj = al + changeharakat(rndWordAr)
+
+  // Add shadda to sun letters
   var a = alobj
   var b = shadda
   var position = 3
@@ -160,49 +244,23 @@ let createRandomSentence = () => {
 
   letterAfterAl = a.charAt(2)
   if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
+    console.log("run")
     alobjshadornot = [a.slice(0, position), b, a.slice(position)].join("")
+    console.log(alobjshadornot)
   }
-
-  // let whereis = () => {
-  //   wheres = where + " " + alobj + questionMark
-  // }
-
-  displaySection([thisis, thatis, thisandthat])
-
-  displaySection([whatsthis, whatsthat]) //whatsthisandthat
-
-  displaySection([whosthis, whosthat, whosthisandthat])
-
-  displaySection([isthis, yesisthis, noisthis])
-  displaySection([isthat, yesisthat, noisthat])
-
-  // display("Lesson 3")
-  // linebreak()
-  // display(rndWordAr)
-  // display(alobj)
-  // linebreak()
-  // display(objin)
-  // display(objon)
-  // display(objto)
-  // display(objfrom)
-
-  // linebreak()
-  // display(wheres)
-  // display(whereAns)
-  // linebreak()
-  // display(alobjshadornot)
+  alobj = alobjshadornot
+  console.log(alobj)
 }
 
-let lesson3 = () => {
-  rndWord = getrndvocab()
-  rndWordAr = rndWord.Ar
-  alobj = al + rndWordAr.replaceLast(doma2, doma)
-  objforal = rndWordAr.replaceLast(doma2, doma)
+let definiteWords = () => {
+  getdefiniteWord()
+  //
+
+  //
+  displaySection([rndWordAr, alobj, alobjshadornot])
 }
 
-let thisAndThat = () => {
-  hatha = starters.get("This")
-  that = starters.get("That")
+let lesson1and2 = () => {
   thisis = thisthat("This")
   thatis = thisthat("That")
   thisandthat = thisis + and() + thatis
@@ -242,7 +300,13 @@ let thisAndThat = () => {
   yesisthat = yes + thatis
   noisthat = no + thatother
   isthisandthat = is + " " + thisandthat + questionMark
+  displaySection([thisis, thatis, thisandthat])
+  displaySection([whatsthis, whatsthat]) //whatsthisandthat
+  displaySection([whosthis, whosthat, whosthisandthat])
+  displaySection([isthis, yesisthis, noisthis])
+  displaySection([isthat, yesisthat, noisthat])
 }
+
 let removeharakat = (str) => {
   return str
     .replaceAll(fatha, "")
@@ -255,7 +319,7 @@ let removeharakat = (str) => {
     .replaceAll(shadda, "")
 }
 let thisthat = (starter) => {
-  nounobj = randomProperty(book)
+  nounobj = getrandomdata("People")
   // console.log(nounobj)
   isM = nounobj.M
   nouneng = nounobj.En
@@ -277,8 +341,7 @@ let and = () => {
 //
 
 setTimeout(() => {
-  // console.log(objects)
-  // createRandomSentence()
+  createRandomSentence()
 }, 1000)
 
 // lessonsMenu = document.getElementById("lessonsMenu")
