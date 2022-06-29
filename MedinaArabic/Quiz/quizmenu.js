@@ -2,6 +2,7 @@
 let createMenu = (noOfLessons, book, setNextQuestion) => {
   let menuHeader = document.createElement("span")
   menuHeader.innerText = "Lesson"
+  menuHeader.id = "menuHeader"
   menuHeader.onclick = function () {
     // startMegaQuiz()
   }

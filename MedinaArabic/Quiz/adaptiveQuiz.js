@@ -1,4 +1,5 @@
 import createMenu, { newmin, newmax } from "./quizmenu.js"
+// const bookjson = "../book1edit.json"
 const bookjson = "../book1edit.json"
 const queText = document.getElementById("queText")
 const optionsContainer = document.getElementById("choices")
@@ -6,15 +7,22 @@ let min, max, questionText, NoOfAnsOptions, resultID
 let NoOfAnsOptionsToShow = 6,
   outputIDs = []
 let book, totalVocab
+let runalgorithm = true
+let EntoAr = true
+let delay = false
 
 // quickly fire through each question
 document.addEventListener("keypress", function onPress(event) {
   if (event.key === "z") {
-    algo(true)
+    algo(runalgorithm, true)
     setNextQuestion()
   } else if (event.key === "x") {
     console.log(algoarray)
   }
+})
+
+queText.addEventListener("click", function () {
+  delay = !delay
 })
 
 // get lesson vocab from json file
@@ -23,7 +31,8 @@ let getVocab = () => {
     .then((response) => response.json()) // return json object
     .then((data) => {
       book = data
-      let noOfLessons = book[book.length - 1].L
+      let noOfLessons = 23
+      // let noOfLessons = book[book.length - 1].L
       createMenu(noOfLessons, book, setNextQuestion)
     })
     .catch((error) => {
@@ -31,47 +40,61 @@ let getVocab = () => {
     })
 }
 
-// let menuContainer = document.getElementById("menuContainer")
-
 let startMegaQuiz = () => {
   min = 0
   max = book.length
   setNextQuestion()
+  document.getElementById("menuHeader").addEventListener("click", function () {
+    EntoAr = !EntoAr
+  })
 }
 
 let focusEl = document.createElement("p")
+focusEl.id = "currentFocus"
 optionsContainer.insertAdjacentElement("afterEnd", focusEl)
 
-let setNextQuestion = () => {
-  focusEl.innerHTML =
-    mostWrongID != undefined ? "Focus: " + book[mostWrongID].En : ""
-  // console.log("")
+let resetQuiz = () => {
   min = newmin() == undefined ? min : newmin()
   max = newmax() == undefined ? max : newmax()
   //remove previous options for next selection (reset state)
   while (optionsContainer.hasChildNodes()) {
     optionsContainer.removeChild(optionsContainer.firstChild)
   }
-  // show less options if a smaller lesson is chosen
-  totalVocab = max - min
-  NoOfAnsOptions =
-    totalVocab < NoOfAnsOptionsToShow ? totalVocab : NoOfAnsOptionsToShow
-  // Get new vocab ID
-  getRndIDs(min, max)
+}
+
+let focuson = () => {
+  focusEl.innerHTML = mostWrongID != undefined ? "Focus: " + book[mostWrongID].En : ""
   // change first ID to most answerd incorrectly
-  if (mostWrongID != undefined && Math.random() < 0.9) {
-    let idalreadyexist = outputIDs.find((num) => num == mostWrongID)
+  if (mostWrongID != undefined && Math.random() < 0.5) {
+    let idalreadyexist = outputIDs.includes(mostWrongID)
     // do not duplicate id
-    if (idalreadyexist == undefined) {
+    if (idalreadyexist == false) {
       outputIDs[0] = mostWrongID
     }
     console.log("Focus active: " + book[outputIDs[0]].En)
   }
+}
+let setNextQuestion = () => {
+  console.log(delay)
+  // console.log("")
+  resetQuiz()
+  // show less options if a smaller lesson is chosen
+  totalVocab = max - min
+  NoOfAnsOptions = totalVocab < NoOfAnsOptionsToShow ? totalVocab : NoOfAnsOptionsToShow
+  // Get new vocab ID
+  getRndIDs(min, max)
+
+  focuson()
   // Select first ID as answer result
   resultID = outputIDs[0]
 
+  display()
+}
+let display = () => {
+  let EnText = book[outputIDs[0]].En
+  let ArText = book[outputIDs[0]].Ar
   // Update question text
-  questionText = book[outputIDs[0]].En
+  questionText = EntoAr ? EnText : ArText
   queText.innerHTML = questionText
   // Randomise ID order for output
   outputIDs = shuffleArr(outputIDs)
@@ -89,7 +112,10 @@ let getRndIDs = (min, max) => {
 
 let algoarray = []
 let mostWrongID = undefined
-let algo = (iscorrect) => {
+let algo = (run, iscorrect) => {
+  if (!run) {
+    return
+  }
   // getIncIDs()
   // console.log("resultID: " + resultID)
 
@@ -133,8 +159,13 @@ let algo = (iscorrect) => {
   // console.log(algoarray)
   if (algoarray.length > 5) {
     // console.log(algoarray[0].id)
-    mostWrongID = algoarray[0].id
-    console.log("Focus on: " + book[mostWrongID].En)
+    if (algoarray[0].w >= 0) {
+      mostWrongID = algoarray[0].id
+      console.log("Focus on: " + book[mostWrongID].En)
+    } else {
+      mostWrongID = undefined
+      console.log("Focus Off")
+    }
   }
 
   // // get IDs in order
@@ -148,7 +179,9 @@ let algo = (iscorrect) => {
 let createOptions = (value) => {
   var ansOption = document.createElement("p")
   let badcount = 0
-  ansOption.innerHTML = book[value].Ar
+  let EnAns = book[value].En
+  let ArAns = book[value].Ar
+  ansOption.innerHTML = EntoAr ? ArAns : EnAns
   ansOption.classList.add("optionchoice")
   ansOption.classList.add("optionchoicehover")
   if (resultID === value) {
@@ -156,11 +189,16 @@ let createOptions = (value) => {
     ansOption.onclick = function () {
       // alert("corect")
       if (badcount > 2) {
-        algo(false)
+        algo(runalgorithm, false)
       } else {
-        algo(true)
+        algo(runalgorithm, true)
       }
-      setNextQuestion()
+      if (!delay) {
+        setNextQuestion()
+        return
+      }
+      ansOption.style.backgroundColor = "darkgreen"
+      !delay ? setNextQuestion() : setTimeout(setNextQuestion, 1000)
     }
   } else {
     // if wrong answer selected
@@ -172,7 +210,7 @@ let createOptions = (value) => {
         ansOption.classList.remove("optionchoicehover")
         // setTimeout(setNextQuestion, 200)
         // console.log("clicked")
-        algo(false)
+        algo(runalgorithm, false)
       }
     }
   }
