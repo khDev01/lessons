@@ -7,7 +7,7 @@ let min, max, questionText, NoOfAnsOptions, resultID
 let NoOfAnsOptionsToShow = 6,
   outputIDs = []
 let book, totalVocab
-let runalgorithm = true
+let runalgorithm = false
 let EntoAr = true
 let delay = false
 
