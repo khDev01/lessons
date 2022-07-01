@@ -1,15 +1,18 @@
-import createMenu, { newmin, newmax } from "./quizmenu.js"
-// const bookjson = "../book1edit.json"
-const bookjson = "../book1edit.json"
+// TODO: clean code
+
+import createMenu, { newmax, lessonid } from "./quizmenu.js"
+const bookjson = "../book1FilterbyL.json"
 const queText = document.getElementById("queText")
 const optionsContainer = document.getElementById("choices")
-let min, max, questionText, NoOfAnsOptions, resultID
+let min, max, questionText, NoOfAnsOptions, resultID, lessonNoselected
 let NoOfAnsOptionsToShow = 6,
   outputIDs = []
 let book, totalVocab
-let runalgorithm = false
+let runalgorithm = true
 let EntoAr = true
 let delay = false
+let noOfLessons
+let menuitem = document.querySelectorAll(".lessonmenuitem")
 
 // quickly fire through each question
 document.addEventListener("keypress", function onPress(event) {
@@ -17,7 +20,7 @@ document.addEventListener("keypress", function onPress(event) {
     algo(runalgorithm, true)
     setNextQuestion()
   } else if (event.key === "x") {
-    console.log(algoarray)
+    console.log(algoobj)
   }
 })
 
@@ -31,8 +34,7 @@ let getVocab = () => {
     .then((response) => response.json()) // return json object
     .then((data) => {
       book = data
-      let noOfLessons = 23
-      // let noOfLessons = book[book.length - 1].L
+      noOfLessons = Object.keys(data[0]).length
       createMenu(noOfLessons, book, setNextQuestion)
     })
     .catch((error) => {
@@ -41,12 +43,20 @@ let getVocab = () => {
 }
 
 let startMegaQuiz = () => {
-  min = 0
-  max = book.length
-  setNextQuestion()
   document.getElementById("menuHeader").addEventListener("click", function () {
     EntoAr = !EntoAr
   })
+  for (let i = 1; i <= noOfLessons; i++) {
+    algoobj[i] = []
+  }
+  min = 0
+  max = book[0][1].length
+  menuitem.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log(item.innerHTML)
+    })
+  })
+  setNextQuestion()
 }
 
 let focusEl = document.createElement("p")
@@ -54,8 +64,7 @@ focusEl.id = "currentFocus"
 optionsContainer.insertAdjacentElement("afterEnd", focusEl)
 
 let resetQuiz = () => {
-  min = newmin() == undefined ? min : newmin()
-  max = newmax() == undefined ? max : newmax()
+  lessonNoselected = lessonid() == undefined ? 1 : lessonid()
   //remove previous options for next selection (reset state)
   while (optionsContainer.hasChildNodes()) {
     optionsContainer.removeChild(optionsContainer.firstChild)
@@ -63,7 +72,9 @@ let resetQuiz = () => {
 }
 
 let focuson = () => {
-  focusEl.innerHTML = mostWrongID != undefined ? "Focus: " + book[mostWrongID].En : ""
+  getlessonspecificmostwrongid()
+  focusEl.innerHTML =
+    mostWrongID !== undefined ? "Focus: " + book[0][lessonNoselected][mostWrongID].En : ""
   // change first ID to most answerd incorrectly
   if (mostWrongID != undefined && Math.random() < 0.5) {
     let idalreadyexist = outputIDs.includes(mostWrongID)
@@ -71,18 +82,39 @@ let focuson = () => {
     if (idalreadyexist == false) {
       outputIDs[0] = mostWrongID
     }
-    console.log("Focus active: " + book[outputIDs[0]].En)
+    console.log("Focus active: " + book[0][lessonNoselected][outputIDs[0]].En)
   }
 }
+
+let getlessonspecificmostwrongid = () => {
+  if (algoobj[lessonNoselected].length > 5) {
+    if (algoobj[lessonNoselected][0].w >= 0) {
+      mostWrongID =
+        algoobj[lessonNoselected][0] === undefined ? undefined : algoobj[lessonNoselected][0].id
+      if (mostWrongID !== undefined) {
+        console.log("Focus on: " + book[0][lessonNoselected][mostWrongID].En)
+      }
+    } else {
+      mostWrongID = undefined
+      console.log("Focus Off")
+    }
+  }
+  //  < 5 elements in lesson specific array
+  else {
+    mostWrongID = undefined
+    console.log("No focus")
+  }
+
+  // console.log("mymostwrong" + mostWrongID)
+}
 let setNextQuestion = () => {
-  console.log(delay)
-  // console.log("")
   resetQuiz()
+  max = newmax() == undefined ? max : newmax()
   // show less options if a smaller lesson is chosen
-  totalVocab = max - min
+  totalVocab = book[0][lessonNoselected].length
   NoOfAnsOptions = totalVocab < NoOfAnsOptionsToShow ? totalVocab : NoOfAnsOptionsToShow
   // Get new vocab ID
-  getRndIDs(min, max)
+  getRndIDs(max)
 
   focuson()
   // Select first ID as answer result
@@ -91,8 +123,8 @@ let setNextQuestion = () => {
   display()
 }
 let display = () => {
-  let EnText = book[outputIDs[0]].En
-  let ArText = book[outputIDs[0]].Ar
+  let EnText = book[0][lessonNoselected][outputIDs[0]].En
+  let ArText = book[0][lessonNoselected][outputIDs[0]].Ar
   // Update question text
   questionText = EntoAr ? EnText : ArText
   queText.innerHTML = questionText
@@ -102,85 +134,61 @@ let display = () => {
   outputIDs.forEach(createOptions)
 }
 
-let getRndIDs = (min, max) => {
+let getRndIDs = (max) => {
   outputIDs = [] // Clear array
   while (outputIDs.length < NoOfAnsOptions) {
-    var r = Math.floor(Math.random() * (max - min)) + min
+    let r = Math.floor(Math.random() * max)
+    // Remove duplicate ids
     if (outputIDs.indexOf(r) === -1) outputIDs.push(r)
   }
+  console.log(outputIDs)
 }
 
-let algoarray = []
 let mostWrongID = undefined
+let algoobj = {}
+
 let algo = (run, iscorrect) => {
   if (!run) {
+    console.log(run)
     return
   }
-  // getIncIDs()
-  // console.log("resultID: " + resultID)
-
   // Add new data
-  let found = algoarray.find((found) => found.id === resultID)
-  if (found == undefined) {
-    // console.log("Not found: " + resultID + " Added")
+  let found = algoobj[lessonNoselected].find((foun) => foun.id === resultID)
+  if (found === undefined) {
     let correctstart = iscorrect ? 1 : 0
     let wrongstart = iscorrect ? 0 : 1
     let addNewarrItem = {
+      // l: lessonNoselected,
       id: resultID,
       c: correctstart,
       w: wrongstart,
+      // en: book[0][lessonNoselected][resultID].En,
       // correct: correctCount,
       // wrong: wrongCount,
     }
-    algoarray.push(addNewarrItem)
+    algoobj[lessonNoselected].push(addNewarrItem)
   }
   // update existing data
   else {
-    // update singular object from array of objs
-    for (const obj of algoarray) {
-      if (obj.id == found.id) {
-        // console.log(obj)
-        if (iscorrect) {
-          obj.c = obj.c + 1
-          if (Math.random() < 0.8) {
-            obj.w = obj.w - 1
-            // console.log(book[obj.id].En + " -1")
-          }
-        } else obj.w = obj.w + 1
-        // console.log(book[obj.id].En + " w:" + obj.w)
-        break
+    let getsome = algoobj[lessonNoselected].find((foun) => foun.id === resultID)
+    console.log(getsome)
+    if (iscorrect) {
+      getsome.c = getsome.c + 1
+      if (Math.random() < 0.8) {
+        getsome.w = getsome.w - 1
       }
-    }
-    // console.log(algoarray)
+    } else getsome.w = getsome.w + 1
   }
 
   //sort array from most w
-  algoarray.sort((a, b) => b.w - a.w)
-  // console.log(algoarray)
-  if (algoarray.length > 5) {
-    // console.log(algoarray[0].id)
-    if (algoarray[0].w >= 0) {
-      mostWrongID = algoarray[0].id
-      console.log("Focus on: " + book[mostWrongID].En)
-    } else {
-      mostWrongID = undefined
-      console.log("Focus Off")
-    }
-  }
-
-  // // get IDs in order
-  // let getIncIDs = () => {
-  //   smin = 0
-  //   smax = book.length
-  //   // console.log("start:" + smin + " end:" + smax)
-  // }
+  algoobj[lessonNoselected].sort((a, b) => b.w - a.w)
 }
 
 let createOptions = (value) => {
-  var ansOption = document.createElement("p")
+  let ansOption = document.createElement("p")
   let badcount = 0
-  let EnAns = book[value].En
-  let ArAns = book[value].Ar
+  let EnAns = book[0][lessonNoselected][value].En
+  let ArAns = book[0][lessonNoselected][value].Ar
   ansOption.innerHTML = EntoAr ? ArAns : EnAns
   ansOption.classList.add("optionchoice")
   ansOption.classList.add("optionchoicehover")
