@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>Arabic</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Traditional Arabic', Amiri, Calibri;
+
+        }
+
+        #container {
+            /* background-color: blue; */
+            font-size: 64vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="container"></main>
+</body>
+<script type="module">
+    import json from "./Qaida/chapters/qaida.json" assert { type: "json" }
+    const container = document.getElementById("container")
+
+    let text = []
+    let index = 0
+
+    const shuffleArr = (array) =>
+        array
+            .map((a) => ({ sort: Math.random(), value: a }))
+            .sort((a, b) => a.sort - b.sort)
+            .map((a) => a.value)
+
+    let newArr = shuffleArr(json.alphabetAr)
+    newArr.forEach((element) => {
+        // console.log(element)
+        text.push(element)
+    })
+
+    let nextElement = () => {
+        container.innerHTML = text[index++ % text.length]
+    }
+    nextElement()
+
+    document.addEventListener("click", function () {
+        nextElement()
+    })
+
+    document.addEventListener("keypress", function onPress(event) {
+        if (event.key === "z") {
+            nextElement()
+        }
+    })
+
+</script>
+
+</html>
