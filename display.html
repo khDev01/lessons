@@ -39,38 +39,63 @@
     <main id="container"></main>
 </body>
 <script type="module">
-    import json from "./Qaida/chapters/qaida.json" assert { type: "json" }
-    const container = document.getElementById("container")
 
-    let text = []
-    let index = 0
+    // import json from "./Qaida/chapters/qaida.json" assert { type: "json" }
+    let json
+    // let getVocab = () => {
+    fetch("./Qaida/chapters/qaida.json")
+        .then((response) => response.json()) // return json object
+        .then((data) => {
+            json = data
+            console.log(json)
+            const container = document.getElementById("container")
 
-    const shuffleArr = (array) =>
-        array
-            .map((a) => ({ sort: Math.random(), value: a }))
-            .sort((a, b) => a.sort - b.sort)
-            .map((a) => a.value)
+            let text = []
+            let index = 0
 
-    let newArr = shuffleArr(json.alphabetAr)
-    newArr.forEach((element) => {
-        // console.log(element)
-        text.push(element)
-    })
+            const shuffleArr = (array) => {
+                return array
+                    .map((a) => ({ sort: Math.random(), value: a }))
+                    .sort((a, b) => a.sort - b.sort)
+                    .map((a) => a.value)
+                // push()
+            }
 
-    let nextElement = () => {
-        container.innerHTML = text[index++ % text.length]
-    }
-    nextElement()
+            let newArr = shuffleArr(json.alphabetAr)
 
-    document.addEventListener("click", function () {
-        nextElement()
-    })
+            // let push = () => {
+            newArr.forEach((element) => {
+                // console.log(element)
+                text.push(element)
+            })
+            // }
 
-    document.addEventListener("keypress", function onPress(event) {
-        if (event.key === "z") {
+
+            let nextElement = () => {
+                container.innerHTML = text[index++ % text.length]
+                if (text[index] === "ا") { newArr = shuffleArr(newArr) }
+            }
             nextElement()
-        }
-    })
+
+            document.addEventListener("click", function () {
+                nextElement()
+            })
+
+            document.addEventListener("keypress", function onPress(event) {
+                if (event.key === "z") {
+                    nextElement()
+                }
+            })
+
+
+        })
+        .catch((error) => {
+            console.error("Error:", error)
+        })
+    // }
+        // ; (function () {
+        //     getVocab()
+        // })()
 
 </script>
 
