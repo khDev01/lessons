@@ -33,3 +33,7 @@ p{
 .line-break,div {
     width: 100%;
   }
+
+.highlight{
+    color:yellow
+}

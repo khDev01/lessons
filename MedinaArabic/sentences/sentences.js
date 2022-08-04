@@ -1,12 +1,14 @@
 // Abreviations: sentence as s, and as wa, question as Q, answer as A, this as hatha
-// Note: single letter words join with next word (no space )
-// TODO: use indefinite tense of word to add shadda to alobj?
+// Note: Arabic grammar: single letter words before a word join with next word (no space )
+// TODO:
+//
 // const urlbook = "./sentence.json"
 const book1json = "../book1Complete.json"
 let sContainer = document.getElementById("sentenceContainer")
 let result, book, booklength //objects
 let keysArr = []
 let vocabArr = []
+
 // get lesson vocab from json file
 let getVocab = () => {
   fetch(book1json)
@@ -14,6 +16,8 @@ let getVocab = () => {
     .then((data) => {
       book = data
       booklength = data.length
+      localStorage.setItem("book1data", JSON.stringify(book))
+      // console.log(JSON.parse(localStorage.getItem("book1data")))
     })
     .catch((error) => {
       console.error("Error:", error)
@@ -22,8 +26,8 @@ let getVocab = () => {
 
 let moonLetters = ["ه", "ي", "و", "م", "ك", "ق", "ف", "غ", "ع", "خ", "ح", "ج", "ب", "أ", "إ"]
 let starterArr = [
-  ["This", "\u0647\u0630\u0627"],
-  ["That", "\u0630\u0644\u0643"],
+  ["This", "\u0647\u064e\u0630\u064e\u0627"],
+  ["That", "\u0630\u064e\u0644\u0650\u0643\u064e"],
   ["What", "\u0645\u064e\u0627 "],
   ["and", "\u0648\u064e"],
   ["is", "أ"],
@@ -32,10 +36,8 @@ let starterArr = [
   ["who", "\u0645\u064e\u0646\u0652"],
   ["where", "\u0623\u064e\u064a\u0652\u0646\u064e"],
   // ["is", "أ"],
-  // ["is", "أ"],
   ["Thisf", "\u0647\u064e\u0640\u0670\u0630\u0650\u0647\u0650"],
   ["Thatf", "\u062a\u0650\u0644\u0652\u0643\u064e"],
-  // ["is", "أ"],
   // ["is", "أ"],
 ]
 // remove instances within string
@@ -110,6 +112,7 @@ let getType = (type) => {
 }
 
 let getrandomdata = (type = "NounObj", maxVocab = 5) => {
+  // let ismale = gender === "M" ? true : false
   filtered = getType(type)
   let TypevocabArr = []
   for (let s = 0; s < maxVocab; s++) {
@@ -117,18 +120,11 @@ let getrandomdata = (type = "NounObj", maxVocab = 5) => {
     bookvocab = filtered[randomID]
     TypevocabArr.push(bookvocab)
   }
-
-  // console.log(bookvocab)
-  // console.log(TypevocabArr)
   return bookvocab
 }
 
-// let getrndvocab = () => {
-//   return getrandomdata()
-// }
-
 let display = (text, options = {}) => {
-  let para = document.createElement("p")
+  let para = createElement("p")
   para.innerHTML = text
   Object.entries(options).forEach(([key, value]) => {
     if (key === "class") {
@@ -145,6 +141,8 @@ let display = (text, options = {}) => {
 
     para.setAttribute(key, value)
   })
+  // textHighlighter(para)
+  // highlight(para, questionMark)
   document.body.appendChild(para)
   // console.log(text)
 }
@@ -165,25 +163,29 @@ hatha = starters.get("This")
 that = starters.get("That")
 
 let createRandomSentence = () => {
-  // lesson1and2()
-  // definiteWords()
-  lesson4()
-  // let whereis = () => {
-  //   wheres = where + " " + alobj + questionMark
-  // }
-  // display(alobjshadornot)
+  lesson1and2()
+  // lesson3() //todo add adjs
+  // lesson4() //todo make sentences correcty with prep
+  // bodyHighlighter()
 }
+
 let Questions = () => {}
 lesson6 = () => {}
 lesson5 = () => {}
+
 lesson4 = () => {
   getdefiniteWord()
   let majroor = (prep, getNewWord) => {
     if (getNewWord) {
       if (prep === fe) {
-        console.log("palece")
+        console.log("Place")
         getdefiniteWord("Place")
-      } else {
+      }
+      // if (prep === fe) {
+      //   console.log("Place")
+      //   getdefiniteWord("Place")
+      // }
+      else {
         console.log("new word")
         getdefiniteWord()
       }
@@ -197,7 +199,7 @@ lesson4 = () => {
     return prep + " " + majobj
   }
   objin = majroor(fe)
-  objon = majroor(on)
+  objon = majroor(on, true)
   objfrom = majroor(from)
   objto = majroor(to)
 
@@ -211,7 +213,7 @@ lesson4 = () => {
   wheresPerson = where + " " + person.Ar + questionMark
   wheresPersonAns = personPronoun + " " + majroor(fe, true)
 
-  // displaySection([objin, objon, objto, objfrom])
+  displaySection([objin, objon, objto, objfrom])
   // displaySection([wheres, whereAns])
   displaySection([wheresPerson, wheresPersonAns])
 }
@@ -234,30 +236,22 @@ let changeharakat = (str, changeTo = doma) => {
 let getdefiniteWord = (vocabget) => {
   rndWord = getrandomdata(vocabget)
   rndWordAr = rndWord.Ar
-  alobj = al + changeharakat(rndWordAr)
+  alobj = al + rndWordAr.replace(/.$/, doma)
 
   // Add shadda to sun letters
-  var a = alobj
-  var b = shadda
-  var position = 3
+  const position = 3
   let alobjshadornot = alobj
-
-  letterAfterAl = a.charAt(2)
+  letterAfterAl = alobj.charAt(2)
   if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
-    console.log("run")
-    alobjshadornot = [a.slice(0, position), b, a.slice(position)].join("")
-    console.log(alobjshadornot)
+    // console.log("Sun letter modification")
+    alobjshadornot = [alobj.slice(0, position), shadda, alobj.slice(position)].join("")
   }
   alobj = alobjshadornot
-  console.log(alobj)
 }
 
-let definiteWords = () => {
+let lesson3 = () => {
   getdefiniteWord()
-  //
-
-  //
-  displaySection([rndWordAr, alobj, alobjshadornot])
+  displaySection([rndWordAr, alobj])
 }
 
 let lesson1and2 = () => {
@@ -307,17 +301,6 @@ let lesson1and2 = () => {
   displaySection([isthat, yesisthat, noisthat])
 }
 
-let removeharakat = (str) => {
-  return str
-    .replaceAll(fatha, "")
-    .replaceAll(doma, "")
-    .replaceAll(kasra, "")
-    .replaceAll(fatha2, "")
-    .replaceAll(doma2, "")
-    .replaceAll(kasra2, "")
-    .replaceAll(sukun, "")
-    .replaceAll(shadda, "")
-}
 let thisthat = (starter) => {
   nounobj = getrandomdata("People")
   // console.log(nounobj)
@@ -392,7 +375,6 @@ document.addEventListener("keypress", function onPress(event) {
     rndomnum = Math.floor(Math.random() * 4)
     createRandomSentence()
   } else if (event.key === "x") {
-    console.log(Math.floor(Math.random() * 4))
   }
 })
 
@@ -421,16 +403,121 @@ function createElement(type, options = {}) {
       return
     }
 
+    if (key === "id") {
+      element.id = value
+      return
+    }
     element.setAttribute(key, value)
   })
   return element
 }
 
+String.prototype.removeTashkeel = function () {
+  return this.replace(/[\u064B-\u0652]/gm, "")
+}
+
+// let removeharakat = (str) => {
+//   return str
+//     .replaceAll(fatha, "")
+//     .replaceAll(doma, "")
+//     .replaceAll(kasra, "")
+//     .replaceAll(fatha2, "")
+//     .replaceAll(doma2, "")
+//     .replaceAll(kasra2, "")
+//     .replaceAll(sukun, "")
+//     .replaceAll(shadda, "")
+// }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+let textHighlighter = (el) => {
+  var str5 = el.innerHTML
+  var reg = /red|blue|فِ|هذا/gi //g is to replace all occurances
+
+  var toStr5 = String(reg)
+  var color = toStr5.replace("/g", "|").substring(1)
+
+  var colors = color.split("|")
+
+  if (colors.indexOf("red") > -1) {
+    str5 = str5.replace(/red/g, '<span style="color:red;">red</span>')
+  }
+
+  if (colors.indexOf("blue") > -1) {
+    str5 = str5.replace(/blue/g, '<span style="color:blue;">blue</span>')
+  }
+
+  if (colors.indexOf("فِ") > -1) {
+    str5 = str5.replace(/فِ/g, '<span style="color:green;">فِ</span>')
+  }
+
+  if (colors.indexOf("هذا") > -1) {
+    str5 = str5.replace(/هذا/g, '<span style="color:orange;">هذا</span>')
+  }
+  el.innerHTML = str5
+}
+
+function highlight(el, text) {
+  var innerHTML = el.innerHTML
+  var index = innerHTML.indexOf(text)
+  if (index >= 0) {
+    innerHTML =
+      innerHTML.substring(0, index) +
+      "<span class='highlight'>" +
+      innerHTML.substring(index, index + text.length) +
+      "</span>" +
+      innerHTML.substring(index + text.length)
+    el.innerHTML = innerHTML
+  }
+}
+
+function bodyHighlighter() {
+  var str5 = document.body.innerHTML
+  var reg = /red|َ|فِ|هذا/gi //g is to replace all occurances
+
+  var toStr5 = String(reg)
+  var color = toStr5.replace("/g", "|").substring(1)
+
+  var colors = color.split("|")
+
+  // if (colors.indexOf(fatha) > -1) {
+  str5 = str5.replace(/َ/g, '<span style="color:red;">&ZeroWidthSpace;\u064e</span>')
+  // }
+
+  document.body.innerHTML = str5
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 // self executing function here / same as jquery document ready
 ;(function () {
-  getVocab()
+  if (localStorage.getItem("book1data") === null) {
+    console.log("Retrieving data")
+    getVocab()
+  } else {
+    console.log("using localstorage")
+    book = JSON.parse(localStorage.getItem("book1data"))
+  }
+
+  // getVocab()
 })()
-
-//"No", "Ar": "\u0644\u0627"
-
-//"Yes","Ar": "\u0646\u064e\u0639\u064e\u0645\u0652"
