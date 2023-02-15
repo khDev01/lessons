@@ -55,9 +55,6 @@ kasra2 = "\u064d"
 doma2 = "\u064c"
 shadda = "\u0651"
 sukun = "\u0652"
-doma2 = "\u064c"
-doma2 = "\u064c"
-doma2 = "\u064c"
 spaceJoin = "\u0640"
 alifsmall = "\u0670"
 questionMark = "\u061f"
@@ -163,7 +160,7 @@ hatha = starters.get("This")
 that = starters.get("That")
 
 let createRandomSentence = () => {
-  lesson1and2()
+  // lesson1and2()
   // lesson3() //todo add adjs
   // lesson4() //todo make sentences correcty with prep
   // bodyHighlighter()
@@ -515,7 +512,7 @@ function bodyHighlighter() {
     console.log("Retrieving data")
     getVocab()
   } else {
-    console.log("using localstorage")
+    // console.log("using localstorage")
     book = JSON.parse(localStorage.getItem("book1data"))
   }
 

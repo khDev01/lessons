@@ -51,11 +51,11 @@ let startMegaQuiz = () => {
   }
   min = 0
   max = book[0][1].length
-  menuitem.forEach((item) => {
-    item.addEventListener("click", function () {
-      console.log(item.innerHTML)
-    })
-  })
+  // menuitem.forEach((item) => {
+  //   item.addEventListener("click", function () {
+  //     console.log(item.innerHTML)
+  //   })
+  // })
   setNextQuestion()
 }
 
@@ -79,10 +79,10 @@ let focuson = () => {
   if (mostWrongID != undefined && Math.random() < 0.5) {
     let idalreadyexist = outputIDs.includes(mostWrongID)
     // do not duplicate id
-    if (idalreadyexist == false) {
+    if (idalreadyexist === false) {
       outputIDs[0] = mostWrongID
     }
-    console.log("Focus active: " + book[0][lessonNoselected][outputIDs[0]].En)
+    // console.log("Focus active: " + book[0][lessonNoselected][outputIDs[0]].En)
   }
 }
 
@@ -92,17 +92,17 @@ let getlessonspecificmostwrongid = () => {
       mostWrongID =
         algoobj[lessonNoselected][0] === undefined ? undefined : algoobj[lessonNoselected][0].id
       if (mostWrongID !== undefined) {
-        console.log("Focus on: " + book[0][lessonNoselected][mostWrongID].En)
+        // console.log("Focus on: " + book[0][lessonNoselected][mostWrongID].En)
       }
     } else {
       mostWrongID = undefined
-      console.log("Focus Off")
+      // console.log("Focus Off")
     }
   }
   //  < 5 elements in lesson specific array
   else {
     mostWrongID = undefined
-    console.log("No focus")
+    // console.log("No focus")
   }
 
   // console.log("mymostwrong" + mostWrongID)
@@ -141,7 +141,7 @@ let getRndIDs = (max) => {
     // Remove duplicate ids
     if (outputIDs.indexOf(r) === -1) outputIDs.push(r)
   }
-  console.log(outputIDs)
+  // console.log(outputIDs)
 }
 
 let mostWrongID = undefined
@@ -171,7 +171,7 @@ let algo = (run, iscorrect) => {
   // update existing data
   else {
     let getsome = algoobj[lessonNoselected].find((foun) => foun.id === resultID)
-    console.log(getsome)
+    // console.log(getsome)
     if (iscorrect) {
       getsome.c = getsome.c + 1
       if (Math.random() < 0.8) {
