@@ -104,10 +104,12 @@ section {
 /*/**/
 
 .queText {
+    text-transform: capitalize;
     font-size: 2.4em;
     margin: 0;
     color: turquoise;
-    text-shadow: 1px 1px 4px rgba(145, 39, 0, 0.742);
+    /* font-family:sans-serif; */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.742);
 }
 
 .optionchoice {
@@ -119,7 +121,7 @@ section {
     cursor: default;
 }
 
-.optionchoicehover:hover {
+.optionchoice:hover {
     border:1px dashed lightgray; 
     color: lightgrey;
     cursor: pointer;

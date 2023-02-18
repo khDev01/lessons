@@ -87,7 +87,8 @@ let focuson = () => {
 }
 
 let getlessonspecificmostwrongid = () => {
-  if (algoobj[lessonNoselected].length > 5) {
+  // starts on lessons that have more than 6 wordszz
+  if (algoobj[lessonNoselected].length >= 6) {
     if (algoobj[lessonNoselected][0].w >= 0) {
       mostWrongID =
         algoobj[lessonNoselected][0] === undefined ? undefined : algoobj[lessonNoselected][0].id
@@ -191,7 +192,6 @@ let createOptions = (value) => {
   let ArAns = book[0][lessonNoselected][value].Ar
   ansOption.innerHTML = EntoAr ? ArAns : EnAns
   ansOption.classList.add("optionchoice")
-  ansOption.classList.add("optionchoicehover")
   if (resultID === value) {
     ansOption.id = "ans"
     ansOption.onclick = function () {
