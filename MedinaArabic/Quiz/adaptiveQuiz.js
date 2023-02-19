@@ -72,6 +72,7 @@ let resetQuiz = () => {
   }
 }
 
+// TODO:
 let focuson = () => {
   getlessonspecificmostwrongid()
   focusEl.innerHTML =
