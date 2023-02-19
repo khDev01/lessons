@@ -1,4 +1,4 @@
-import { newmin, newmax } from "./quizmenu.js"
+import { newmin, newmax, navigation } from "./quizmenu.js"
 import getVocab, { mybookdata } from "./quizgetdata.js"
 const bookjson = "../book1edit.json"
 let min = 0,
@@ -16,6 +16,7 @@ let currentQuestionIndex
 let maxNumberofQuestions = 20
 let book
 
+navigation()
 // get lesson vocab from json file
 let addbook = () => {
   book = mybookdata()
@@ -31,8 +32,7 @@ const shuffleArr = (array) =>
 let getRndIDs = (min, max) => {
   // console.log(book)
   let vocabAmount = max - min
-  let NoOfAnsOptions =
-    vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
+  let NoOfAnsOptions = vocabAmount < NoOfAnsOptionsToShow ? vocabAmount : NoOfAnsOptionsToShow
   // outputIDs = []
   while (outputIDs.length < NoOfAnsOptions) {
     var r = Math.floor(Math.random() * (max - min)) + min

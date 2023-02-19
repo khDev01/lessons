@@ -1,6 +1,6 @@
 // TODO: clean code
 
-import createMenu, { newmax, lessonid } from "./quizmenu.js"
+import createMenu, { newmax, lessonid, navigation } from "./quizmenu.js"
 const bookjson = "../book1FilterbyL.json"
 const queText = document.getElementById("queText")
 const optionsContainer = document.getElementById("choices")
@@ -14,6 +14,7 @@ let delay = false
 let noOfLessons
 let menuitem = document.querySelectorAll(".lessonmenuitem")
 
+navigation()
 // quickly fire through each question
 document.addEventListener("keypress", function onPress(event) {
   if (event.key === "z") {

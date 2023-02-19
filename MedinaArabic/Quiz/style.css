@@ -21,6 +21,16 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
+.navlink {
+    margin: 0 1em 0 0;
+    text-decoration: none;
+    color: floralwhite;
+}
+.navlink:hover {
+    color: darkslategray;
+    background-color: darkgrey;
+}
+
 button {
     font-family: inherit;
     font-weight: bold;

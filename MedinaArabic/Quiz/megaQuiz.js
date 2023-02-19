@@ -1,5 +1,5 @@
 import mainfunc, { shuffleArr } from "./quizLib.js"
-import createMenu, { newmin, newmax } from "./quizmenu.js"
+import createMenu, { newmin, newmax, navigation } from "./quizmenu.js"
 import getVocab, { mybookdata } from "./quizgetdataV2.js"
 const bookjson = "../book1vocabOnly.json"
 
@@ -13,6 +13,7 @@ let outputIDs = [],
   resultID
 let book, totalVocab
 
+navigation()
 // quickly fire through each question
 document.addEventListener("keypress", function onPress(event) {
   if (event.key === "z") {
@@ -79,17 +80,8 @@ let createOptions = (value) => {
   optionsContainer.appendChild(ansOption)
 }
 
-// const shuffleArr = (array) =>
-//   array
-//     .map((a) => ({ sort: Math.random(), value: a }))
-//     .sort((a, b) => a.sort - b.sort)
-//     .map((a) => a.value)
-
 // self executing function here / same as jquery document ready
-;(async function () {
-  await getVocab(bookjson, totalVocab, setNextQuestion)
-  console.log("hi")
-  console.log(book)
-  //    setTimeout(startMegaQuiz, 1000)
-  await startMegaQuiz()
+;(function () {
+  getVocab(bookjson, totalVocab, setNextQuestion)
+  setTimeout(startMegaQuiz, 1000)
 })()

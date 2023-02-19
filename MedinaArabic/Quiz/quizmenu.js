@@ -1,3 +1,44 @@
+export let navigation = () => {
+  // let nav = document.createElement("span")
+  // nav.innerText = "moo"
+
+  // menuContainer.appendChild(nav)
+  // var nav = document.querySelector("nav");
+  var list = document.createElement("span")
+  var items = [
+    {
+      text: "Cool",
+      url: "/MedinaArabic/Quiz/cardQuiz.html",
+    },
+    {
+      text: "Mega",
+      url: "/MedinaArabic/Quiz/megaQuiz.html",
+    },
+    {
+      text: "Full(Simple)",
+      url: "/MedinaArabic/Quiz/simpleQuiz.html",
+    },
+    {
+      text: "Adaptive",
+      url: "/MedinaArabic/Quiz/adaptiveQuiz.html",
+    },
+  ]
+
+  items.forEach(function (item) {
+    // var li = document.createElement("li")
+    // var link = document.createElement("a")
+    let navlink = document.createElement("a")
+    navlink.innerText = item.text
+    navlink.href = item.url
+    navlink.classList.add("navlink")
+
+    // li.appendChild(link)
+    list.appendChild(navlink)
+  })
+
+  menuContainer.appendChild(list)
+}
+
 // menuContainer = document.getElementById("menuContainer")
 let createMenu = (noOfLessons, book, setNextQuestion) => {
   let menuHeader = document.createElement("span")
