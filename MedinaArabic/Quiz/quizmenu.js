@@ -8,19 +8,19 @@ export let navigation = () => {
   var items = [
     {
       text: "Cool",
-      url: "/MedinaArabic/Quiz/cardQuiz.html",
+      url: "/lessons/MedinaArabic/Quiz/cardQuiz.html",
     },
     {
       text: "Mega",
-      url: "/MedinaArabic/Quiz/megaQuiz.html",
+      url: "/lessons/MedinaArabic/Quiz/megaQuiz.html",
     },
     {
       text: "Full(Simple)",
-      url: "/MedinaArabic/Quiz/simpleQuiz.html",
+      url: "/lessons/MedinaArabic/Quiz/simpleQuiz.html",
     },
     {
       text: "Adaptive",
-      url: "/MedinaArabic/Quiz/adaptiveQuiz.html",
+      url: "/lessons/MedinaArabic/Quiz/adaptiveQuiz.html",
     },
   ]
 
