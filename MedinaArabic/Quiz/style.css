@@ -3,7 +3,13 @@
     --hue-wrong: 0;
     --hue-correct: 145;
 }
-html, body {margin: 0; height: 100%; overflow: hidden}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
 
 body {
     --hue: var(--hue-neutral);
@@ -14,9 +20,11 @@ body {
     font-family: 'Traditional Arabic', Amiri, Calibri;
     width: 100vw;
 }
+
 body.correct {
     --hue: var(--hue-correct);
 }
+
 body.wrong {
     --hue: var(--hue-wrong);
 }
@@ -26,6 +34,7 @@ body.wrong {
     text-decoration: none;
     color: floralwhite;
 }
+
 .navlink:hover {
     color: darkslategray;
     background-color: darkgrey;
@@ -42,13 +51,13 @@ section {
     align-items: center;
     /* background-color: rgba(210, 156, 156, 0.09); */
     text-align: center;
-    
+
 }
 
 .container {
     margin: auto 0.4em;
     width: 100%;
-    background-color:#303032;
+    background-color: #303032;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px grey;
@@ -60,7 +69,7 @@ section {
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
-    
+
 }
 
 .btn {
@@ -81,14 +90,17 @@ section {
     text-shadow: 0 0 4px #393838f9;
     cursor: pointer;
 }
+
 .btn.correct {
     --hue: var(--hue-correct);
     color: black;
     text-shadow: 0 0 4px #f4f4f4;
 }
+
 .btn.wrong {
     --hue: var(--hue-wrong);
 }
+
 .start-btn,
 .next-btn {
     font-size: 1.5rem;
@@ -111,6 +123,7 @@ section {
     --hue: var(--hue-correct);
     color: green;
 }
+
 /*/**/
 
 .queText {
@@ -123,21 +136,21 @@ section {
 }
 
 .optionchoice {
-    border:1px dashed grey; 
-    padding: 5px; 
-    font-size: 2rem; 
+    border: 1px dashed grey;
+    padding: 5px;
+    font-size: 2rem;
     width: fit-content;
     margin: 0.2rem;
     cursor: default;
 }
 
 .optionchoice:hover {
-    border:1px dashed lightgray; 
+    border: 1px dashed lightgray;
     color: lightgrey;
     cursor: pointer;
 }
 
-.flexgrid{
+.flexgrid {
     /* display: grid;
     grid-template-columns: repeat(auto, auto); */
     margin: 0px 0;
@@ -152,25 +165,28 @@ section {
     width: 3em;
     display: flex;
     flex-direction: row;
-    justify-content:stretch;
+    justify-content: stretch;
     flex-wrap: wrap;
     margin: 1em 0;
     /* padding-left: .5em; */
     text-align: left;
-    margin:0
+    margin: 0
 }
-.menuheader{
+
+.menuheader {
     flex-basis: 100%;
 }
 
-.lessonmenuitem{
+.lessonmenuitem {
     max-width: 3em;
     min-width: 3rem;
-    flex: 1; /*items fill all area(no none items at the end i.e whitespace)*/
-    margin:0;
-    
+    flex: 1;
+    /*items fill all area(no none items at the end i.e whitespace)*/
+    margin: 0;
+
 }
-.lessonmenuitem:hover{
+
+.lessonmenuitem:hover {
     background-color: rgba(12, 151, 161, 0.479);
     cursor: pointer;
     /* background-color: hsl(var(--hue), 100%, 50%); */
@@ -181,13 +197,14 @@ section {
     flex-direction: row;
 }
 
-main{
+main {
     width: 100%;
     padding: 0;
-    /* margin-right: 1em; */
+    margin: 1.6em 0 0 0;
 }
 
 @media only screen and (max-width: 600px) {
+
     /* body {
       background-color: lightblue;
     } */
@@ -197,18 +214,18 @@ main{
         text-align: center;
         font-size: 1.2em;
     }
-    .flex{
+
+    .flex {
         flex-direction: column;
     }
+
     .optionchoice {
-        border:1px dashed grey; 
+        border: 1px dashed grey;
         /* padding: 5px;  */
-        font-size: 3rem; 
+        font-size: 3rem;
         width: fit-content;
         margin: 0.2rem;
         cursor: default;
     }
-    
-  }
-  
 
+}
