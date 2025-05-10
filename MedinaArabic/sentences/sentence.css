@@ -3,6 +3,7 @@
     --hue-wrong: 0;
     --hue-correct: 145;
 }
+
 /* html, body {margin: 0; height: 100%; overflow: hidden} */
 
 body {
@@ -15,14 +16,20 @@ body {
     width: 100vw;
     font-size: 2.3rem;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     flex-direction: row-reverse;
     align-content: flex-start;
- 
 }
 
-p{
-    padding: 0 5px;
+.sContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-content: flex-start;
+}
+
+p {
+    padding: 6px 5px 0 5px;
     margin: 4px 4px;
     border: 1px solid green;
     width: max-content;
@@ -30,10 +37,11 @@ p{
     text-shadow: 0 0 4px #393838f9;
 }
 
-.line-break,div {
+.line-break,
+div {
     width: 100%;
-  }
+}
 
-.highlight{
-    color:yellow
+.highlight {
+    color: yellow
 }

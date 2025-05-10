@@ -1,0 +1,179 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.png">
+</head>
+
+<body>
+    <!-- <div class="flex">
+        <main id="chapterContainer" class="flex">
+        </main>
+    </div> -->
+    <!-- <main id="chapterContainer" class="flex"> -->
+    <div id="textContainer" onclick="nextStr()"
+    style="font-size: 400px; padding-left: 20%; display: block; position: absolute; ">
+        ا
+    </div>
+    <!-- </main> -->
+
+    <div id="tsparticles"></div>
+    <!--  <script
+     src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script> -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-confetti@3/tsparticles.preset.confetti.bundle.min.js"></script>
+    <script type="text/javascript">
+        // const options = {
+        //     background: {
+        //         color: "#000", // the canvas background color
+        //     },
+        //     interactivity: {
+        //         events: {
+        //             onClick: {
+        //                 // this handles the mouse click event
+        //                 enable: true,
+        //                 mode: "push", // this adds particles
+        //             },
+        //             onHover: {
+        //                 // this handles the mouse hover event
+        //                 enable: true,
+        //                 mode: "repulse", // this make particles move away from the mouse
+        //             },
+        //         },
+        //         modes: {
+        //             push: {
+        //                 quantity: 6, // number of particles to add
+        //             },
+        //             repulse: {
+        //                 distance: 100, // the distance of the particles from the mouse
+        //             },
+        //         },
+        //     },
+        //     particles: {
+        //         links: {
+        //             enable: false, // this enables links between particles
+        //             opacity: 0.3,
+        //             distance: 200,
+        //         },
+        //         move: {
+        //             enable: true, // this makes particles move
+        //             speed: { min: 1, max: 3 }, // this is the speed of the particles
+        //         },
+        //         opacity: {
+        //             value: { min: 0.3, max: 0.7 }, // this sets the opacity of the particles
+        //         },
+        //         size: {
+        //             value: { min: 1, max: 10 }, // this sets the size of the particles
+        //         },
+        //     },
+        // };
+
+        // tsParticles.load("tsparticles", options);
+        // tsParticles.load({
+        //     id: "tsparticles",
+        //     options: {
+        //         particles: {
+        //             color: {
+        //                 value: ["#0000ff", "#00ff00"],
+        //             },
+        //             size: {
+        //                 // value: { min: 1, max: 10 }
+        //             },
+        //         },
+        //         preset: "confetti",
+        //     },
+        // });
+        tsParticles.load({
+            id: "tsparticles",
+            options: {
+                emitters: [
+                    {
+                        life: {
+                            duration: 100,
+                            count: 1,
+                        },
+                        position: {
+                            x: 0,
+                            y: 30,
+                        },
+                        particles: {
+                            move: {
+                                direction: "top-right",
+                            },
+                        },
+                    },
+                    {
+                        life: {
+                            duration: 5,
+                            count: 1,
+                        },
+                        position: {
+                            x: 100,
+                            y: 30,
+                        },
+                        particles: {
+                            move: {
+                                direction: "top-left",
+                            },
+                        },
+                    },
+                ],
+                preset: "confetti",
+            },
+        });
+    </script>
+</body>
+
+<script>
+    const container = document.getElementById('textContainer')
+    let letters = [
+        'ا',
+        'ب',
+        // 'ت',
+        // 'ث',
+        // 'ج',
+        // 'ح',
+        // 'خ',
+        // 'د',
+        // 'ذ',
+        // 'ر',
+        // 'ز',
+        // 'س',
+        // 'ش',
+        // 'ص',
+        // 'ض',
+        // 'ط',
+        // 'ظ',
+        // 'ع',
+        // 'غ',
+        // 'ف',
+        // 'ق',
+        // 'ك',
+        // 'ل',
+        // 'م',
+        // 'ن',
+        // 'و',
+        // 'ه',
+        // 'ء',
+        // 'ي',
+        // 'ى'
+    ]
+    let index = 1
+    let nextStr = () => {
+        container.innerHTML = letters[index++ % letters.length];
+        function change() {
+            var i = Math.floor(Math.random() * 100) + 1;
+            var j = Math.floor(Math.random() * 100) + 1;
+            container.style.left = i + "px";
+            container.style.top = j + "px";
+        }
+        change()
+    }
+
+</script>
+
+</html>

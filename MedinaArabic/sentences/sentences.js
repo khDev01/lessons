@@ -2,282 +2,307 @@
 // Note: Arabic grammar: single letter words before a word join with next word (no space )
 // TODO:
 //
+import getData from './getdata.js'
+import getRandomVocab, { getMatch, getdefiniteWord, getGenderVocab } from './getVocab.js'
+import displaySection from './display.js'
+import newHighlighter from './highlighter.js'
 // const urlbook = "./sentence.json"
-const book1json = "../book1Complete.json"
-let sContainer = document.getElementById("sentenceContainer")
-let result, book, booklength //objects
-let keysArr = []
-let vocabArr = []
+let sContainer = document.getElementById('sentenceContainer')
+// let result, book, booklength //objects
+let keysArr = [],
+  vocabArr = []
 
-// get lesson vocab from json file
-let getVocab = () => {
-  fetch(book1json)
-    .then((response) => response.json()) // return json object
-    .then((data) => {
-      book = data
-      booklength = data.length
-      localStorage.setItem("book1data", JSON.stringify(book))
-      // console.log(JSON.parse(localStorage.getItem("book1data")))
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-    })
-}
-
-let moonLetters = ["ه", "ي", "و", "م", "ك", "ق", "ف", "غ", "ع", "خ", "ح", "ج", "ب", "أ", "إ"]
+let moonLetters = ['ه', 'ي', 'و', 'م', 'ك', 'ق', 'ف', 'غ', 'ع', 'خ', 'ح', 'ج', 'ب', 'أ', 'إ']
 let starterArr = [
-  ["This", "\u0647\u064e\u0630\u064e\u0627"],
-  ["That", "\u0630\u064e\u0644\u0650\u0643\u064e"],
-  ["What", "\u0645\u064e\u0627 "],
-  ["and", "\u0648\u064e"],
-  ["is", "أ"],
-  ["yes", "نعم"],
-  ["no", "لا"],
-  ["who", "\u0645\u064e\u0646\u0652"],
-  ["where", "\u0623\u064e\u064a\u0652\u0646\u064e"],
+  ['This', '\u0647\u064e\u0640\u0630\u064e\u0627'],
+  ['That', '\u0630\u064e\u0644\u0650\u0643\u064e'],
+  ['What', '\u0645\u064e\u0627 '],
+  ['and', '\u0648\u064e'],
+  ['is', 'أ'],
+  ['yes', 'نعم'],
+  ['no', 'لا'],
+  ['who', '\u0645\u064e\u0646\u0652'],
+  ['where', '\u0623\u064e\u064a\u0652\u0646\u064e'],
   // ["is", "أ"],
-  ["Thisf", "\u0647\u064e\u0640\u0670\u0630\u0650\u0647\u0650"],
-  ["Thatf", "\u062a\u0650\u0644\u0652\u0643\u064e"],
+  // ["Thisf", "\u0647\u064e\u0640\u0670\u0630\u0650\u0647\u0650"],
+  ['Thisf', '\u0647\u064e\u0640\u0630\u0650\u0647\u0650'],
+  ['Thatf', '\u062a\u0650\u0644\u0652\u0643\u064e']
   // ["is", "أ"],
 ]
-// remove instances within string
-// let strin = getrandomdata(objects)[1]
-//   strin = strin.replaceAll("\u064e", "")
-
 // // Create a Map
 const starters = new Map(starterArr)
 
-fatha = "\u064e"
-kasra = "\u0650"
-doma = "\u064f"
-fatha2 = "\u064b"
-kasra2 = "\u064d"
-doma2 = "\u064c"
-shadda = "\u0651"
-sukun = "\u0652"
-spaceJoin = "\u0640"
-alifsmall = "\u0670"
-questionMark = "\u061f"
-comma = "\u060c "
-dateSeperator = "\u060d"
-semicolon = "\u061b"
-trippledot = "\u061f"
-fullstop = "\u06d4"
-Allah = "\ufdf2"
-akbar = "\ufdf3"
-Muhammad = "\ufdf4"
-rasool = "\ufdf6"
-salalahual = "\ufdfa"
-reyal = "\ufdfc"
-bism = "\ufdfd"
-yes = starters.get("yes") + comma
-no = starters.get("no") + comma
-al = "\u0627\u0644"
-fe = "\u0641\u0650\u064a"
-on = "\u0639\u064e\u0644\u064e\u0649"
-to = "\u0625\u0650\u0644\u064e\u0649"
-from = "\u0645\u0650\u0646\u0652"
-he = "\u0647\u064f\u0648\u064e"
-she = "\u0647\u0650\u064a\u064e"
-// function toUnicode(str) {
-//   return str
-//     .split("")
-//     .map(function (value, index, array) {
-//       var temp = value.charCodeAt(0).toString(16).toUpperCase()
-//       if (temp.length > 2) {
-//         return "\\u" + temp
-//       }
-//       return value
-//     })
-//     .join("")
+let alif = 'ا'
+let fatha = '\u064e'
+let kesra = '\u0650'
+let doma = '\u064f'
+let fatha2 = '\u064b'
+let kesra2 = '\u064d'
+let doma2 = '\u064c'
+let shadda = '\u0651'
+let sukun = '\u0652'
+let spaceJoin = '\u0640'
+let alifsmall = '\u0670'
+let questionMark = '\u061f'
+let comma = '\u060c '
+let dateSeperator = '\u060d'
+let semicolon = '\u061b'
+let trippledot = '\ufbb3 \ufbb3 \ufbb3'
+let fullstop = '\u06d4'
+let Allah = '\ufdf2'
+let akbar = '\ufdf3'
+let Muhammad = '\ufdf4'
+let rasool = '\ufdf6'
+let salalahual = '\ufdfa'
+let reyal = '\ufdfc'
+let bism = '\ufdfd'
+let yes = starters.get('yes') + comma
+let no = starters.get('no') + comma
+let al = '\u0627\u0644'
+let fe = '\u0641\u0650\u064a'
+let on = '\u0639\u064e\u0644\u064e\u0649'
+let to = '\u0625\u0650\u0644\u064e\u0649'
+let from = '\u0645\u0650\u0646\u0652'
+let he = '\u0647\u064f\u0648\u064e'
+let she = '\u0647\u0650\u064a\u064e'
+let tanween = [fatha2, doma2, kesra2] // tanween is only found at then end of nouns
+let yaa = '\u064a\u0627'
+let hatha = starters.get('This')
+let that = starters.get('That')
+const textColors = {
+  [fatha]: 'red',
+  [doma]: 'green',
+  [kesra]: 'blue',
+  [questionMark]: 'yellow'
+}
+let and = () => {
+  let wa = starters.get('and')
+  // console.lzog(wa)
+  wa = ' ' + wa.replace(fatha, '')
+  return wa
+}
+let what = starters.get('What')
+let whatsthis = what + hatha + questionMark
+let whatsthat = what + that + questionMark
+// let whatsthisandthat = what + hatha + and() + what + that + questionMark
+let who = starters.get('who') + ' '
+let whosthis = who + hatha + questionMark
+let whosthat = who + that + questionMark
+let whosthisandthat = who + hatha + and() + who + that + questionMark
+let is = starters.get('is')
+// Turn statement to question with Hamza
+let Qis = (statement) => {
+  return is + statement + questionMark
+}
+
+let yesis = yes + fullstop
+
+let VocabNouns = getRandomVocab('nbody', 15)
+let randomNoun = () => VocabNouns[Math.floor(Math.random() * VocabNouns.length)]
+
+String.prototype.replaceLast = function (char, replacement) {
+  return this.split(' ').reverse().join(' ').replace(new RegExp(char), replacement).split(' ').reverse().join(' ')
+}
+String.prototype.al = function () {
+  return al + this.replaceLast(doma2, doma)
+}
+String.prototype.o = function () {
+  return yaa + ' ' + this.replaceLast(doma2, doma)
+}
+// remove 3vowel tashkeel +shadda and skoon
+// String.prototype.removeTashkeel = function () {
+// return this.replace(/[\u064B-\u0652]/gm, "")
 // }
-String.prototype.replaceLast = function (what, replacement) {
-  return this.split(" ")
-    .reverse()
-    .join(" ")
-    .replace(new RegExp(what), replacement)
-    .split(" ")
-    .reverse()
-    .join(" ")
+String.prototype.removeTashkeel = function () {
+  return this.replace(/[\u064B-\u0652]/gm, '')
 }
 
-let getType = (type) => {
-  let newArrbook = book.filter(function (el) {
-    return el.T === type
-  })
-  return newArrbook
-}
+// String.prototype.changeHarakat = function (caseEnging) {
+//   switch (caseEnging) {
+//     case "majroor":
+//       break
+//     case "mansoob":
+//       break
+//     case "marfoo":
+//       break
 
-let getrandomdata = (type = "NounObj", maxVocab = 5) => {
-  // let ismale = gender === "M" ? true : false
-  filtered = getType(type)
-  let TypevocabArr = []
-  for (let s = 0; s < maxVocab; s++) {
-    randomID = Math.floor(Math.random() * filtered.length)
-    bookvocab = filtered[randomID]
-    TypevocabArr.push(bookvocab)
-  }
-  return bookvocab
-}
+//     default:
+//       break
+//   }
+// }
 
-let display = (text, options = {}) => {
-  let para = createElement("p")
-  para.innerHTML = text
-  Object.entries(options).forEach(([key, value]) => {
-    if (key === "class") {
-      para.classList.add(value)
-      return
-    }
+let myand = ' and '
+let mystarters1 = 'string1'
+let mystarters2 = 'string2'
+console.log(mystarters1 + myand + mystarters2)
 
-    if (key === "dataset") {
-      Object.entries(value).forEach(([dataKey, dataValue]) => {
-        para.dataset[dataKey] = dataValue
-      })
-      return
-    }
-
-    para.setAttribute(key, value)
-  })
-  // textHighlighter(para)
-  // highlight(para, questionMark)
-  document.body.appendChild(para)
-  // console.log(text)
-}
-
-let displaySection = (array) => {
-  array.forEach((element) => {
-    display(element)
-  })
-  linebreak()
-}
-let linebreak = () => {
-  let div = document.createElement("div")
-  document.body.appendChild(div)
-  // console.log(sentence)
-}
-
-hatha = starters.get("This")
-that = starters.get("That")
-
-let createRandomSentence = () => {
-  // lesson1and2()
+let createSentence = () => {
+  lesson1and2()
   // lesson3() //todo add adjs
   // lesson4() //todo make sentences correcty with prep
   // bodyHighlighter()
+  // newHighlighter("ه", "purple")
+  // for (const [key, value] of Object.entries(textColors)) {
+  //   newHighlighter(key, value)
+  // }
+  // lesson5()
+  // lesson18dual()
+}
+
+let makedual = (vocab) => {
+  let End2Noalif = 'نِ'
+  let End2wfatha = 'َانِ'
+  let dualvocab // = vocab + dualEnding
+  let lastChar = vocab.charAt(vocab.length - 1)
+  if (/[\u064B-\u0652]/.test(lastChar)) dualvocab = vocab.slice(0, -1) + End2wfatha
+  else if (lastChar === alif) dualvocab = vocab + End2Noalif
+  else dualvocab = vocab + 'madeDual'
+  // let changeEnding = vocab.replace(/.$/, "")
+  return dualvocab
 }
 
 let Questions = () => {}
-lesson6 = () => {}
-lesson5 = () => {}
+let lesson18dual = () => {
+  let rndWord = randomNoun()
+  let single = rndWord.Ar
+  let dual = makedual(rndWord.Ar)
 
-lesson4 = () => {
-  getdefiniteWord()
-  let majroor = (prep, getNewWord) => {
+  let one = getMatch('one')
+  // console.log(one[0])
+  single = single + one.Ar
+
+  displaySection([single, dual])
+}
+
+// lesson 5 possesion
+let lesson5 = () => {
+  let rndword = getRandomVocab('People')
+  let possessive = possess(randomNoun().Ar, rndword.Ar)
+  let caller = rndword.Ar.o()
+  displaySection([possessive.removeTashkeel(), caller])
+}
+
+// Possess
+let possess = (possession, possessor) => {
+  return mudaf(possession) + ' ' + mudafIlaih(possessor)
+}
+// Possession
+let mudaf = (str) => {
+  return changeharakat(str, doma)
+}
+// Possessor
+let mudafIlaih = (str) => {
+  return changeharakat(str, 'majroor')
+}
+
+let lesson4 = () => {
+  let rndWord = getdefiniteWord()
+  let getSpecificNoun = (prep, getNewWord) => {
     if (getNewWord) {
       if (prep === fe) {
-        console.log("Place")
-        getdefiniteWord("Place")
+        rndWord = getdefiniteWord('Place')
+        // console.log("Place" + rndWord.Ar)
       }
       // if (prep === fe) {
       //   console.log("Place")
       //   getdefiniteWord("Place")
       // }
       else {
-        console.log("new word")
-        getdefiniteWord()
+        // console.log("new word")
+        rndWord = getdefiniteWord()
       }
     }
-
-    majobj = changeharakat(alobj, kasra)
-    if (prep == "\u0645\u0650\u0646\u0652") {
+    let majobj = changeharakat(rndWord.Ar.al(), 'majroor')
+    // meeting of two skoons between words
+    if (prep == '\u0645\u0650\u0646\u0652') {
+      console.log(prep)
       prep = changeharakat(prep, fatha)
-      return prep + " " + majobj
+      console.log(prep)
+      return prep + ' ' + majobj
     }
-    return prep + " " + majobj
+    return prep + ' ' + majobj
   }
-  objin = majroor(fe)
-  objon = majroor(on, true)
-  objfrom = majroor(from)
-  objto = majroor(to)
+  let objin = getSpecificNoun(fe),
+    objon = getSpecificNoun(on, true),
+    objfrom = getSpecificNoun(from),
+    objto = getSpecificNoun(to),
+    where = starters.get('where')
+  let wheres = where + ' ' + rndWord.Ar.al() + questionMark
+  let rndWordpronoun = rndWord.M ? he : she
+  let whereAns = rndWordpronoun + ' ' + getSpecificNoun(on, true)
 
-  where = starters.get("where")
-  wheres = where + " " + alobj + questionMark
-  rndWordpronoun = rndWord.M ? he : she
-  whereAns = rndWordpronoun + " " + majroor(on, true)
-
-  person = getrandomdata("Name")
-  personPronoun = person.M ? he : she
-  wheresPerson = where + " " + person.Ar + questionMark
-  wheresPersonAns = personPronoun + " " + majroor(fe, true)
+  let person = getRandomVocab('Name'),
+    personPronoun = person.M ? he : she,
+    wheresPerson = where + ' ' + person.Ar + questionMark,
+    wheresPersonAns = personPronoun + ' ' + getSpecificNoun(fe, true)
 
   displaySection([objin, objon, objto, objfrom])
   // displaySection([wheres, whereAns])
   displaySection([wheresPerson, wheresPersonAns])
 }
 
-let changeharakat = (str, changeTo = doma) => {
+let changeharakat = (str, changeTo = 'majroor') => {
+  // console.log(str)
+  // make majroor
+  if (tanween.some((haraka) => str.at(-1).includes(haraka))) {
+    if (changeTo === 'majroor') {
+      return str.replace(/.$/, kesra2)
+    }
+  }
+  if (changeTo === 'majroor') {
+    return str.replaceLast(doma, kesra)
+  }
+
   // make definite
   if (changeTo === doma) {
     return str.replaceLast(doma2, changeTo)
   }
-  // make majroor
-  if (changeTo === kasra) {
-    return str.replaceLast(doma, changeTo)
-  }
+
   // Change Prep ending
   if (changeTo === fatha) {
     return str.replace(sukun, changeTo)
   }
 }
 
-let getdefiniteWord = (vocabget) => {
-  rndWord = getrandomdata(vocabget)
-  rndWordAr = rndWord.Ar
-  alobj = al + rndWordAr.replace(/.$/, doma)
-
-  // Add shadda to sun letters
+// Add shadda to sun letters
+let addShadda = (word) => {
   const position = 3
-  let alobjshadornot = alobj
-  letterAfterAl = alobj.charAt(2)
+  let letterAfterAl = word.charAt(2)
   if (!moonLetters.some((v) => letterAfterAl.includes(v))) {
-    // console.log("Sun letter modification")
-    alobjshadornot = [alobj.slice(0, position), shadda, alobj.slice(position)].join("")
+    return [word.slice(0, position), shadda, word.slice(position)].join('')
   }
-  alobj = alobjshadornot
+  return word
+}
+
+let makeDefinite = (word, shadda = true) => {
+  theNoun = al + word.replace(/.$/, doma)
+  return addShadda(theNoun)
 }
 
 let lesson3 = () => {
-  getdefiniteWord()
-  displaySection([rndWordAr, alobj])
+  // let mytestvocab = getGenderVocab()
+  // displaySection([1, mytestvocab.Ar, mytestvocab.M])
+
+  let L3vocab = getRandomVocab()
+  console.log(L3vocab)
+  let definiteNoun = L3vocab.Ar.al()
+  let definiteWshada = addShadda(definiteNoun)
+  let f = L3vocab.M ? '' : 'f'
+  let start = starters.get('This' + f)
+  let completeSent = start + ' ' + L3vocab.Ar
+  let NotCompleteSent = start + ' ' + definiteNoun + ' ' + trippledot
+  displaySection([L3vocab.Ar, definiteNoun, completeSent, NotCompleteSent, definiteWshada])
 }
 
 let lesson1and2 = () => {
-  thisis = thisthat("This")
-  thatis = thisthat("That")
-  thisandthat = thisis + and() + thatis
-  what = starters.get("What")
-  whatsthis = what + hatha + questionMark
-  whatsthat = what + that + questionMark
-  // whatsthisandthat =
-  //   what +
-  //   hatha +
-  //   and() +
-  //   what +
-  //   that +
-  //   questionMark
-  who = starters.get("who") + " "
-  whosthis = who + hatha + questionMark
-  whosthat = who + that + questionMark
-  whosthisandthat = who + hatha + and() + who + that + questionMark
-  thisother = thisthat("This")
-  thatother = thisthat("That")
-  is = starters.get("is")
-
-  let Qis = (statement) => {
-    return is + statement + questionMark
-  }
-  isthis = Qis(thisis)
-  isthat = Qis(thatis)
+  let thisis = ismIsharat('This')
+  let thatis = ismIsharat('That')
+  let thisandthat = thisis + and() + thatis
+  let thisother = ismIsharat('This')
+  let thatother = ismIsharat('That')
+  let isthis = Qis(thisis)
+  let isthat = Qis(thatis)
+  // yes/no answer
   let Ais = (istrue) => {
     if (istrue) {
       return yes + thisis
@@ -285,12 +310,11 @@ let lesson1and2 = () => {
       return no + thisother
     }
   }
-  yesis = yes + fullstop
-  yesisthis = Ais(true)
-  noisthis = Ais(false)
-  yesisthat = yes + thatis
-  noisthat = no + thatother
-  isthisandthat = is + " " + thisandthat + questionMark
+  let yesisthis = Ais(true)
+  let noisthis = Ais(false)
+  let yesisthat = yes + thatis
+  let noisthat = no + thatother
+  let isthisandthat = is + ' ' + thisandthat + questionMark
   displaySection([thisis, thatis, thisandthat])
   displaySection([whatsthis, whatsthat]) //whatsthisandthat
   displaySection([whosthis, whosthat, whosthisandthat])
@@ -298,223 +322,54 @@ let lesson1and2 = () => {
   displaySection([isthat, yesisthat, noisthat])
 }
 
-let thisthat = (starter) => {
-  nounobj = getrandomdata("People")
-  // console.log(nounobj)
-  isM = nounobj.M
-  nouneng = nounobj.En
-  nounarb = nounobj.Ar
-  f = isM ? "" : "f"
-  start = starters.get(starter + f)
+// ismIsharat
+let ismIsharat = (starter) => {
+  let nounobj = randomNoun()
+  let isMasculine = nounobj.M
+  let nouneng = nounobj.En
+  let nounarb = nounobj.Ar
+  let f = isMasculine ? '' : 'f'
+  let start = starters.get(starter + f)
   // console.log(start)
-  sent = start + " " + nounarb
+  let sent = start + ' ' + nounarb
   return sent
 }
 
-let and = () => {
-  wa = starters.get("and")
-  // console.lzog(wa)
-  wa = " " + wa.replace(fatha, "")
-  return wa
+let getIsmIsharat = (word, starter = 'this') => {
+  let isMasculine = word.M
+  let f = isMasculine ? '' : 'f'
+  let start = starters.get(starter + f)
+  return start // ...randomise starter
 }
-// continue after research
-//
 
-setTimeout(() => {
-  createRandomSentence()
-}, 1000)
-
-// lessonsMenu = document.getElementById("lessonsMenu")
-// let createMenu = () => {
-//   let menuHeader = document.createElement("span")
-//   menuHeader.innerText = "Lesson"
-//   menuHeader.onclick = function () {
-//     //
-//   }
-//   lessonsMenu.appendChild(menuHeader)
-//   for (let lessonNo = 1; lessonNo <= noOfLessons; lessonNo++) {
-//     let lsnNo = document.createElement("span")
-//     lsnNo.innerHTML = lessonNo
-//     lsnNo.classList.add("lessonmenuitem")
-//     lsnNo.onclick = function () {
-//       filterLesson(lessonNo)
-//       // creates(lessonNo)
-//       // style lesson itmes
-//       lessnmenuitems = lessonsMenu.children
-//       for (let i = 0; i < lessnmenuitems.length; i++) {
-//         let itemmenu = lessnmenuitems[i]
-//         itemmenu.style.removeProperty("background-color")
-//       }
-//       lsnNo.style.backgroundColor = "purple"
-//     }
-//     lessonsMenu.appendChild(lsnNo)
-//   }
-// }
-
-// let filterLesson = (selectedNo) => {
-//   result = book.filter((obj) => {
-//     return obj.L === selectedNo
-//   })
-//   if (selectedNo == 1) {
-//     console.log(selectedNo)
-//     console.log(result[0].Ar + " " + result[1].Ar)
-//   } else {
-//     console.log("oops")
-//   }
-// }
-
-// let creates = (lessonNo) => {
-
-// }
-
-document.addEventListener("keypress", function onPress(event) {
-  if (event.key === "z") {
-    rndomnum = Math.floor(Math.random() * 4)
-    createRandomSentence()
-  } else if (event.key === "x") {
+document.addEventListener('keypress', function onPress(event) {
+  if (event.key === 'z') {
+    // let rndomnum = Math.floor(Math.random() * 4)
+    createSentence()
+  } else if (event.key === 'x') {
+    console.log('hey')
+    // bodyHighlighter()
+    newHighlighter('أَ', 'red')
   }
 })
 
-// function swapKeysAndValues(obj) {
-//   const swapped = Object.entries(obj).map(([key, value]) => [value, key])
-//   return Object.fromEntries(swapped)
-// }
-
-function createElement(type, options = {}) {
-  const element = document.createElement(type)
-  Object.entries(options).forEach(([key, value]) => {
-    if (key === "class") {
-      element.classList.add(value)
-      return
-    }
-
-    if (key === "dataset") {
-      Object.entries(value).forEach(([dataKey, dataValue]) => {
-        element.dataset[dataKey] = dataValue
-      })
-      return
-    }
-
-    if (key === "text") {
-      element.textContent = value
-      return
-    }
-
-    if (key === "id") {
-      element.id = value
-      return
-    }
-    element.setAttribute(key, value)
-  })
-  return element
-}
-
-String.prototype.removeTashkeel = function () {
-  return this.replace(/[\u064B-\u0652]/gm, "")
-}
-
-// let removeharakat = (str) => {
-//   return str
-//     .replaceAll(fatha, "")
-//     .replaceAll(doma, "")
-//     .replaceAll(kasra, "")
-//     .replaceAll(fatha2, "")
-//     .replaceAll(doma2, "")
-//     .replaceAll(kasra2, "")
-//     .replaceAll(sukun, "")
-//     .replaceAll(shadda, "")
-// }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-let textHighlighter = (el) => {
-  var str5 = el.innerHTML
-  var reg = /red|blue|فِ|هذا/gi //g is to replace all occurances
-
-  var toStr5 = String(reg)
-  var color = toStr5.replace("/g", "|").substring(1)
-
-  var colors = color.split("|")
-
-  if (colors.indexOf("red") > -1) {
-    str5 = str5.replace(/red/g, '<span style="color:red;">red</span>')
-  }
-
-  if (colors.indexOf("blue") > -1) {
-    str5 = str5.replace(/blue/g, '<span style="color:blue;">blue</span>')
-  }
-
-  if (colors.indexOf("فِ") > -1) {
-    str5 = str5.replace(/فِ/g, '<span style="color:green;">فِ</span>')
-  }
-
-  if (colors.indexOf("هذا") > -1) {
-    str5 = str5.replace(/هذا/g, '<span style="color:orange;">هذا</span>')
-  }
-  el.innerHTML = str5
-}
-
-function highlight(el, text) {
-  var innerHTML = el.innerHTML
-  var index = innerHTML.indexOf(text)
-  if (index >= 0) {
-    innerHTML =
-      innerHTML.substring(0, index) +
-      "<span class='highlight'>" +
-      innerHTML.substring(index, index + text.length) +
-      "</span>" +
-      innerHTML.substring(index + text.length)
-    el.innerHTML = innerHTML
-  }
-}
-
-function bodyHighlighter() {
-  var str5 = document.body.innerHTML
-  var reg = /red|َ|فِ|هذا/gi //g is to replace all occurances
-
-  var toStr5 = String(reg)
-  var color = toStr5.replace("/g", "|").substring(1)
-
-  var colors = color.split("|")
-
-  // if (colors.indexOf(fatha) > -1) {
-  str5 = str5.replace(/َ/g, '<span style="color:red;">&ZeroWidthSpace;\u064e</span>')
-  // }
-
-  document.body.innerHTML = str5
-}
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-// self executing function here / same as jquery document ready
+// self executing function / same as jquery document ready
 ;(function () {
-  if (localStorage.getItem("book1data") === null) {
-    console.log("Retrieving data")
-    getVocab()
+  if (localStorage.getItem('book1data') === null) {
+    console.log('Retrieving data')
+    localStorage.clear()
+    getData()
+    setTimeout(() => {
+      createSentence()
+    }, 1000)
+    // book = JSON.parse(localStorage.getItem("book1data"))
   } else {
-    // console.log("using localstorage")
-    book = JSON.parse(localStorage.getItem("book1data"))
-  }
+    console.log('loading data')
+    createSentence()
+    // console.log("localstorage")
+    // console.log(JSON.parse(localStorage.getItem("book1data")))
 
-  // getVocab()
+    // book = JSON.parse(localStorage.getItem("book1data"))
+  }
+  // getData()
 })()
